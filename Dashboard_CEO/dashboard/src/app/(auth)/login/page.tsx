@@ -17,22 +17,43 @@ export default function LoginPage() {
     setError(null)
     setLoading(true)
 
-    const { error } = await supabase.auth.signInWithPassword({
-      email,
-      password,
-    })
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
 
-    setLoading(false)
+      if (error) {
+        const errorMessage = error.message.toLowerCase()
 
-    if (error) {
-      setError(error.message === 'Invalid login credentials'
-        ? 'Email hoặc mật khẩu không đúng'
-        : error.message)
-      return
+        if (errorMessage.includes('failed to fetch')) {
+          setError('Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.')
+          return
+        }
+
+        setError(
+          error.message === 'Invalid login credentials'
+            ? 'Email hoặc mật khẩu không đúng'
+            : error.message
+        )
+        return
+      }
+
+      router.push('/')
+      router.refresh()
+    } catch (error) {
+      const isNetworkError =
+        error instanceof TypeError ||
+        (error instanceof Error && error.message.toLowerCase().includes('fetch'))
+
+      setError(
+        isNetworkError
+          ? 'Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.'
+          : 'Đăng nhập thất bại. Vui lòng thử lại.'
+      )
+    } finally {
+      setLoading(false)
     }
-
-    router.push('/')
-    router.refresh()
   }
 
   return (

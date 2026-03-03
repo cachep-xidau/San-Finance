@@ -2,13 +2,11 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { LayoutDashboard, Building2, Wallet, FileText, User } from 'lucide-react'
+import { LayoutDashboard, Wallet, User } from 'lucide-react'
 
 const navItems = [
   { href: '/', label: 'Tổng quan', icon: LayoutDashboard },
-  { href: '/#clinic-comparison', label: 'Chi nhánh', icon: Building2 },
   { href: '/budget', label: 'Ngân sách', icon: Wallet },
-  { href: '/#revenue-trend', label: 'Báo cáo', icon: FileText },
   { href: '/login', label: 'Tài khoản', icon: User },
 ]
 
@@ -26,8 +24,8 @@ export function MobileNav() {
       <div className="flex items-center justify-around h-16 px-2">
         {navItems.map((item) => {
           const Icon = item.icon
-          const baseHref = item.href.split('#')[0]
-          const isActive = pathname === baseHref
+          const isOverview = item.href === '/'
+          const isActive = isOverview ? pathname === '/' : pathname === item.href
 
           return (
             <Link

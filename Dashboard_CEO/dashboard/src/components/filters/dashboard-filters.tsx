@@ -60,7 +60,7 @@ export function DashboardFilters({
     })
 
     const query = params.toString()
-    router.push(query ? `${pathname}?${query}` : pathname)
+    router.replace(query ? `${pathname}?${query}` : pathname)
   }
 
   return (
