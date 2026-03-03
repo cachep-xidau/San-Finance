@@ -1,0 +1,23 @@
+{
+  "name": "S Group Dashboard",
+  "short_name": "S Group",
+  "description": "Financial dashboard for S Group dental clinics",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F1F5F9",
+  "theme_color": "#3B82F6",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "/next.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/vercel.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

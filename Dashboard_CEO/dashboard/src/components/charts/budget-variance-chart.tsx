@@ -11,10 +11,10 @@ import {
   ResponsiveContainer,
   ReferenceLine,
 } from 'recharts'
-import type { BudgetWithDetails } from '@/lib/queries/budgets'
+import type { BudgetVariance } from '@/lib/queries/budgets'
 
 interface BudgetVarianceChartProps {
-  budgets: BudgetWithDetails[]
+  variances: BudgetVariance[]
 }
 
 const formatYAxis = (value: number) => {
@@ -46,8 +46,8 @@ const CustomTooltip = ({ active, payload, label }: {
   return null
 }
 
-export function BudgetVarianceChart({ budgets }: BudgetVarianceChartProps) {
-  if (!budgets || budgets.length === 0) {
+export function BudgetVarianceChart({ variances }: BudgetVarianceChartProps) {
+  if (!variances || variances.length === 0) {
     return (
       <div
         className="flex items-center justify-center h-[300px] rounded-lg"
@@ -58,34 +58,12 @@ export function BudgetVarianceChart({ budgets }: BudgetVarianceChartProps) {
     )
   }
 
-  // Aggregate by category (simplified - use category code prefix)
-  const categoryMap = new Map<string, { budget: number; actual: number }>()
-
-  for (const b of budgets) {
-    const prefix = b.category_code.split('.')[0] // GIAVON, CPBH, QLDN, etc.
-    const existing = categoryMap.get(prefix) || { budget: 0, actual: 0 }
-    existing.budget += b.amount
-    // Simulate actual with variance (in real app, fetch from expenses)
-    existing.actual += b.amount * (0.85 + Math.random() * 0.3)
-    categoryMap.set(prefix, existing)
-  }
-
-  const categoryNames: Record<string, string> = {
-    GIAVON: 'Giá vốn',
-    CPBH: 'Chi phí BH',
-    QLDN: 'QLDN',
-    THUE: 'Thuế',
-    KHAC: 'Khác',
-  }
-
-  const data = Array.from(categoryMap.entries())
-    .filter(([prefix]) => categoryNames[prefix])
-    .map(([prefix, values]) => ({
-      category: categoryNames[prefix] || prefix,
-      budget: values.budget,
-      actual: values.actual,
-      variance: values.actual - values.budget,
-    }))
+  const data = variances.map((item) => ({
+    category: item.category,
+    budget: item.budget,
+    actual: item.actual,
+    variance: item.variance,
+  }))
 
   return (
     <ResponsiveContainer width="100%" height={300}>

@@ -3,12 +3,6 @@
 import { useState } from 'react'
 import { ChevronDown, Calendar } from 'lucide-react'
 
-interface DateRange {
-  start: Date
-  end: Date
-  label: string
-}
-
 interface DateRangePickerProps {
   value: { start: Date; end: Date }
   onChange: (range: { start: Date; end: Date }) => void

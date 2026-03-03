@@ -15,7 +15,7 @@ export default function DashboardLayout({
       </div>
 
       {/* Main Content */}
-      <div className="md:ml-[240px] min-h-screen pb-20 md:pb-0">
+      <div className="md:ml-[240px] min-h-screen pb-24 md:pb-0">
         <Header />
         <main className="p-4 md:p-6">
           {children}

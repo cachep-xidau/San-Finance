@@ -1,4 +1,4 @@
-import { Edit, Trash2 } from 'lucide-react'
+import { Pencil, Trash2 } from 'lucide-react'
 
 interface BudgetItem {
   id: string
@@ -10,15 +10,8 @@ interface BudgetItem {
   amount: number
 }
 
-interface Clinic {
-  id: string
-  name: string
-  slug: string
-}
-
 interface BudgetTableProps {
   budgets: BudgetItem[]
-  clinics: Clinic[]
 }
 
 const formatCurrency = (value: number) => {
@@ -32,7 +25,7 @@ const getMonthName = (month: number | null) => {
   return `Tháng ${month}`
 }
 
-export function BudgetTable({ budgets, clinics }: BudgetTableProps) {
+export function BudgetTable({ budgets }: BudgetTableProps) {
   if (budgets.length === 0) {
     return (
       <div
@@ -40,7 +33,7 @@ export function BudgetTable({ budgets, clinics }: BudgetTableProps) {
         style={{ color: 'var(--text-muted)' }}
       >
         <p>Chưa có ngân sách nào</p>
-        <p className="text-sm mt-1">Nhấn "Thêm ngân sách" để bắt đầu</p>
+        <p className="text-sm mt-1">Nhấn &quot;Thêm ngân sách&quot; để bắt đầu</p>
       </div>
     )
   }
@@ -107,7 +100,7 @@ export function BudgetTable({ budgets, clinics }: BudgetTableProps) {
                           style={{ color: 'var(--text-muted)' }}
                           title="Sửa"
                         >
-                          <Edit size={14} />
+                          <Pencil size={14} />
                         </button>
                         <button
                           className="p-1.5 rounded hover:opacity-80"

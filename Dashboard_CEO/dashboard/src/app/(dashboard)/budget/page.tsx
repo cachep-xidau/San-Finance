@@ -1,7 +1,6 @@
 import { Plus, Download } from 'lucide-react'
 import Link from 'next/link'
-import { getBudgets } from '@/lib/queries/budgets'
-import { getClinics } from '@/lib/queries/clinics'
+import { getBudgets, getBudgetVariance } from '@/lib/queries/budgets'
 import { BudgetTable } from '@/components/budget/budget-table'
 import { BudgetVarianceChart } from '@/components/charts/budget-variance-chart'
 
@@ -15,9 +14,9 @@ export default async function BudgetPage({
   const month = searchParams.month ? parseInt(searchParams.month) : now.getMonth() + 1
   const clinicId = searchParams.clinic
 
-  const [budgets, clinics] = await Promise.all([
+  const [budgets, variances] = await Promise.all([
     getBudgets(clinicId, year, month),
-    getClinics(),
+    clinicId ? getBudgetVariance(clinicId, year, month) : Promise.resolve([]),
   ])
 
   return (
@@ -59,7 +58,7 @@ export default async function BudgetPage({
         <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
           Ngân sách vs Thực tế
         </h2>
-        <BudgetVarianceChart budgets={budgets} />
+        <BudgetVarianceChart variances={variances} />
       </div>
 
       {/* Budget Table */}
@@ -70,7 +69,7 @@ export default async function BudgetPage({
         <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
           Chi tiết ngân sách
         </h2>
-        <BudgetTable budgets={budgets} clinics={clinics} />
+        <BudgetTable budgets={budgets} />
       </div>
     </div>
   )

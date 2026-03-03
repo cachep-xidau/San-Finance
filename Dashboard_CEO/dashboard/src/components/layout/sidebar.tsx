@@ -18,10 +18,10 @@ import { useRouter } from 'next/navigation'
 
 const navItems = [
   { href: '/', label: 'Tổng quan', icon: LayoutDashboard },
-  { href: '/clinics', label: 'Chi nhánh', icon: Building2 },
+  { href: '/#clinic-comparison', label: 'Chi nhánh', icon: Building2 },
   { href: '/budget', label: 'Ngân sách', icon: Wallet },
-  { href: '/reports', label: 'Báo cáo', icon: FileText },
-  { href: '/settings', label: 'Cài đặt', icon: Settings },
+  { href: '/#revenue-trend', label: 'Báo cáo', icon: FileText },
+  { href: '/login', label: 'Tài khoản', icon: Settings },
 ]
 
 export function Sidebar() {
@@ -72,7 +72,8 @@ export function Sidebar() {
       <nav className="flex-1 py-4 px-2 space-y-1 overflow-y-auto">
         {navItems.map((item) => {
           const Icon = item.icon
-          const isActive = pathname === item.href
+          const baseHref = item.href.split('#')[0]
+          const isActive = pathname === baseHref
 
           return (
             <Link

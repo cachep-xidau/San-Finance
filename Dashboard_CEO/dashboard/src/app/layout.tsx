@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
@@ -15,7 +15,12 @@ const plusJakarta = Plus_Jakarta_Sans({
 export const metadata: Metadata = {
   title: "S Group Dashboard",
   description: "Financial dashboard for S Group dental clinics",
-};
+  manifest: '/manifest.json',
+}
+
+export const viewport: Viewport = {
+  themeColor: '#3B82F6',
+}
 
 export default function RootLayout({
   children,

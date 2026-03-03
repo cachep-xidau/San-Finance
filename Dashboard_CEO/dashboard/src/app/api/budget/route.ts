@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { createClient } from '@/lib/supabase/server'
-import { getBudgets, createBudget, upsertBudget } from '@/lib/queries/budgets'
+import { getBudgets, upsertBudget } from '@/lib/queries/budgets'
 
 // GET /api/budget - List budgets
 export async function GET(request: NextRequest) {

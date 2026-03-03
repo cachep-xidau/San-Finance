@@ -1,7 +1,7 @@
 'use client'
 
 import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts'
-import type { BreakdownDataPoint, CATEGORY_COLORS } from '@/lib/queries/breakdown'
+import type { BreakdownDataPoint } from '@/lib/queries/breakdown'
 
 interface CostBreakdownChartProps {
   data: BreakdownDataPoint[]
