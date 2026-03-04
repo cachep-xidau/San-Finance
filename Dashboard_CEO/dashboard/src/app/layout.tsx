@@ -1,16 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
-
-const inter = Inter({
-  variable: "--font-inter",
-  subsets: ["latin"],
-});
-
-const plusJakarta = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta",
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   title: "S Group Dashboard",
@@ -19,7 +9,7 @@ export const metadata: Metadata = {
 }
 
 export const viewport: Viewport = {
-  themeColor: '#3B82F6',
+  themeColor: '#0F1117',
 }
 
 export default function RootLayout({
@@ -28,11 +18,32 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="vi">
-      <body
-        className={`${inter.variable} ${plusJakarta.variable} antialiased`}
-      >
+    <html lang="vi" data-theme="dark" suppressHydrationWarning>
+      <head>
+        <script
+          dangerouslySetInnerHTML={{
+            __html: `
+              try {
+                var t = localStorage.getItem('theme');
+                if (t === 'light') document.documentElement.setAttribute('data-theme','light');
+              } catch(e){}
+            `,
+          }}
+        />
+      </head>
+      <body>
         {children}
+        <Script id="pwa-sw-register" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch((error) => {
+                  console.error('Service worker registration failed:', error)
+                })
+              })
+            }
+          `}
+        </Script>
       </body>
     </html>
   );

@@ -1,41 +1,40 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, type FormEvent } from 'react'
 import { createClient } from '@/lib/supabase/client'
 import { useRouter } from 'next/navigation'
+
+const NETWORK_ERROR_MESSAGE =
+  'Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.'
+const GENERIC_ERROR_MESSAGE = 'Đăng nhập thất bại. Vui lòng thử lại.'
+const INVALID_CREDENTIALS_MESSAGE = 'Email hoặc mật khẩu không đúng'
 
 export default function LoginPage() {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
+  const [activeTab, setActiveTab] = useState<'login' | 'register'>('login')
   const router = useRouter()
   const supabase = createClient()
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault()
+    if (activeTab === 'register') return
+
     setError(null)
     setLoading(true)
 
     try {
-      const { error } = await supabase.auth.signInWithPassword({
-        email,
-        password,
-      })
+      const { error } = await supabase.auth.signInWithPassword({ email, password })
 
       if (error) {
         const errorMessage = error.message.toLowerCase()
-
         if (errorMessage.includes('failed to fetch')) {
-          setError('Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.')
+          setError(NETWORK_ERROR_MESSAGE)
           return
         }
-
-        setError(
-          error.message === 'Invalid login credentials'
-            ? 'Email hoặc mật khẩu không đúng'
-            : error.message
-        )
+        setError(error.message === 'Invalid login credentials' ? INVALID_CREDENTIALS_MESSAGE : error.message)
         return
       }
 
@@ -43,95 +42,198 @@ export default function LoginPage() {
       router.refresh()
     } catch (error) {
       const isNetworkError =
-        error instanceof TypeError ||
-        (error instanceof Error && error.message.toLowerCase().includes('fetch'))
-
-      setError(
-        isNetworkError
-          ? 'Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.'
-          : 'Đăng nhập thất bại. Vui lòng thử lại.'
-      )
+        error instanceof TypeError || (error instanceof Error && error.message.toLowerCase().includes('fetch'))
+      setError(isNetworkError ? NETWORK_ERROR_MESSAGE : GENERIC_ERROR_MESSAGE)
     } finally {
       setLoading(false)
     }
   }
 
   return (
-    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'var(--background)' }}>
-      <div className="w-full max-w-md">
-        {/* Logo */}
-        <div className="text-center mb-8">
-          <h1 className="text-2xl font-bold" style={{ color: 'var(--text-main)' }}>
-            S Group Dashboard
-          </h1>
-          <p className="mt-2" style={{ color: 'var(--text-muted)' }}>
-            Đăng nhập để tiếp tục
-          </p>
+    <div
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        minHeight: '100vh',
+        width: '100%',
+        backgroundColor: 'var(--bg-primary, #0F1117)',
+        fontFamily: 'var(--font-primary)',
+      }}
+    >
+      {/* Card */}
+      <div
+        style={{
+          width: '100%',
+          maxWidth: 460,
+          borderRadius: 'var(--radius-xl)',
+          backgroundColor: 'var(--bg-card, #1C2333)',
+          padding: '40px 36px 36px',
+          boxShadow: 'var(--shadow-xl)',
+          border: '1px solid var(--border)',
+        }}
+      >
+        {/* Title */}
+        <h1
+          style={{
+            fontSize: 'var(--text-2xl)',
+            fontWeight: 'var(--weight-bold)',
+            color: 'var(--text-primary)',
+            marginBottom: 8,
+            letterSpacing: 'var(--tracking-tight)',
+          }}
+        >
+          Nexus Hub
+        </h1>
+        <p
+          style={{
+            fontSize: 'var(--text-sm)',
+            color: 'var(--text-muted)',
+            marginBottom: 24,
+          }}
+        >
+          Enter your credentials to continue.
+        </p>
+
+        {/* Tabs */}
+        <div style={{ display: 'flex', gap: 'var(--space-2)', marginBottom: 28 }}>
+          <button
+            type="button"
+            onClick={() => setActiveTab('login')}
+            style={{
+              padding: 'var(--space-2) var(--space-3)',
+              borderRadius: 'var(--radius-sm)',
+              fontSize: 'var(--text-sm)',
+              fontWeight: 'var(--weight-medium)',
+              border: 'none',
+              cursor: 'pointer',
+              backgroundColor: activeTab === 'login' ? 'var(--accent)' : 'transparent',
+              color: activeTab === 'login' ? '#FFFFFF' : 'var(--text-muted)',
+              outline: activeTab === 'login' ? '1px solid rgba(255,255,255,0.15)' : 'none',
+              transition: 'all var(--transition-fast)',
+              fontFamily: 'inherit',
+            }}
+          >
+            Login
+          </button>
+          <button
+            type="button"
+            onClick={() => setActiveTab('register')}
+            style={{
+              padding: 'var(--space-2) var(--space-3)',
+              borderRadius: 'var(--radius-sm)',
+              fontSize: 'var(--text-sm)',
+              fontWeight: 'var(--weight-medium)',
+              border: 'none',
+              cursor: 'pointer',
+              backgroundColor: activeTab === 'register' ? 'var(--accent)' : 'transparent',
+              color: activeTab === 'register' ? '#FFFFFF' : 'var(--text-muted)',
+              outline: activeTab === 'register' ? '1px solid rgba(255,255,255,0.15)' : 'none',
+              transition: 'all var(--transition-fast)',
+              fontFamily: 'inherit',
+            }}
+          >
+            Register
+          </button>
         </div>
+
+        {/* Error */}
+        {error && (
+          <div
+            style={{
+              marginBottom: 16,
+              padding: 'var(--space-3) var(--space-4)',
+              borderRadius: 'var(--radius-md)',
+              backgroundColor: 'var(--error-bg)',
+              border: '1px solid var(--error-border)',
+              color: 'var(--red)',
+              fontSize: 'var(--text-sm)',
+            }}
+          >
+            {error}
+          </div>
+        )}
 
         {/* Form */}
-        <div className="p-6 rounded-xl shadow-sm" style={{ background: 'var(--surface)' }}>
-          <form onSubmit={handleLogin} className="space-y-4">
-            {error && (
-              <div className="p-3 rounded-lg text-sm" style={{ background: 'var(--danger-soft)', color: 'var(--danger)' }}>
-                {error}
-              </div>
-            )}
+        <form onSubmit={handleLogin}>
+          {/* Email Input */}
+          <div style={{ marginBottom: 16 }}>
+            <input
+              id="email"
+              name="email"
+              type="email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              autoComplete="email"
+              required
+              placeholder="Email"
+              style={{
+                width: '100%',
+                height: 48,
+                padding: '0 var(--space-4)',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border)',
+                backgroundColor: 'var(--bg-input)',
+                color: 'var(--text-primary)',
+                fontSize: 'var(--text-sm)',
+                outline: 'none',
+                transition: 'border-color var(--transition-fast)',
+                fontFamily: 'inherit',
+              }}
+              onFocus={(e) => { e.target.style.borderColor = 'var(--accent)' }}
+              onBlur={(e) => { e.target.style.borderColor = 'var(--border)' }}
+            />
+          </div>
 
-            <div>
-              <label htmlFor="email" className="block text-sm font-medium mb-1" style={{ color: 'var(--text-main)' }}>
-                Email
-              </label>
-              <input
-                id="email"
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                className="w-full px-3 py-2 rounded-lg border focus:outline-none focus:ring-2"
-                style={{
-                  borderColor: 'var(--border)',
-                  background: 'var(--surface)',
-                  color: 'var(--text-main)'
-                }}
-                placeholder="email@example.com"
-              />
-            </div>
+          {/* Password Input */}
+          <div style={{ marginBottom: 24 }}>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              autoComplete="current-password"
+              required
+              placeholder="Password"
+              style={{
+                width: '100%',
+                height: 48,
+                padding: '0 var(--space-4)',
+                borderRadius: 'var(--radius-md)',
+                border: '1px solid var(--border)',
+                backgroundColor: 'var(--bg-input)',
+                color: 'var(--text-primary)',
+                fontSize: 'var(--text-sm)',
+                outline: 'none',
+                transition: 'border-color var(--transition-fast)',
+                fontFamily: 'inherit',
+              }}
+              onFocus={(e) => { e.target.style.borderColor = 'var(--accent)' }}
+              onBlur={(e) => { e.target.style.borderColor = 'var(--border)' }}
+            />
+          </div>
 
-            <div>
-              <label htmlFor="password" className="block text-sm font-medium mb-1" style={{ color: 'var(--text-main)' }}>
-                Mật khẩu
-              </label>
-              <input
-                id="password"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-                className="w-full px-3 py-2 rounded-lg border focus:outline-none focus:ring-2"
-                style={{
-                  borderColor: 'var(--border)',
-                  background: 'var(--surface)',
-                  color: 'var(--text-main)'
-                }}
-                placeholder="••••••••"
-              />
-            </div>
-
-            <button
-              type="submit"
-              disabled={loading}
-              className="w-full py-2.5 rounded-lg font-medium text-white transition-opacity disabled:opacity-50"
-              style={{ background: 'var(--primary)' }}
-            >
-              {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
-            </button>
-          </form>
-        </div>
-
-        <p className="text-center mt-4 text-sm" style={{ color: 'var(--text-muted)' }}>
-          Quên mật khẩu? Liên hệ quản trị viên
-        </p>
+          {/* Sign In Button */}
+          <button
+            type="submit"
+            disabled={loading}
+            className="btn-primary"
+            style={{
+              width: '100%',
+              height: 48,
+              borderRadius: 'var(--radius-md)',
+              border: 'none',
+              fontSize: 'var(--text-base)',
+              fontWeight: 'var(--weight-medium)',
+              cursor: loading ? 'not-allowed' : 'pointer',
+              opacity: loading ? 0.7 : 1,
+              fontFamily: 'inherit',
+            }}
+          >
+            {loading ? 'Signing In...' : 'Sign In'}
+          </button>
+        </form>
       </div>
     </div>
   )

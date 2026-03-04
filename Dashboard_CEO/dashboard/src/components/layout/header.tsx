@@ -8,48 +8,45 @@ interface HeaderProps {
 
 export function Header({ title = 'Dashboard' }: HeaderProps) {
   return (
-    <header
-      className="sticky top-0 z-30 flex items-center justify-between h-16 px-6 border-b"
-      style={{
-        background: 'var(--surface)',
-        borderColor: 'var(--border)',
-      }}
-    >
-      <h1 className="text-lg font-semibold" style={{ color: 'var(--text-main)' }}>
-        {title}
-      </h1>
-
-      <div className="flex items-center gap-4">
+    <header className="header">
+      <h1 className="header-title">{title}</h1>
+      <div className="header-actions">
         {/* Search */}
-        <button
-          className="p-2 rounded-lg hover:opacity-80 transition-opacity"
-          style={{ background: 'var(--background)' }}
-        >
-          <Search size={18} style={{ color: 'var(--text-muted)' }} />
+        <button className="btn-icon" aria-label="Search">
+          <Search size={18} />
         </button>
 
         {/* Notifications */}
-        <button
-          className="p-2 rounded-lg hover:opacity-80 transition-opacity relative"
-          style={{ background: 'var(--background)' }}
-        >
-          <Bell size={18} style={{ color: 'var(--text-muted)' }} />
+        <button className="btn-icon" style={{ position: 'relative' }} aria-label="Notifications">
+          <Bell size={18} />
           <span
-            className="absolute top-1 right-1 w-2 h-2 rounded-full"
-            style={{ background: 'var(--danger)' }}
+            className="animate-pulse-dot"
+            style={{
+              position: 'absolute',
+              top: 4,
+              right: 4,
+              width: 8,
+              height: 8,
+              borderRadius: 'var(--radius-pill)',
+              background: 'var(--red)',
+            }}
           />
         </button>
 
         {/* User */}
-        <button
-          className="flex items-center gap-2 p-2 rounded-lg hover:opacity-80 transition-opacity"
-          style={{ background: 'var(--background)' }}
-        >
+        <button className="btn-icon" style={{ borderRadius: 'var(--radius-lg)' }} aria-label="Profile">
           <div
-            className="w-8 h-8 rounded-full flex items-center justify-center"
-            style={{ background: 'var(--primary)' }}
+            style={{
+              width: 28,
+              height: 28,
+              borderRadius: 'var(--radius-md)',
+              background: 'var(--gradient-brand)',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
           >
-            <User size={16} className="text-white" />
+            <User size={14} style={{ color: 'white' }} />
           </div>
         </button>
       </div>

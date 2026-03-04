@@ -1,0 +1,448 @@
+﻿Month,Year,Amount,Description,Category,Classify,Expense Type
+01,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+01,2025,16648334.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+01,2025,22841000.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+01,2025,5110000.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+01,2025,18494808.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+01,2025,12026667.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+01,2025,44291333.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+01,2025,130000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+01,2025,4850000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+01,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+01,2025,10533123.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+01,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+01,2025,16866667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+01,2025,3806000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+01,2025,22500000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+01,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+01,2025,224938188.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+01,2025,2659493.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+01,2025,11313500.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+01,2025,438573024.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+01,2025,128678500.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+01,2025,27979000.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+01,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+01,2025,15883333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+01,2025,2000000.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+01,2025,8100000.0,Tiền hàm tạm TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,983333.0,composite,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,440000.0,Giấy phòng điều trị,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,1273000.0,Thuốc + nước muối,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,895000.0,tiền thuốc tê xanh,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,1400000.0,tiền cao su đặc,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,357000.0,Cồn rửa máng in TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,7200000.0,Màng xương,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,120000.0,2 đầu bàn chải,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,31800000.0,công nợ xương màn osteobiol đợt 6,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,14470000.0,hd SIC (còn 4 đợt),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,31400000.0,hd xương màn (còn 2 đợt),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,757000.0,dụng cụ cắt tỉa răng nhựa + hộp chống sốc),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,4382000.0,tiền xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,7197000.0,công nợ Thanh Ngọc,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+01,2025,112000000.0,Hd 1000 trụ Dentium done,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,165000.0,mua kềm cho phụ tá(TGIP),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+01,2025,205900000.0,lab Thịnh,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+01,2025,10470000.0,lab AZ,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+01,2025,50000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+01,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+01,2025,1700000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+01,2025,3109333.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+01,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+01,2025,2413333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+02,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+02,2025,33367335.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+02,2025,15474568.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+02,2025,4916667.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+02,2025,14738973.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+02,2025,19016666.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+02,2025,23338667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+02,2025,110000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+02,2025,7643333.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+02,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+02,2025,7788727.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+02,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+02,2025,9572833.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+02,2025,13464650.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+02,2025,22000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+02,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+02,2025,162389222.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+02,2025,4294240.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+02,2025,7511600.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+02,2025,399486151.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+02,2025,127714660.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+02,2025,30006613.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+02,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+02,2025,10666667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+02,2025,6400000.0,mua kin,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,2907000.0,tiền xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,5116000.0,Khẩu trang + thuốc giảm đau + mua thuốc chống sốc,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,20445000.0,xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,29874000.0,công nợ Thanh Ngọc T1/25,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,14470000.0,công nợ SIC VĐ,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,31400000.0,công nợ hd xương màn VĐ,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,3500000.0,mua đầu scan máy itero,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,1337000.0,mũi đốt nướu,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+02,2025,160250000.0,labo,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+02,2025,1260000.0,labo,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+02,2025,0.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+02,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+02,2025,83932000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+02,2025,15896668.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+02,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+02,2025,2416667.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+03,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+03,2025,60005019.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+03,2025,22646177.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+03,2025,4588000.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+03,2025,15760186.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+03,2025,20715335.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+03,2025,20888667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+03,2025,157000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+03,2025,25218334.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+03,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+03,2025,12821541.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+03,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+03,2025,99847334.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+03,2025,15607870.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+03,2025,22000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+03,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+03,2025,382678318.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+03,2025,6582681.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+03,2025,9629500.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+03,2025,443648055.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+03,2025,128489333.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+03,2025,28938240.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+03,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+03,2025,12000000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+03,2025,42559000.0,"vật tư(đầu CVR, thuốc tê, giấy in phim, đồ dùng pk, chỉ tiêu, nhựa in máng...)",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,16000000.0,thanh toán tiền cylinder,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,3806000.0,thanh toán tiền phụ kiện Biotem,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,8275000.0,xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,22079400.0,Công nợ implant swiss,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,31800000.0,hd xương osteobiol kì cuối,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,6400000.0,Kin,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,253000.0,mua kính bảo hộ cho KH,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,31400000.0,Hd xương màn Viêt Đăng,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,14470000.0,Hd sic,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,198100000.0,lab,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+03,2025,38400000.0,lab,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+03,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+03,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+03,2025,77868667.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+03,2025,17762667.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+03,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+03,2025,1166667.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+04,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+04,2025,20205669.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+04,2025,22312000.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+04,2025,4860667.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+04,2025,22915694.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+04,2025,10865680.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+04,2025,200000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+04,2025,23833200.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+04,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+04,2025,10291074.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+04,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+04,2025,35325734.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+04,2025,28938475.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+04,2025,22000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+04,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+04,2025,259739627.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+04,2025,5399822.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+04,2025,11091000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+04,2025,453028642.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+04,2025,129913020.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+04,2025,29013360.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+04,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+04,2025,14166667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+04,2025,1686667.0,nước ngâm dụng cụ,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,2406667.0,thuốc giảm đau,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,129000.0,mua giấy bạc nano tgip,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,257000.0,hộc tủ nhựa  tgip,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,9500000.0,Tiền tấm in và màn hình máy in TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,7750000.0,composite lỏng,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,3300000.0,tiền cây cào xương TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,32385000.0,Thanh Ngọc T2,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,18968000.0,"tiền vật liệu, banh vạt, cây bóc tách, cán dao mổ, cây đo túi nướu, cây nạo xương, kềm nhổ chân răng, kềm nạy, tay khoan chậm",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,5155000.0,xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,79100000.0,hd 20tr strauman đợt 3/3 done,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,6107000.0,tiền xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,3200000.0,Kin,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,5990000.0,implant Osstem 2set,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,20702000.0,vât lieu TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,2500000.0,Nhận mũi nhổ răng(TGIL),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,1257000.0,hàng đtt của TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,14470000.0,công nợ SIC,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,42909000.0,Thanh Ngọc T3/25 tgip,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+04,2025,9000000.0,Tiền hàm tạm BN Khả Ái(TGIP),1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+04,2025,13980000.0,"Tháo lắp t3,4",1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+04,2025,32050000.0,lab Vũ,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+04,2025,33900000.0,lab Thịnh,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+04,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+04,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+04,2025,46083001.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+04,2025,3191667.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+04,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+04,2025,1000000.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+05,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+05,2025,30482003.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+05,2025,22349000.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+05,2025,5420334.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+05,2025,26520745.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+05,2025,21598935.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+05,2025,19000000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+05,2025,105000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+05,2025,6175000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+05,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+05,2025,11399934.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+05,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+05,2025,32910000.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+05,2025,9391375.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+05,2025,22000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+05,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+05,2025,304048260.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+05,2025,12266965.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+05,2025,11436500.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+05,2025,512340376.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+05,2025,142111333.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+05,2025,31069867.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+05,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+05,2025,13666667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+05,2025,0.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+05,2025,3350000.0,mua metrogyl + Effegan,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,5900000.0,cây trẻ xương TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,10835000.0,Xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,6278000.0,tiền xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,33138000.0,vật tư+kin+thuốc,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,1573000.0,mua aldinate + Thạch cao lấy dấu-TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,2910000.0,khẩu trang,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,400000.0,chụp phim ngoài cho KH,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,7845000.0,Mực in máng phẫu thuâth,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,5556000.0,in ly giấy,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,50331250.0,tiền chênh lệch trụ strauman+mua phụ kiên,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,69272500.0,hd đợt 1/3. 20 trụ strauman,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,20000000.0,hd 50tr Osstem (còn nợ 30/3),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,2790000.0,kềm kẹp phẫu + kéo cắt chỉ phẫu TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,12984000.0,vật tư Thanh Ngọc,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,7200000.0,Tiền màng,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,6815000.0,xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,1572000.0,phôi Anthogyr,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,25335104.0,mua cây cào xương,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,62808000.0,4impl zygoma ca Ngọc Cẩm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+05,2025,121350000.0,LAbo,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+05,2025,5830000.0,Labo,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+05,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+05,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+05,2025,1233333.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+05,2025,7848333.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+05,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+05,2025,9828000.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+06,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+06,2025,496226943.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+06,2025,117945000.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+06,2025,38223360.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+06,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+06,2025,15333333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+06,2025,28940000.0,công nợ SIC,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,10030000.0,nhận mũi NR8 +dung dịch ngâm dụng cụ,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,36459000.0,Nước rửa tay PT + nước sát khuẩn tay PT + dây UC + kim luồn + thuốc giảm đau+vật tư,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,24620000.0,Nhận Cone OBT+Mũi mài xương+bóng tia cực tím+MTA BOT - TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,11365000.0,"xnm,chụp flim KH",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,8093667.0,thuốc giảm đau+thuốc tê,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,10000000.0,hd ostem,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,6400000.0,kin,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,18713000.0,Xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,2400000.0,phụ kiện biotem,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+06,2025,234690000.0,lab Vũ,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+06,2025,22300000.0,lab Thịnh,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+06,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+06,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+06,2025,116683334.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+06,2025,4600000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+06,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+06,2025,10166666.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+06,2025,150000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+06,2025,19851669.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+06,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+06,2025,12502918.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+06,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+06,2025,16223334.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+06,2025,10209500.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+06,2025,22000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+06,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+06,2025,314221874.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+06,2025,10765658.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+06,2025,15281466.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+06,2025,17002668.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+06,2025,22622500.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+06,2025,4863333.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+06,2025,22709164.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+06,2025,23846632.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+06,2025,15125000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+07,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+07,2025,22848672.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+07,2025,22274500.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+07,2025,5286667.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+07,2025,23540712.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+07,2025,18466000.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+07,2025,4658000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+07,2025,155000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+07,2025,10936001.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+07,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+07,2025,11782443.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+07,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+07,2025,11602667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+07,2025,12490000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+07,2025,25596000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+07,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+07,2025,236858825.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+07,2025,2807314.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+07,2025,13341000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+07,2025,504591563.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+07,2025,121861667.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+07,2025,38329173.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+07,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+07,2025,10333333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+07,2025,57834000.0,Medipac tgip,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+07,2025,5504750.0,"Vật liệu TGIP, thuốc giảm đau, đồ nội nha",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+07,2025,22054150.0,mua  phôi trụ Mis,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+07,2025,10000000.0,"Mũi khoan tgip, copping, đồ lấy dấu IP, chỉ khâu TGIP,bộ trám",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+07,2025,125700000.0,lab Vũ,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+07,2025,11100000.0,lab Thịnh,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+07,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+07,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+07,2025,1433333.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+07,2025,10043000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+07,2025,3000000.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+08,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+08,2025,20436333.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+08,2025,23964000.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+08,2025,5330000.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+08,2025,21316171.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+08,2025,20194913.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+08,2025,2679000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+08,2025,250000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+08,2025,19161666.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+08,2025,12813262.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+08,2025,7119750.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+08,2025,25596000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+08,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+08,2025,249333825.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+08,2025,8816694.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+08,2025,11418500.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+08,2025,483552714.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+08,2025,125986077.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+08,2025,37582333.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+08,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+08,2025,14333333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+08,2025,2349000.0,xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,400000.0,Chụp phim CT Xương gò má KH TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,39860000.0,Vật liệu tgip,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,60000000.0,"công nợ zygoma+ipl chân bướm (còn nợ lại64,450)",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,12058000.0,"15 tack hàn, mua 2 coping, Bộ tak, 5 màng",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,21669000.0,xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,18010667.0,"thuốc tê, Thuốc TTR, tt tiền giấy in phim CT, efferalgan, Giấy chuyên dụng vên sinh phòng điều trị",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,2361000.0,Mua thuốc tê xanh+mua nước muối + dịch chuyền(TGIP),1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,2414000.0,"khăn choàng phụ tá, đầu siêu âm IP, gương chụp hình trong miệng TGIP",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,8652600.0,mực in 3D,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,11500000.0,2 trụ+2 healing Neodent,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,10000000.0,hd Ostem kì cuối,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+08,2025,3120000.0,lab tháo lắp,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+08,2025,74100000.0,Lab Vũ,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+08,2025,15600000.0,Lab Thịnh,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+08,2025,0.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+08,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+08,2025,41000000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+08,2025,4380334.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+08,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+08,2025,11139333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+09,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+09,2025,26576333.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+09,2025,22414000.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+09,2025,5096667.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+09,2025,24284731.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+09,2025,22559000.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+09,2025,67421467.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+09,2025,288000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+09,2025,20955000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+09,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+09,2025,11027418.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+09,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+09,2025,16812001.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+09,2025,19128000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+09,2025,25596000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+09,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+09,2025,337138311.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+09,2025,6449732.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+09,2025,14235167.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+09,2025,485898834.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+09,2025,119286000.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+09,2025,38116667.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+09,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+09,2025,17166667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+09,2025,1344000.0,"pin đèn flash, khăn choàng PT",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,51090000.0,thuốc tê+tiền thuốc+đồ trám,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,5500000.0,Mua cây cvr,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,138540000.0,hd tru strauman,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,3500000.0,tt tiền đầu máy scan,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,1250000.0,tiền tấm phim in của TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,3283200.0,xnm,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,53382000.0,vật tư,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,20100000.0,Kí hd osstem còn lại 30tr/3th,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,64450000.0,imp zygoma và chân bướm\,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,26300000.0,hd xương màn 1/4,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,4500000.0,tt tiền vật liệu trâm máy + endo TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+09,2025,195600000.0,lab Vũ,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+09,2025,20500000.0,lab Thịnh,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+09,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+09,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+09,2025,7775000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+09,2025,14498334.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+09,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+09,2025,13333333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+10,2025,43466170.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+10,2025,24936000.0,Tiền thuê xe+phí về xe,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+10,2025,2700000.0,bãi xe cty+bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+10,2025,20151564.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+10,2025,13446667.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+10,2025,19295667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+10,2025,245500000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+10,2025,16547334.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+10,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+10,2025,12952860.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+10,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí
+10,2025,28421634.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+10,2025,36832250.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+10,2025,25596000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+10,2025,0.0,SEO,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+10,2025,412163708.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+10,2025,4037135.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí
+10,2025,27159813.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+10,2025,506933361.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+10,2025,123805667.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+10,2025,36623333.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí
+10,2025,18000000.0,Thuê bằng bs+bằng y tá,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+10,2025,8304000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+10,2025,36725000.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+10,2025,16559550.0,implant swiss T4+5,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,32282333.0,"vật liệu đtt, Bao tay y tế, mua thuốc,nước muối, tấm choàng che cổ, gương cầm tay phòng điều trị+túi chườm, mua áo chì , khăn giấy choàng cổ phòng điều trị",1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,2268000.0,kiểm định lò hấp,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,7497000.0,Cây nạy răng,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,4925400.0,xnm+chụp phim khách+thuốc khách,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,4019250.0,xương zimmer,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,13540000.0,Mua kin,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,76299000.0,tt trụ Neodent,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,6200000.0,Mua vật liệu impl,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,900000.0,bóng đèn cực tím,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,33260000.0,Pk implant strauman,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,2500000.0,tiền tiền mê,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,147600000.0,Kí hd JD,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,26300000.0,Hd xương màn đợt 2,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,10000000.0,Mua mũi khoan lấy xương TGIP,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+10,2025,97100000.0,Lab,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+10,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+10,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí
+10,2025,5547001.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí
+10,2025,11835001.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+10,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+10,2025,5751667.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí

@@ -3,33 +3,30 @@ import { Home, ArrowLeft } from 'lucide-react'
 
 export default function NotFound() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'var(--background)' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'var(--space-6)', background: 'var(--bg-primary)' }}>
       <div
-        className="w-full max-w-md p-6 rounded-2xl border"
-        style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
+        style={{
+          width: '100%',
+          maxWidth: 448,
+          padding: 'var(--space-6)',
+          borderRadius: 'var(--radius-xl)',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border)',
+        }}
       >
-        <h1 className="text-2xl font-bold" style={{ color: 'var(--text-main)' }}>
+        <h1 style={{ fontSize: 'var(--text-2xl)', fontWeight: 'var(--weight-bold)', color: 'var(--text-primary)' }}>
           404
         </h1>
-        <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>
+        <p style={{ fontSize: 'var(--text-sm)', marginTop: 'var(--space-2)', color: 'var(--text-muted)' }}>
           Không tìm thấy trang bạn đang truy cập.
         </p>
 
-        <div className="mt-5 flex items-center gap-3">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white"
-            style={{ background: 'var(--primary)' }}
-          >
+        <div style={{ marginTop: 'var(--space-5)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+          <Link href="/" className="btn-primary btn-sm">
             <Home size={16} />
             Về trang chủ
           </Link>
-
-          <Link
-            href="/login"
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm"
-            style={{ borderColor: 'var(--border)', color: 'var(--text-main)' }}
-          >
+          <Link href="/login" className="btn btn-sm">
             <ArrowLeft size={16} />
             Đăng nhập
           </Link>

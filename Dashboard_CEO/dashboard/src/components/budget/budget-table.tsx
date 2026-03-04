@@ -29,16 +29,21 @@ export function BudgetTable({ budgets }: BudgetTableProps) {
   if (budgets.length === 0) {
     return (
       <div
-        className="flex flex-col items-center justify-center py-12"
-        style={{ color: 'var(--text-muted)' }}
+        style={{
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          justifyContent: 'center',
+          padding: 'var(--space-12) 0',
+          color: 'var(--text-muted)',
+        }}
       >
         <p>Chưa có ngân sách nào</p>
-        <p className="text-sm mt-1">Nhấn &quot;Thêm ngân sách&quot; để bắt đầu</p>
+        <p style={{ fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)' }}>Nhấn &quot;Thêm ngân sách&quot; để bắt đầu</p>
       </div>
     )
   }
 
-  // Group by clinic
   const groupedByClinic = budgets.reduce((acc, budget) => {
     const clinicName = budget.clinic_name
     if (!acc[clinicName]) {
@@ -49,64 +54,63 @@ export function BudgetTable({ budgets }: BudgetTableProps) {
   }, {} as Record<string, BudgetItem[]>)
 
   return (
-    <div className="space-y-6">
+    <div className="stack">
       {Object.entries(groupedByClinic).map(([clinicName, clinicBudgets]) => (
         <div key={clinicName}>
           <h3
-            className="text-sm font-medium mb-2 pb-2 border-b"
-            style={{ color: 'var(--text-main)', borderColor: 'var(--border)' }}
+            style={{
+              fontSize: 'var(--text-sm)',
+              fontWeight: 'var(--weight-semibold)',
+              marginBottom: 'var(--space-2)',
+              paddingBottom: 'var(--space-2)',
+              color: 'var(--text-primary)',
+              borderBottom: '2px solid var(--border)',
+            }}
           >
             {clinicName}
           </h3>
-          <div className="overflow-x-auto">
-            <table className="w-full">
+          <div className="san-table-wrap">
+            <table className="san-table">
               <thead>
-                <tr style={{ borderBottom: '1px solid var(--border)' }}>
-                  <th className="text-left py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
-                    Hạng mục
-                  </th>
-                  <th className="text-left py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
-                    Kỳ
-                  </th>
-                  <th className="text-right py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
-                    Số tiền
-                  </th>
-                  <th className="text-right py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
-                    Thao tác
-                  </th>
+                <tr>
+                  <th className="san-th">Hạng mục</th>
+                  <th className="san-th">Kỳ</th>
+                  <th className="san-th" style={{ textAlign: 'right' }}>Số tiền</th>
+                  <th className="san-th" style={{ textAlign: 'right' }}>Thao tác</th>
                 </tr>
               </thead>
               <tbody>
-                {clinicBudgets.map((budget) => (
-                  <tr key={budget.id} style={{ borderBottom: '1px solid var(--border)' }}>
-                    <td className="py-2 px-2" style={{ color: 'var(--text-main)' }}>
-                      <div className="flex flex-col">
-                        <span className="text-sm">{budget.category_name}</span>
-                        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
-                          {budget.category_code}
-                        </span>
+                {clinicBudgets.map((budget, index) => (
+                  <tr
+                    key={budget.id}
+                    style={{
+                      background: index % 2 === 1 ? 'var(--bg-surface)' : 'transparent',
+                    }}
+                    onMouseEnter={(e) => {
+                      e.currentTarget.style.background = 'var(--bg-surface-hover)'
+                    }}
+                    onMouseLeave={(e) => {
+                      e.currentTarget.style.background = index % 2 === 1 ? 'var(--bg-surface)' : 'transparent'
+                    }}
+                  >
+                    <td className="san-td">
+                      <div style={{ display: 'flex', flexDirection: 'column' }}>
+                        <span style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-medium)' }}>{budget.category_name}</span>
+                        <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>{budget.category_code}</span>
                       </div>
                     </td>
-                    <td className="py-2 px-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+                    <td className="san-td" style={{ fontSize: 'var(--text-sm)', color: 'var(--text-muted)' }}>
                       {getMonthName(budget.month)}/{budget.year}
                     </td>
-                    <td className="py-2 px-2 text-right font-medium" style={{ color: 'var(--text-main)' }}>
+                    <td className="san-td" style={{ textAlign: 'right', fontWeight: 'var(--weight-semibold)', fontVariantNumeric: 'tabular-nums' }}>
                       {formatCurrency(budget.amount)}
                     </td>
-                    <td className="py-2 px-2">
-                      <div className="flex items-center justify-end gap-2">
-                        <button
-                          className="p-1.5 rounded hover:opacity-80"
-                          style={{ color: 'var(--text-muted)' }}
-                          title="Sửa"
-                        >
+                    <td className="san-td" style={{ textAlign: 'right' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 'var(--space-1)' }}>
+                        <button className="btn-icon" title="Sửa" style={{ padding: 6 }}>
                           <Pencil size={14} />
                         </button>
-                        <button
-                          className="p-1.5 rounded hover:opacity-80"
-                          style={{ color: 'var(--danger)' }}
-                          title="Xóa"
-                        >
+                        <button className="btn-icon" title="Xóa" style={{ padding: 6, color: 'var(--red)' }}>
                           <Trash2 size={14} />
                         </button>
                       </div>
@@ -116,11 +120,9 @@ export function BudgetTable({ budgets }: BudgetTableProps) {
               </tbody>
               <tfoot>
                 <tr style={{ borderTop: '2px solid var(--border)' }}>
-                  <td className="py-2 px-2 font-medium" style={{ color: 'var(--text-main)' }}>
-                    Tổng
-                  </td>
+                  <td className="san-td" style={{ fontWeight: 'var(--weight-bold)' }}>Tổng</td>
                   <td></td>
-                  <td className="py-2 px-2 text-right font-semibold" style={{ color: 'var(--primary)' }}>
+                  <td className="san-td" style={{ textAlign: 'right', fontWeight: 'var(--weight-bold)', fontVariantNumeric: 'tabular-nums', color: 'var(--accent)' }}>
                     {formatCurrency(clinicBudgets.reduce((sum, b) => sum + b.amount, 0))}
                   </td>
                   <td></td>

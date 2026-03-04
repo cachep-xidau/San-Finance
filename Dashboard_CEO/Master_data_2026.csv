@@ -1,0 +1,52 @@
+Index,Category,Classify,Expense type
+GIAVON.01,1. Giá vốn hàng bán,Vật tư nha khoa (điều trị - nội nha - nha chu),Biến phí
+GIAVON.02,1. Giá vốn hàng bán,Vật liệu implant,Biến phí
+GIAVON.03,1. Giá vốn hàng bán,Lab răng sứ,Biến phí
+GIAVON.04,1. Giá vốn hàng bán,Mắc cài,Biến phí
+GIAVON.05,1. Giá vốn hàng bán,Thuốc - hoá chất,Biến phí
+GIAVON.06,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí
+GIAVON.07,1. Giá vốn hàng bán,Khác,Biến phí
+CPBH.01,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí
+CPBH.02,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí
+CPBH.03,2. Chi phí bán hàng,Chi phí sản xuất nội dung,Biến phí
+CPBH.04,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí
+CPBH.05,2. Chi phí bán hàng,"Chi phí video, hình ảnh",Biến phí
+CPBH.06,2. Chi phí bán hàng,KOL/KOC,Biến phí
+CPBH.07,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí
+CPBH.08,2. Chi phí bán hàng,Event marketing,Biến phí
+CPBH.09,2. Chi phí bán hàng,Quà tặng - voucher,Biến phí
+CPBH.10,2. Chi phí bán hàng,In ấn POSM,Biến phí
+CPBH.11,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí
+CPBH.12,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí
+CPBH.13,2. Chi phí bán hàng,Đi trường,Biến phí
+CPBH.14,2. Chi phí bán hàng,Hành chính MKT,Biến phí
+QLDN.01,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí
+QLDN.02,3. Chi phí quản lý doanh nghiệp,Dọn vệ sinh,Định phí
+QLDN.03,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí
+QLDN.04,3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí
+QLDN.05,3. Chi phí quản lý doanh nghiệp,Văn phòng phẩm,Biến phí
+QLDN.06,3. Chi phí quản lý doanh nghiệp,"Chi phí phần mềm (CRM, kế toán, cloud)",Định phí
+QLDN.07,3. Chi phí quản lý doanh nghiệp,Chi phí ngân hàng - POS,Định phí
+QLDN.08,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí
+QLDN.09,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí
+QLDN.10,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí
+QLDN.NS.01,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí
+QLDN.NS.02,4. Chi phí nhân sự,Lương cố định bộ phận kinh doanh,Định phí
+QLDN.NS.03,4. Chi phí nhân sự,Thưởng KPI,Biến phí
+QLDN.NS.04,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí
+QLDN.NS.05,4. Chi phí nhân sự,Phụ cấp chuyên môn,Định phí
+QLDN.NS.06,4. Chi phí nhân sự,Bảo hiểm,Định phí
+QLDN.NS.07,4. Chi phí nhân sự,Thuế TNCN,Định phí
+QLDN.NS.08,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí
+THUE.01,5. Chi phí thuế và lãi vay,Thuế GTGT/ TNCN/ TNDN/ môn bài/ lệ phí..nộp NSNN,Biến phí
+THUE.02,5. Chi phí thuế và lãi vay,Chi phí lãi vay,Biến phí
+THUE.03,5. Chi phí thuế và lãi vay,"Phường, quận",Biến phí
+KHAC.01,6. Chi phí khác,Thưởng tổng cuối năm,Định phí
+KHAC.02,6. Chi phí khác,Quỹ dự phòng,Biến phí
+KHAC.03,6. Chi phí khác,Chi phí phát sinh bất thường,Biến phí
+KHAC.04,6. Chi phí khác,Chi phí phúc lợi nội bộ,Định phí
+KHAC.05,6. Chi phí khác,Tiếp khách phòng khám,Biến phí
+KHAC.06,6. Chi phí khác,Tiếp khách ngoài,Biến phí
+KHAC.07,6. Chi phí khác,Mua sắm tài sản,Biến phí
+KHAC.08,6. Chi phí khác,Phí cà thẻ,Biến phí
+KHAC.09,6. Chi phí khác,Giới thiệu nhân sự,Biến phí

@@ -3,40 +3,34 @@ import { WifiOff, RefreshCcw } from 'lucide-react'
 
 export default function OfflinePage() {
   return (
-    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'var(--background)' }}>
+    <div style={{ minHeight: '100vh', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 'var(--space-6)', background: 'var(--bg-primary)' }}>
       <div
-        className="w-full max-w-md p-6 rounded-2xl border"
-        style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
+        style={{
+          width: '100%',
+          maxWidth: 448,
+          padding: 'var(--space-6)',
+          borderRadius: 'var(--radius-xl)',
+          background: 'var(--bg-card)',
+          border: '1px solid var(--border)',
+        }}
       >
-        <div
-          className="inline-flex p-2 rounded-lg"
-          style={{ background: 'var(--warning-soft)', color: 'var(--warning)' }}
-        >
+        <div style={{ display: 'inline-flex', padding: 'var(--space-2)', borderRadius: 'var(--radius-md)', background: 'var(--warning-bg)', color: 'var(--warning)' }}>
           <WifiOff size={18} />
         </div>
 
-        <h1 className="text-lg font-semibold mt-3" style={{ color: 'var(--text-main)' }}>
+        <h1 style={{ fontSize: 'var(--text-lg)', fontWeight: 'var(--weight-semibold)', marginTop: 'var(--space-3)', color: 'var(--text-primary)' }}>
           Bạn đang ngoại tuyến
         </h1>
-        <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+        <p style={{ fontSize: 'var(--text-sm)', marginTop: 'var(--space-1)', color: 'var(--text-muted)' }}>
           Không thể tải dữ liệu mới. Kiểm tra kết nối mạng và thử lại.
         </p>
 
-        <div className="mt-5 flex items-center gap-3">
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white"
-            style={{ background: 'var(--primary)' }}
-          >
+        <div style={{ marginTop: 'var(--space-5)', display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
+          <Link href="/" className="btn-primary btn-sm">
             <RefreshCcw size={16} />
             Thử lại kết nối
           </Link>
-
-          <Link
-            href="/"
-            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm"
-            style={{ borderColor: 'var(--border)', color: 'var(--text-main)' }}
-          >
+          <Link href="/" className="btn btn-sm">
             Về dashboard
           </Link>
         </div>

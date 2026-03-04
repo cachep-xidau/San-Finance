@@ -1,25 +1,25 @@
 export default function DashboardLoading() {
   return (
-    <div className="space-y-6 animate-pulse">
+    <div className="stack">
       <div>
-        <div className="h-7 w-40 rounded-md" style={{ background: 'var(--surface)' }} />
-        <div className="h-4 w-32 rounded-md mt-2" style={{ background: 'var(--surface)' }} />
+        <div className="skeleton-shimmer" style={{ height: 28, width: 160, borderRadius: 'var(--radius-md)' }} />
+        <div className="skeleton-shimmer" style={{ height: 16, width: 128, borderRadius: 'var(--radius-md)', marginTop: 'var(--space-2)' }} />
       </div>
 
-      <div className="flex gap-3">
-        <div className="h-10 w-48 rounded-lg" style={{ background: 'var(--surface)' }} />
-        <div className="h-10 w-40 rounded-lg" style={{ background: 'var(--surface)' }} />
+      <div style={{ display: 'flex', gap: 'var(--space-3)' }}>
+        <div className="skeleton-shimmer" style={{ height: 40, width: 192 }} />
+        <div className="skeleton-shimmer" style={{ height: 40, width: 160 }} />
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      <div className="dashboard-stats" style={{ gridTemplateColumns: 'repeat(4, 1fr)' }}>
         {[1, 2, 3, 4].map((i) => (
-          <div key={i} className="h-28 rounded-xl" style={{ background: 'var(--surface)' }} />
+          <div key={i} className="skeleton-shimmer" style={{ height: 112, animationDelay: `${i * 80}ms` }} />
         ))}
       </div>
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
-        <div className="h-[320px] rounded-xl" style={{ background: 'var(--surface)' }} />
-        <div className="h-[320px] rounded-xl" style={{ background: 'var(--surface)' }} />
+      <div className="grid-2">
+        <div className="skeleton-shimmer" style={{ height: 320 }} />
+        <div className="skeleton-shimmer" style={{ height: 320 }} />
       </div>
     </div>
   )

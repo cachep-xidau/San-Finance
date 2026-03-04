@@ -1,6 +1,6 @@
 'use client'
 
-import { useMemo } from 'react'
+import { useEffect, useMemo, useRef } from 'react'
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
 import { DateRangePicker } from '@/components/filters/date-range-picker'
 import { ClinicSelect } from '@/components/filters/clinic-select'
@@ -39,6 +39,11 @@ export function DashboardFilters({
   const router = useRouter()
   const pathname = usePathname()
   const searchParams = useSearchParams()
+  const pendingParamsRef = useRef<URLSearchParams | null>(null)
+
+  useEffect(() => {
+    pendingParamsRef.current = new URLSearchParams(searchParams.toString())
+  }, [searchParams])
 
   const dateRange = useMemo(
     () => ({
@@ -49,22 +54,25 @@ export function DashboardFilters({
   )
 
   const updateSearchParams = (updates: Record<string, string | null>) => {
-    const params = new URLSearchParams(searchParams.toString())
+    const baseParams = pendingParamsRef.current
+      ? new URLSearchParams(pendingParamsRef.current)
+      : new URLSearchParams(typeof window === 'undefined' ? '' : window.location.search)
 
     Object.entries(updates).forEach(([key, value]) => {
       if (value === null || value === '') {
-        params.delete(key)
+        baseParams.delete(key)
         return
       }
-      params.set(key, value)
+      baseParams.set(key, value)
     })
 
-    const query = params.toString()
-    router.replace(query ? `${pathname}?${query}` : pathname)
+    pendingParamsRef.current = new URLSearchParams(baseParams)
+    const query = baseParams.toString()
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false })
   }
 
   return (
-    <div className="flex flex-wrap items-center gap-3">
+    <div className="filter-row">
       <DateRangePicker
         value={dateRange}
         onChange={(range) => {

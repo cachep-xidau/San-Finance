@@ -25,7 +25,7 @@ export function VarianceAlertList({ items }: VarianceAlertListProps) {
   }
 
   return (
-    <div className="space-y-2">
+    <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)' }}>
       {items.map((item, index) => (
         <VarianceAlertCard key={index} item={item} />
       ))}
@@ -37,34 +37,36 @@ function VarianceAlertCard({ item }: { item: VarianceItem }) {
   const isOver = item.variance > 0
   const Icon = isOver ? TrendingUp : TrendingDown
 
-  const bgColor = item.status === 'critical'
-    ? 'var(--danger-soft)'
-    : 'var(--warning-soft)'
-  const textColor = item.status === 'critical'
-    ? 'var(--danger)'
-    : 'var(--warning)'
+  const bgColor = item.status === 'critical' ? 'var(--error-bg)' : 'var(--warning-bg)'
+  const textColor = item.status === 'critical' ? 'var(--red)' : 'var(--warning)'
 
   return (
     <div
-      className="flex items-center justify-between p-3 rounded-lg"
-      style={{ background: bgColor }}
+      style={{
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+        padding: 'var(--space-3)',
+        borderRadius: 'var(--radius-md)',
+        background: bgColor,
+      }}
     >
-      <div className="flex items-center gap-3">
+      <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)' }}>
         <Icon size={18} style={{ color: textColor }} />
         <div>
-          <p className="font-medium text-sm" style={{ color: textColor }}>
+          <p style={{ fontWeight: 'var(--weight-medium)', fontSize: 'var(--text-sm)', color: textColor }}>
             {item.category}
           </p>
-          <p className="text-xs" style={{ color: textColor, opacity: 0.8 }}>
+          <p style={{ fontSize: 'var(--text-xs)', color: textColor, opacity: 0.8 }}>
             {isOver ? 'Vượt' : 'Thiếu'} {formatCurrency(Math.abs(item.variance))} ({Math.abs(item.variancePct).toFixed(1)}%)
           </p>
         </div>
       </div>
-      <div className="text-right">
-        <p className="text-xs" style={{ color: textColor, opacity: 0.7 }}>
+      <div style={{ textAlign: 'right' }}>
+        <p style={{ fontSize: 'var(--text-xs)', color: textColor, opacity: 0.7 }}>
           Ngân sách: {formatCurrency(item.budget)}
         </p>
-        <p className="text-xs font-medium" style={{ color: textColor }}>
+        <p style={{ fontSize: 'var(--text-xs)', fontWeight: 'var(--weight-medium)', color: textColor }}>
           Thực tế: {formatCurrency(item.actual)}
         </p>
       </div>
@@ -72,7 +74,6 @@ function VarianceAlertCard({ item }: { item: VarianceItem }) {
   )
 }
 
-// Summary badge for dashboard header
 interface VarianceBadgeProps {
   count: number
   criticalCount: number
@@ -83,16 +84,17 @@ export function VarianceBadge({ count, criticalCount }: VarianceBadgeProps) {
 
   return (
     <div
-      className="flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium"
+      className="status-badge"
       style={{
-        background: criticalCount > 0 ? 'var(--danger-soft)' : 'var(--warning-soft)',
-        color: criticalCount > 0 ? 'var(--danger)' : 'var(--warning)',
+        background: criticalCount > 0 ? 'var(--error-bg)' : 'var(--warning-bg)',
+        color: criticalCount > 0 ? 'var(--red)' : 'var(--warning)',
+        border: `1px solid ${criticalCount > 0 ? 'var(--error-border)' : 'var(--warning-border)'}`,
       }}
     >
       <AlertTriangle size={12} />
       <span>{count} cảnh báo</span>
       {criticalCount > 0 && (
-        <span className="font-bold">({criticalCount} nghiêm trọng)</span>
+        <span style={{ fontWeight: 'var(--weight-bold)' }}>({criticalCount} nghiêm trọng)</span>
       )}
     </div>
   )

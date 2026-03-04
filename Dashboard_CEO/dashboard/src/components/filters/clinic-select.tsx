@@ -1,7 +1,7 @@
 'use client'
 
 import { useState } from 'react'
-import { ChevronDown, Building2 } from 'lucide-react'
+import { ChevronDown, Building2, Check } from 'lucide-react'
 
 interface Clinic {
   id: string
@@ -11,7 +11,7 @@ interface Clinic {
 
 interface ClinicSelectProps {
   clinics: Clinic[]
-  value: string | null // null = all clinics
+  value: string | null
   onChange: (clinicId: string | null) => void
 }
 
@@ -21,45 +21,93 @@ export function ClinicSelect({ clinics, value, onChange }: ClinicSelectProps) {
   const selectedClinic = value ? clinics.find(c => c.id === value) : null
 
   return (
-    <div className="relative">
+    <div style={{ position: 'relative' }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors"
         style={{
-          borderColor: 'var(--border)',
-          background: 'var(--surface)',
-          color: 'var(--text-main)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 'var(--space-2)',
+          padding: 'var(--space-2) var(--space-4)',
+          borderRadius: 'var(--radius-pill)',
+          border: '1px solid var(--border)',
+          background: 'var(--bg-card)',
+          color: 'var(--text-primary)',
+          cursor: 'pointer',
+          transition: 'all var(--transition-base)',
+          boxShadow: isOpen ? 'var(--shadow-md)' : 'var(--shadow-xs)',
+          fontFamily: 'inherit',
+          fontSize: 'var(--text-sm)',
+          fontWeight: 'var(--weight-medium)',
         }}
       >
-        <Building2 size={16} style={{ color: 'var(--text-muted)' }} />
-        <span className="text-sm">{selectedClinic?.name || 'Tất cả chi nhánh'}</span>
-        <ChevronDown size={16} style={{ color: 'var(--text-muted)' }} />
+        <Building2 size={15} style={{ color: 'var(--accent)' }} />
+        <span>{selectedClinic?.name || 'Tất cả chi nhánh'}</span>
+        <ChevronDown
+          size={14}
+          style={{
+            color: 'var(--text-muted)',
+            transition: 'transform 0.2s ease',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          }}
+        />
       </button>
 
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 z-10"
+            style={{ position: 'fixed', inset: 0, zIndex: 10 }}
             onClick={() => setIsOpen(false)}
           />
           <div
-            className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg z-20 min-w-[180px]"
-            style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              marginTop: 'var(--space-2)',
+              padding: '0.35rem 0',
+              borderRadius: 'var(--radius-lg)',
+              zIndex: 20,
+              minWidth: 200,
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
+              boxShadow: 'var(--shadow-lg)',
+            }}
           >
             <button
               onClick={() => {
                 onChange(null)
                 setIsOpen(false)
               }}
-              className="w-full px-3 py-2 text-left text-sm hover:opacity-80 transition-opacity"
               style={{
-                color: 'var(--text-main)',
-                fontWeight: value === null ? '600' : '400',
+                width: '100%',
+                padding: 'var(--space-2) var(--space-4)',
+                textAlign: 'left',
+                fontSize: 'var(--text-sm)',
+                fontWeight: 'var(--weight-medium)',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'space-between',
+                color: 'var(--text-primary)',
+                background: 'transparent',
+                border: 'none',
+                cursor: 'pointer',
+                transition: 'all var(--transition-fast)',
+                fontFamily: 'inherit',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.background = 'var(--primary-bg)'
+                e.currentTarget.style.color = 'var(--accent)'
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.background = 'transparent'
+                e.currentTarget.style.color = 'var(--text-primary)'
               }}
             >
-              Tất cả chi nhánh
+              <span>Tất cả chi nhánh</span>
+              {value === null && <Check size={14} style={{ color: 'var(--accent)' }} />}
             </button>
-            <div style={{ borderTop: '1px solid var(--border)', margin: '4px 0' }} />
+            <div style={{ borderTop: '1px solid var(--border)', margin: '4px 12px' }} />
             {clinics.map((clinic) => (
               <button
                 key={clinic.id}
@@ -67,13 +115,33 @@ export function ClinicSelect({ clinics, value, onChange }: ClinicSelectProps) {
                   onChange(clinic.id)
                   setIsOpen(false)
                 }}
-                className="w-full px-3 py-2 text-left text-sm hover:opacity-80 transition-opacity"
                 style={{
-                  color: 'var(--text-main)',
-                  fontWeight: value === clinic.id ? '600' : '400',
+                  width: '100%',
+                  padding: 'var(--space-2) var(--space-4)',
+                  textAlign: 'left',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 'var(--weight-medium)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  color: 'var(--text-primary)',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all var(--transition-fast)',
+                  fontFamily: 'inherit',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'var(--primary-bg)'
+                  e.currentTarget.style.color = 'var(--accent)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'transparent'
+                  e.currentTarget.style.color = 'var(--text-primary)'
                 }}
               >
-                {clinic.name}
+                <span>{clinic.name}</span>
+                {value === clinic.id && <Check size={14} style={{ color: 'var(--accent)' }} />}
               </button>
             ))}
           </div>

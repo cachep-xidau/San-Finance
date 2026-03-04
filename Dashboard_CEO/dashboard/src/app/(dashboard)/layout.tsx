@@ -8,16 +8,14 @@ export default function DashboardLayout({
   children: React.ReactNode
 }) {
   return (
-    <div className="min-h-screen" style={{ background: 'var(--background)' }}>
+    <div className="app-layout">
       {/* Desktop Sidebar */}
-      <div className="hidden md:block">
-        <Sidebar />
-      </div>
+      <Sidebar />
 
       {/* Main Content */}
-      <div className="md:ml-[240px] min-h-screen pb-24 md:pb-0">
+      <div className="main-content">
         <Header />
-        <main className="p-4 md:p-6">
+        <main className="page-content">
           {children}
         </main>
       </div>

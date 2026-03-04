@@ -1,0 +1,1460 @@
+Month,Year,Amount,Description,Category,Classify,Expense type,Old Classification,Match Type
+01,2023,315000.0,hoa trái cây,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,620000.0,chè t12,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,325000.0,cúng m16,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,600000.0,cúng vp mới,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,2000000.0,phí cúng vp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,276000.0,trái cây,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,500000.0,hoa trái cây,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,750000.0,đồ cúng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,1000000.0,cúng cuối năm,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,1377000.0,hotlime teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,17787000.0,TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,2000000.0,353 gth 527,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,2000000.0,149 gth 893,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2023,30000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+01,2023,57500000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+01,2023,12026000.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+01,2023,0.0,Labo,1. Giá vốn hàng bán,Lab răng sứ,Biến phí,Tiền Lab,exact_match
+01,2023,8960000.0,Bảo hiểm nv,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+01,2023,9000000.0,3th bằng cô châu (t1.2.3/23),3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+01,2023,98045455.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+01,2023,138679000.0,% BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+01,2023,181216912.0,lươngnv,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+01,2023,36405245.0,% nv,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+01,2023,1500000.0,thun thước đo kẽ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2023,233000.0,vật tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2023,18570000.0,Thanh Ngọc T12/22,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,727000.0,hotline tee,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,2000000.0,858 gth 861,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,2000000.0,296 gth 887,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,550000.0,nhựa ép máng duy trì,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,17787000.0,31 TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,400000.0,hàm duy trì khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,2000000.0,900 gth 901,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,400000.0,hàm duy trì 202,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,2000000.0,263 gth 868,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2023,115000000.0,marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2023,57500000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+02,2023,8041000.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+02,2023,13767680.0,bảo hiểm nv,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+02,2023,134062500.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+02,2023,297859175.0,% BS nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+02,2023,217123146.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+02,2023,56603095.0,% các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+02,2023,1500000.0,button kim loại,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2023,16642000.0,Thanh Ngọc t1/23,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2023,19000000.0,Khí cụ T1+2/2023,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,400000.0,hàm duy trì 956,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,12000000.0,"Phần mềm teennie 3th: 3,4,5",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,813000.0,mua kéo tặng khách niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,2000000.0,286 gth 946,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,17787000.0,31 TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,1282000.0,hotline 0836,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,2000000.0,263 gth 492,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,17787000.0,TN tặng khách mua lần 2,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,2000000.0,597 gth 971,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,3926921.0,phí cà thẻ T3/23,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2023,179850000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2023,57500000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+03,2023,12816500.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+03,2023,6605500.0,Nước,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+03,2023,14772800.0,bảo hiểm nv,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+03,2023,137750000.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+03,2023,325362875.0,% BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+03,2023,222116243.0,lương bộ phận còn lại,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+03,2023,86943465.0,% bộ phận còn lại,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+03,2023,3000000.0,Thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2023,33442500.0,Vật liệu morelli t1-15/2,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2023,9450000.0,vít chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2023,8580000.0,thun teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2023,9410000.0,Thanh Ngọc t2/23,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,2000000.0,743 gth 980,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,820000.0,mua kéo tặng khách niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,4000000.0,308 gth 992 và 507 gth 922,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,355000.0,bàn chải kẽ cho khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,2000000.0,0037 gth 938,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,4000000.0,612 gth 865+848,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,2000000.0,213 gth 873,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,890000.0,mua kéo tặng khách teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,2969002.0,Phí cà thẻ t4/23,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2023,222000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2023,57500000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+04,2023,13784000.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+04,2023,9233000.0,Nước 61A t3+4,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+04,2023,9000000.0,bằng điều dưỡng 3th,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+04,2023,17617920.0,bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+04,2023,139062500.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+04,2023,247343148.0,% BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+04,2023,233813599.0,lương nv,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+04,2023,57896593.0,% nv,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+04,2023,1920000.0,mua thun màu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2023,21359000.0,Thanh Ngọc T3,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2023,26464900.0,Công nợ 3M t3,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2023,34050000.0,Máy xq,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,2000000.0,357 gth 957,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,1118000.0,hotline tee,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,2000000.0,Hh gth 881,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,17787000.0,TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,2000000.0,877 gth 904,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,23000000.0,Chiến dịch niềng răng 5tr theanh28,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,7000000.0,Quay dựng post niềng răng 5tr,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,18000000.0,5Post Page Nha Van Cuc Suc - Teennie clinic,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,30000000.0,Teennie 5 post - Groups NKNR Hi Smile,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,864000.0,kéo tặng khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,6000000.0,Seeding Fanpage Teennie.,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,7000000.0,Tiền quay dựng video teennie bên team anh Quốc GenZ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,1814000.0,mua kéo tặng khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,919000.0,mua bàn chải kẽ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,2000000.0,971 gth 972,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,4000000.0,"1032 gth 1045, 0080 gth 1019",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,8900000.0,Seeding Group Teennie.,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,34200000.0,Seeding chiến dịch niềng răng 0đ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,3000000.0,Seeding fanpage,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,21570690.0,Phí cà thẻ T5,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2023,265000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2023,57500000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+05,2023,13809000.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+05,2023,17628160.0,bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+05,2023,141375000.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+05,2023,265036488.0,% dthu BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+05,2023,199440659.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+05,2023,68760357.0,% lương bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+05,2023,1300000.0,dây chỉnh nha+đầu vặn mini,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2023,1125000.0,thun liên hàm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2023,4000000.0,thun  + dây cung,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2023,55125000.0,Mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2023,31635000.0,công nợ morrelly T3+4,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2023,32523432.0,niềng invi ca My,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,17213000.0,TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,24000000.0,T6-T11/23,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,4000000.0,760 gth 1030 và 1029,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,2000000.0,1039 gth 1048,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,1000000.0,227 gth 1068,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,3000000.0,263 gth 954 và 1084,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,2000000.0,939 gth 943,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,17787000.0,31 MTN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,160000.0,mua gấu bông teddy làm mẫu cho tặng KH kết thúc niềng răng (gấu 140k + ship 20k),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,656000.0,Tiền photo 500 cam kết niềng răng + 300 lời dặn sau dv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,200000.0,Thanh toán tiền in test cẩm nang Teennnie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,1000000.0,270 gth 1106,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,340000.0,mua kẹp kim,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,5180230.0,phí cà thẻ t6,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2023,355000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2023,59000000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+06,2023,15754500.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+06,2023,9150000.0,Nước 61A T5+6,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+06,2023,17628160.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+06,2023,138093750.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+06,2023,388687651.0,%BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+06,2023,196452953.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+06,2023,79261632.0,% lương bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+06,2023,3900000.0,vật liệu (thun+cung),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,1440000.0,thun mác cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,450000.0,cục cắn chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,3300000.0,dây cung,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,17736000.0,Thanh Ngọc T5,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,3660000.0,vật tư (minivis+thun),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,2043000.0,endoz+kẹo kim,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2023,56500000.0,"Khí cụ t3,4,5,6",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,9365000.0,bình nc tặng khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,300000.0,voice off video 6 li do Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,1000000.0,853 gth 1141,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,20000000.0,Huy quần hoa làm video tiktok,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,17787000.0,31TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,1625000.0,mua khung hình tặng khách tháo niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,7770000.0,Làm bình tặng khacha,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,3500000.0,ép in logo bằng khen khách tháo niêng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,985000.0,"In ấn Thư cảm ơn, lời dặn KH, hồ sơ bệnh án, card Teennie",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,88000.0,mua bàn cắt giấy,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,130000.0,Tin màu bằng khen cho KH Teennie tháo niềng(5k*26),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,295000.0,rửa hình+ship Ngô Kiến Huy tặng KH Teennie (9k*30 tấm),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,300000.0,"in decal logo Teennie dán lên hộp quà, túi giấy (1k/ cái 300 cái) cho hộp quà và túi tặng KH Teennie tháo niềng",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,203000.0,túi giấy+giấy rơm + dây thừng + giấy mỹ thuật làm quà tặng KH Teennie tháo niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,1000000.0,hh teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,4055601.0,Phí cà thẻ T7,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2023,345000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+07,2023,59000000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+07,2023,14774500.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+07,2023,4790000.0,Nước 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+07,2023,19230720.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+07,2023,9000000.0,bằng điều dưỡng 3th,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+07,2023,149650840.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+07,2023,401560151.0,% BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+07,2023,210631044.0,lương nv,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+07,2023,99615689.0,% nv,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+07,2023,1500000.0,button,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2023,15450000.0,Thun dây cung,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2023,19823000.0,Thanh Ngọc T6,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2023,38747800.0,Morrlly,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,1480000.0,Hộp quà khách tháo niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,1300000.0,Khung tranh cho khách tháo niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,17787000.0,31 máy tăm nước,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,10000000.0,Seo web,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,2000000.0,"785 san gth 1165, 400 gth1167",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,340000.0,in chăm sóc sau gắn mc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,6000000.0,chi hh teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,2509000.0,kéo tặng khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,1376000.0,hộp quà,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,550000.0,bàn chải kẽ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,34117000.0,62 TN tee,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,20000.0,ship tặng quà bình nước Teennie cho đối tác,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,300000.0,Mua balo mẫu Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,45000.0,ship balo mẫu qua cho Chị Trâm may balo mẫu cho Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,140000.0,mua giày đồng phục cho phụ tá mới Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,616000.0,"in ấn hồ sơ, lời dặn sau dịch vụ, ruột hồ sơ",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,25000.0,in bằng tặng KH tháo niềng 5k/tấm (5 khách),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,239000.0,mua mẫu túi thổ cẩm đựng bình Bộ Tộc Niềng răng (A Hiền đặt),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,196000.0,mẫu túi cói đựng bình bình Bộ Tộc Niềng răng (Bông đặt),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,160000.0,giấy mỹ thuật + dây cói làm thư cảm ơn Teennie 60k + Bìa cứng kê giấy đựng hồ sơ - 110k,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,600000.0,túi cói đựng bình Bộ tộc niềng răng cho A Quang tặng KOL 6 cái/100k,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,4342619.0,phí cà thẻ T8,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2023,315000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+08,2023,59000000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+08,2023,15099500.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+08,2023,6500000.0,Nước 61A T7,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+08,2023,19230720.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+08,2023,148125000.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+08,2023,429563723.0,% của BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+08,2023,211089010.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+08,2023,111717386.0,% của các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+08,2023,8200000.0,kềm nhổ răng,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2023,8100000.0,Vis,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2023,23750000.0,vặt tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2023,24686000.0,Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2023,42461000.0,"Mua khâu t6,7,8/23",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2023,42300000.0,khí cụ T7+8,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,1595000.0,quạt đèn gương chụ trong miệng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,10000000.0,Seo web,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,5000000.0,Cọc lên tick xanh,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,1000000.0,1032 gth 1270,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,200000.0,sửa ghế nha,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,38415000.0,balo tặng khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,5500000.0,tiền seeding+mua tài khoản,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,16517000.0,31TN Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,800000.0,bàn chải kẽ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,4340000.0,đông phục teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,2000000.0,980 gth 1179 và 826 gth 1207,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,400000.0,phí sms brand name,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,770000.0,dấu teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,7770000.0,Đặt Bình cho khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,2200000.0,quà sn BS Huy,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,2000000.0,hh khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,135000.0,"bảng tên bác Sáng, phụ tá Teennie mới",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,50000.0,gửi hàm duy trì cho KH ở Long AN và Bình Phước,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,3000000.0,phí gth nhân viên Trang gth Y bình,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,4437884.0,phí cà thẻ T9,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2023,335000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+09,2023,59000000.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+09,2023,27714000.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+09,2023,5990000.0,Nước 61A T9,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+09,2023,17628160.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+09,2023,147062500.0,lương cb BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+09,2023,433183848.0,% dthu BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+09,2023,208927584.0,lương cb các bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+09,2023,108210948.0,% dth các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+09,2023,1750000.0,nâng khớp + dây art chỉnh torque,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,3650000.0,kềm step+keo dán chỉnh nha+chẩn gắn khâu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,8100000.0,minivis,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,38750000.0,công nợ Tín Nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,49937000.0,Công nợ morrelly t8+9,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,24776000.0,Thanh Ngọc T8,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2023,12650000.0,thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,10000000.0,Seo web,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,605000.0,hotline,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1544000.0,mua kéo tặng khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1715000.0,dphuc BS Thọ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,16822000.0,31 TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,2500000.0,Mua hoá đơn,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,544000.0,rác y tế vượt mức t9,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1000000.0,1211 gth 1373,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,562000.0,5c gương soi phòng điều trị,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1000000.0,1101 gth 1357,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,2000000.0,"337 gth 1331, 1407 gth 1444",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1000000.0,1322 gth 1435,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,400000.0,hàm duy trì,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,500000.0,hotline nhắn tin,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,4000000.0,"54513 san gth 10449, 1191 gth 1273, 1272 gth 1412, 564 gth 1176",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,700000.0,khảo sát nha khoa,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,6300000.0,Thuế môn bài 2022 2023,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1000000.0,1383 gth 1498,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,37884000.0,60 MTN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1000000.0,973 gth 1310,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,1000000.0,1382 gth 1418,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,2526522.0,phí cà thẻ T10,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,195000.0,sửa áo Blu cho team BS Teennie 3 cái + thuê tên cho BS Tân 1 cái 50k,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,100000.0,mua Mực màu nâu 4 chai cho sale đóng con dấu Teennie lên hộp đựng balo,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,210000.0,in bảng giá mới Teennie 4 cuốn 55k/cuốn,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,169000.0,mua 3 đôi dép cross cho BS Thọ Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,180000.0,in hình nghệ sĩ tặng KH Teennie tháo niềng 30 tấm,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,30000.0,ship hồ sơ Teennie cho chị Vy làm đổi địa chỉ giấy phép KD Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,950000.0,"in ấn phiếu cọc, lời dặn KH sau làm dịch vụ, card , photo hồ sơ KH, in bằng cho KH tháo niềng",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,3000000.0,Phí gth nhân sự (a Vinh gth lt Lan),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2023,285000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+10,2023,49166667.0,61A,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+10,2023,17164583.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+10,2023,0.0,Nước 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+10,2023,10792240.0,BH NV (6.835.920 đ),4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+10,2023,9000000.0,bằng điều dưỡng t10.11.12,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+10,2023,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+10,2023,172625000.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+10,2023,508371610.0,%BS nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+10,2023,239835285.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+10,2023,129797349.0,% các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+10,2023,55125000.0,Mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,5400000.0,vis chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,17250000.0,Mua 5 kềm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,3636000.0,composite gắn mc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,20934940.0,Mua khâu t8-9,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,1950000.0,teennie mua mũi khoan,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,32895000.0,Thanh Ngọc T9,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,14892000.0,mua khâu chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,6750000.0,vis chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,2250000.0,mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2023,6150000.0,thun liên hàm+bôi trơn ống tủy,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1000000.0,chi phường,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,8294000.0,mua 4 mẫu hàm mc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,100000.0,khảo sát nk,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,6000000.0,Làm giấy phép,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2000000.0,485 gth 654,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1000000.0,919 gth 1550,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,670000.0,hotline T,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,10000000.0,Seo web,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,4000000.0,cọc dphuc Nguyệt +Chi,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1666667.0,in ấn/3,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,400000.0,hàm duy trì,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,3000000.0,"hh 1332,1261,1383",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2970000.0,Gia hạn chữ kí số hd đỏ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,60000000.0,300 balo Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,13300000.0,Tiếp BS Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2400000.0,đồng phục Chi Nguyệt,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,200000.0,mua hộp nhựa đựng đồ chống sốc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,670000.0,rửa ảnh bằng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2560000.0,rèm cửa,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,160000.0,hộp đựng giấy nvs,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,40000.0,đồ chặn cống,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,20000.0,đồ sửa ống nc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,150000.0,ổ điện,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,210000.0,ổ khóa cửa kính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2200000.0,2 dù bự,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1000000.0,34 gth 1113,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,860000.0,dán decal mặt tiền,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,900000.0,dán decal 2 xe,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1080000.0,dán decal phòng tư vấn,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1000000.0,1156 gth 1452,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,242000.0,bút lông,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,150000.0,mực máy in,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,145000.0,giấy lau tay,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,700000.0,sửa bộ đàm,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,765000.0,bàn chải kẽ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1890000.0,dd ngâm dụng cụ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,250000.0,sửa bộ đàm,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,14800000.0,3th thuê p.mềm + sever,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2850000.0,tiền xe máy nv t11,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1280000.0,khung tranh treo bằng BS,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,100000.0,thẻ nhớ phát nhạc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,400000.0,sim dt cho sale,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1460000.0,in bảng biểu,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1300000.0,Khung hình lộng bằng tháo niềng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2300000.0,Seeding page,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,2052000.0,"đãi khách nước, cơm",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,128000.0,Thanh toán tiền mua giày đồng phục cho sale Ngọc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1020000.0,"Thanh toán tiền in ấn ban đầu cho nha khoa mới (Hồ sơ bệnh Án 500 bộ, phiếu chuyển viện, phiếu cọc, bảo hành, cam kết niềng răng)",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,330000.0,Thanh toán tiền mua màng nhà vệ sinh nữ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,150000.0,"Thanh toán tiền mua bảng tên toilet + in decal ""kéo vào đẩy ra"" phòng họp",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,45000.0,"Thanh toán tiền làm lại ổ khoá tủ lễ tân (để lễ tân cất máy tâm nước, bàn chải điện)",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,150000.0,"Thanh toán tiền đánh thêm chìa khoá cửa cho phòng khám chia cho bảo vệ, tạp vụ, A Hiền",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,155000.0,Thanh toán tiền mua 2 giỏ mây cho nhân viên xách đồ ăn vào phòng khám,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,52000.0,Thanh toán tiền mua móc chìa khoá có thẻ tên để ghi chú cho Như note chìa khoá từng phòng nha khoa mới,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,183333.0,Thanh toán tiền in lại Sơ đồ chống sốc thuốc tê do bên thẩm định báo mình cập nhật công văn mới (15 form tấm A2),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,50000.0,"Thanh toán tiền giấy phép kinh doanh 3 công ty (mỗi cty 10 bản) (5k/ tờ - 30 tờ) (cho A Quang nộp lên quận 2 bộ, để làm giấy phép phòng khám + làm chuyển quận BHXH, …..)",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,150000.0,Thanh toán tiền làm hồ sơ chuyển quận và đky BHXH ban đầu cho 3 cty (mỗi công ty 150k),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,100000.0,"Hỗ trợ A Chung bảo vệ 100k, lắp ghế họp, lắp bàn A Vinh",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,300000.0,Thanh toán tiền bồi dưỡng cho người của công trình A Chinh hỗ trợ chuyển sâm qua VP và chuyển máy X Quang từ lầu 7 lên xe tải chuyển qua Kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,1500000.0,khách xem PT,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,3714024.0,phí cà thẻ t11,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2023,245000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+11,2023,82120833.0,61A + Số 5 kỳ Đồng (17-30/11),3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+11,2023,5162333.0,Điện 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+11,2023,3633333.0,Nước 61A,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+11,2023,16251000.0,"BH NV (5,258,400)",4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+11,2023,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+11,2023,167325000.0,lương BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+11,2023,357536398.0,% BS nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+11,2023,187540032.0,lương các bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+11,2023,53965701.0,% lương các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+11,2023,6900000.0,Mc sứ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,2400000.0,vật tư Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,17800000.0,thun chuỗi,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,3680000.0,keo gắn mc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,4540000.0,"mắc cài r7, torque chỉnh răng, túi turbo nâng khớp",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,5400000.0,mua vít,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,24969500.0,Thanh Ngọc vật liệu t10,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,8540000.0,keo gắn mc+hộp đựng mẫu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,41181611.0,Niềng invy kol noway,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2023,5432000.0,bảng kính+ghé phòng họp,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+11,2023,12490000.0,bàn làm việc+2 tủ giày+bàn phòng họp,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+11,2023,3600000.0,mua hộc cá nhân+tủ phòng vô trùng,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+11,2023,5500000.0,tủ imp+tú cá nhân+tủ đứng phòng GĐ,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+11,2023,1750000.0,đèn trám,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+12,2023,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,65000.0,mua silicon,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,543000.0,hộp mica,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,132000.0,cây giấy,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,104000.0,thơm đốt nvs,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,25000.0,hộp quẹt,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,thưởng bv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,300000.0,đồ ăn sáng nghệ sĩ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,994 gth1532,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,11000000.0,web,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,2000000.0,pbi cho pccc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1643333.0,thảm lót cầu thang,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,530000.0,hotline teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,300000.0,giặt đồ BS t11,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,30000.0,mua bàn chải pt rửa đồ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,150000.0,thay mực máy in,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,150000.0,khăn lau dụng cụ cho pt,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1600000.0,khóa 4 phòng điều trị,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,180000.0,mua trái cây+bánh tiếp đoàn,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,13000000.0,pbi cho đoàn kiểm tra,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,3766500.0,Nhậu tiếp phường,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1500000.0,thêm 1 p.bì cho đoàn thẩm định,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,320 gth 1525,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,1266 gth 1598,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,4000000.0,đồng phục,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,7500000.0,TN,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,2200000.0,ổ cứng media,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,648333.0,"in thư cảm ơn, cskh",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,12900000.0,50 post sedding bộ tộc niềng răng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,360000.0,2 sim dt cho telesale,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,300000.0,thơm xông phòng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,450000.0,kẹ sắt teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,491000.0,khăn lau đèn ghế nha,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,186000.0,card Teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,3000000.0,chi tiền gth nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,528 gth 1518,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,31250000.0,50 TN tee,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1783333.0,quà tặng sếp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,xe quận,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,600000.0,sửa lò hấp Tênnie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,1468 gth 1562,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,155000.0,mua dù bv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,478 gth 1622,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,1294 gth 1570,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1000000.0,1294 gth 1569,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,400000.0,hàm duy trì,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1250000.0,Nhậu tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,tiếp khách,exact_match
+12,2023,611000.0,hộp đựng hàm duy trì,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1333333.0,Chi phí đào tạo telesale,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+12,2023,630000.0,thay đầu cvr,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,952000.0,vpp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,210000.0,in bảng tên BS teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,150000.0,in hs bệnh án,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,150000.0,bảng wc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1625000.0,khung tranh teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,2280000.0,tiền bãi xe nv T12,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,130000.0,sửa tăm nước cho khách,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,55000.0,thưởng trà sữa nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,200000.0,hotline sale teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1666667.0,cho phường 9,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1356000.0,bảng giá tee,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1410000.0,hộp quà tee,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,3948799.0,phí cà thẻ T12,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,944667.0,tiền chè hoa trái cây cúng t12/23,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,8001333.0,"tiền  suôi, nc bình, tinh dầu, đồ tạp vụ T12",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1833333.0,khách xem pt,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,331667.0,mua đồ cúng giải hạn cho Phòng khám,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,134667.0,nước uống 19l cho VP,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,320000.0,mua nước bù khoáng cho bảo vệ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,472000.0,mua VPP cho lễ tân,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,660000.0,in lại sốc phản vệ cho PK,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,330000.0,mua cục sạc laptop cho tele (sạc của Yến bị hỏng),3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,600000.0,thay CB và cục nguồn điện VP,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,200000.0,vệ sinh máy lạnh văn phòng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,1167000.0,in ấn,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,154000.0,mua dù cho bảo vệ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2023,235000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+12,2023,91462500.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+12,2023,9674667.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+12,2023,1932549.0,Nước kỳ đồng t11,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+12,2023,21470720.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+12,2023,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+12,2023,172800000.0,luong BS,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+12,2023,459529398.0,% BS,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+12,2023,179394965.0,lương các bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+12,2023,77405350.0,% các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+12,2023,2560000.0,vật liệu teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,330000.0,sáp nk,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,50158000.0,công nợ morelli y10+11,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,14025000.0,"bộ pt, kềm, dd rửa tay",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,6250000.0,thun teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,6600000.0,mua kềm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,9180000.0,mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,28626000.0,Thanh Ngọc T11,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,85300000.0,khí cụ T9-12,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2023,18000000.0,máy hấp,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+12,2023,5300000.0,Máy đóng gói dụng cụ,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+01,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2024,205000000.0,Marketing,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+01,2024,91575000.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+01,2024,14611667.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+01,2024,134960633.0,Hành chính chung,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2024,21470720.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+01,2024,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+01,2024,8097333.0,thuê vp,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+01,2024,9000000.0,"Thuê bằng điều dưỡng cô Châu T1,2,3",3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+01,2024,816667.0,wf,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2024,2333333.0,tiền xe nv t1,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+01,2024,136930000.0,lương bs,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+01,2024,418857023.0,%bs,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+01,2024,221899765.0,lương nv,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+01,2024,99379314.0,% nv,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+01,2024,6604000.0,vật liệu chỉnh nha(có kềm),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,4200000.0,kềm bẻ dây cung,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,15150000.0,thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,58336500.0,Vật liệu morille t12/23,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,5760000.0,thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,35616700.0,Mua khâu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,32865000.0,Vật liệu Thanh Ngọc T12/23,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,12600000.0,khis cụ t1/24,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2024,7237269.0,Thưởng cuối năm,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+01,2024,11111111.0,lễ tất niên,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+01,2024,0.0,Tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+02,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2024,37180335.0,Hành chính chung,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2024,1000000.0,675 gth 1681,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2024,1780000.0,"hộp quà+túi Teennie, in logo dán hộp quà+hình nghẹ sĩ, in bằng tốt nghiêph",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2024,6686666.0,Hạt điều tặng khách+tiền nem+tiền ship quà+thịt rừng tặng sếp,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2024,5416667.0,khách xem phong thuỷ,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2024,2637676.0,phí cà thẻ T2,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+02,2024,175000000.0,nạp qc,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2024,11000000.0,SEO web,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2024,92100000.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+02,2024,17658693.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+02,2024,1361676.0,Nước kỳ đồng T1,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+02,2024,21470720.0,BH NV( 7.045.080 ),4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+02,2024,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+02,2024,7867333.0,thuê vp,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+02,2024,715000.0,wf,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2024,1462765.0,Nước kỳ đồng T2,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+02,2024,5700000.0,"(đô thị 2, TCAP 1, PCA 1, giao thông2)",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2024,1000000.0,"Cho thuế hàng tháng (t1,2,3)",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2024,99597895.0,lương bs,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+02,2024,262272235.0,%bs,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+02,2024,202157609.0,lương nv,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+02,2024,40929313.0,% nv,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+02,2024,15000000.0,vít chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,5176000.0,vật tư Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,880000.0,lò xo,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,36750000.0,100 tặng 20b mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,965000.0,nhựa hàm duy trì,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,405000.0,khay tinh chỉnh,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,28635000.0,Thanh Ngọc T1,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2024,5511667.0,mua máy in+ổ cứng,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+02,2024,1650000.0,mua xe đẩy,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+02,2024,11111111.0,Trích quỹ tất niên,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+02,2024,4000000.0,anh Quang và anh Hiền đi học,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+03,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,38806066.0,Hành chính chung,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,88000.0,nón bh mẫu,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,34727000.0,MTN,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,11000000.0,hh Teennie (11 khách),2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,12000000.0,"Thuê phần mền t3,4,5",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,1400000.0,giấy in phim,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,2750000.0,tiền sở hữu trí tuệ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,1000000.0,hh khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,1000000.0,1148 gth 1849,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,266667.0,20 dép khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,337667.0,gương phòng điều trị,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,3000000.0,hh khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,9166667.0,KH xem PT,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,3616225.0,Phí cà thẻ,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,1000000.0,1373 gth 1752,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,265000000.0,Qc tee,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,24000000.0,combo quà tặng,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,11000000.0,Seo web,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,200000.0,phí thường niên,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,27000000.0,làm 2000 dây đeo bảng tên,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,7000000.0,này chi phí theo chiến dịch(18/03),2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,29750000.0,Booking bài,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,20250000.0,Toi uu web Teennie - Backlink Teennie,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,440000.0,làm mẫu đeo cổ test,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,20000000.0,Cọc làm balo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,5500000.0,in tờ rơi đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,2687000.0,"chi phí đi trường(ăn uống, xăng xe)",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2024,93075000.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+03,2024,11278773.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+03,2024,1116333.0,Nước kỳ đồng 06/02-08/03,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+03,2024,21470720.0,"BH NV(7,045,080)",4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+03,2024,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+03,2024,7603667.0,thuê vp,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+03,2024,715000.0,wf,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,5033333.0,"Cho hàng tháng mục số 1,2",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,2216667.0,tiền bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2024,181831350.0,lương bs,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+03,2024,611116610.0,% bs,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+03,2024,228817043.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+03,2024,112592325.0,% các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+03,2024,210000.0,hux nhựa+kdr+túi zip Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,33333.0,bao tay rửa dụng cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,14490000.0,"Mắc cài răng 6,7, torque chỉnh, dây cung, lò xo, button đế tròn",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,7341000.0,keo gắn mc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,53582000.0,"Dây cung+thun, mc kim loại (14tr)",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,493000.0,bàn chải kẽ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,11373000.0,vật tư Thanh Ngọc T2/24,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,295000.0,bàn chải kẽ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,10000000.0,thun chuỗi,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2024,2400000.0,gương chụp trong miệng Teennie,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,530000.0,tủ nhỏ phòng tư vấn đựng mẫu hàm teennue,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,1994667.0,lắp camera bên ngoài,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,1500000.0,đèn chụp trong miệng tee,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,1200000.0,ghế sopha quay pv,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,5333333.0,mua laptop cho telesale,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,950000.0,bộ đàm tai nghe,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,1000000.0,mua ghế phòng C Phượng,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,190000.0,banh miệng Tee,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,237000.0,chuột máy tính media,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,1590000.0,gimbal media,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,666667.0,mua dù bự che nắng,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,525000.0,kệ đựng mẫu răng sứ,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2024,1220043.0,Trích thưởng nhân viên cuối năm,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+03,2024,10000000.0,Trích quỹ tất niên,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+03,2024,3666667.0,Trích quỹ đào tạo,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+03,2024,10000000.0,Quỹ Team buiding,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+04,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,47810002.0,Hành chính chung,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,1802000.0,đi trường,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,1000000.0,gth khách 1740 Teennie,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,1000000.0,898 gth 1873,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,200000.0,tiền checkin,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,1615300.0,tên miền teennie,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,3000000.0,"1713 gth 1714, 545 gth 1913, 900 gth 1850",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,3020000.0,thuế môn bài,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,2000000.0,hh teennie,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,2000000.0,329 gth 951 chính sách cũ ng gth đc 2tr hh,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,20000000.0,balo tặng khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,14400000.0,thuê 1office 1 năm,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,8000000.0,hh khách Teennie,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,4000000.0,hh khách Teennie,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,3056805.0,phí cà thẻ T4,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,5000000.0,khách xem PT,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,253000000.0,NẠP QC FB,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,8000000.0,Seeding Teennie final,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,11000000.0,Seo web,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,2314400.0,mua VPS cho 3 Website: San - Teennie - Implant,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,500000.0,đi trường mkt,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2024,93600000.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+04,2024,21505000.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+04,2024,1613000.0,Nước kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+04,2024,23390720.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+04,2024,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+04,2024,8028333.0,thuê vp,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+04,2024,715000.0,wf,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,6033333.0,"Tiền Cho quận, phường hàng tháng",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,1000000.0,pccc,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,9000000.0,"Thuê bằng điều dưỡng t4,5,6",3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+04,2024,2334000.0,tiền bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2024,37500000.0,lương 4cđ,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+04,2024,127302279.0,Lương bs,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+04,2024,464008898.0,% bs,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+04,2024,245282854.0,lương nv,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+04,2024,67713592.0,% các bp khác,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+04,2024,1100000.0,mũi đốt nướu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,3564000.0,"vật liệu teennie(tuýt, mrc6, sáp)",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,9280000.0,keo gắn mc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,1115000.0,bàn chải kẽ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,3720000.0,bộ đồ khám KH,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,35000000.0,mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,14100000.0,"Vật Tư Teennie(button, mc răng 6,7, lò xo, sáp nk)",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,8562000.0,mua khâu T2+3,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,20983500.0,công nợ Thanh ngọc T3,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,4280000.0,thun liên hàm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,1658333.0,thuốc chống sốc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,183333.0,hộp nhựa đựng đồ PT,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,55600000.0,khí cụ T2+3+4,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2024,165000.0,bàn phím máy tính cho sale Teennie,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+04,2024,316000.0,d.hồ treo tường tee,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+04,2024,1233333.0,bể phong thuỷ trong phòng telesales,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+04,2024,500000.0,ghế,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+04,2024,1950000.0,lấy tủ looker nhân viên,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+04,2024,10000000.0,Trích quỹ tất niên,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+04,2024,10000000.0,Team building,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+05,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2024,3000000.0,Hh KH,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,550000.0,làm giấy tờ huỷ hộ kinh doanh cá thể,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+05,2024,2000000.0,hh khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,500000.0,phí bản quyền HDDT 2024,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+05,2024,553000.0,đựng mẫu hàm,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2024,1000000.0,Hh khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,34727000.0,Tăm nước tặng khacha,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,506667.0,khảo sát nk khác,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2024,3000000.0,Hh khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,2800000.0,"Cọc 70% làm lại đăng ký quyền tác giả của San và Teennie qua địa chỉ mới, logo mới",2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+05,2024,5383333.0,khách xem PT,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+05,2024,4391374.0,phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+05,2024,255000000.0,Qc tee,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,7900000.0,Nạp thẻ chạy qc trên tiktok,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,11000000.0,Seo web,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,20000000.0,đặt 100 ba lô,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,10000000.0,chi phí đi trường HUtech+Nguyễn trãi cho anh Huỳnh Phương,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,18910000.0,làm nón,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,1083333.0,Khung tranh tặng khách,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,1333333.0,San Dental Group in 600 the nhe,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,5000000.0,cp đi trường NGuyễn Hữu Thọ cho anh NKH,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,6666667.0,Chi trường hutech,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,2110000.0,Tt hd mono,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,726667.0,Tt pancake,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,14562000.0,tt cty truyền thông đi trường Sàigonista,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,1000000.0,thuê xe đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,410000.0,mua mước cho nv đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,3638750.0,gia hạn tên miền,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,480000.0,dán qc trên xe Đất Việt,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,13750000.0,Gói SEO Băng Tâm,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,7666667.0,đi trường UEF,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,5000000.0,Chi phí đi trg UEF cho a Luật,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,498333.0,In thẻ đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,13500000.0,Cọc dây đeo đi trg,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,7200000.0,Mua loa đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,2300000.0,Seeding điều hướng nói xấu nha khoa,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,7200000.0,Hỗ trợ nhân sự đi trường + ĂN uống,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,22500000.0,Teennie - Thegioiimplantcom(Huy quần hoa),2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,3113000.0,in voucher đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,9600000.0,in brochure Teennie,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,2400000.0,in voucher đi trường+đất việt,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,450000.0,in hình nghệ sĩ đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,356000.0,thuê rèm setup kí kết Đất Việt,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,3800000.0,backcrop Đất Việt để phòng họp kí kết,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,700000.0,standy đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2024,95452500.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+05,2024,19273323.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+05,2024,1537741.0,Nước kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+05,2024,21788160.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+05,2024,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+05,2024,8017333.0,thuê vp,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+05,2024,715000.0,wf,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2024,5700000.0,Cho hàng tháng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2024,2479333.0,Tiền xe nv,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+05,2024,37500000.0,lương 4cđ,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+05,2024,120419142.0,lương bs,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+05,2024,418017273.0,% bs nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+05,2024,286484704.0,lương bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+05,2024,73749518.0,% các bp khác nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+05,2024,2670000.0,mua thun chuỗi của teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,13500000.0,vít chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,3600000.0,nhận dây cung Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,27725000.0,Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,21857200.0,Công nợ khâu 3D,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,48239500.0,Công nợ Morelli t4,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,4320000.0,Thun AO,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,5170000.0,Thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,15300000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2024,2450000.0,mua bộ đàm,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2024,3000000.0,xe đẩy Teennie,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2024,250000.0,quạt phòng vô trùng,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2024,10390000.0,Mua mây tính cho mkt,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2024,1350000.0,lắp kệ TV phòng họp,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2024,10000000.0,Trích quỹ tất niên,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+05,2024,6666667.0,đào tạo sale (anh Quý),4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+05,2024,10000000.0,Team building,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+05,2024,63190337.0,Hành chính chung,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2024,87057333.0,Hành chính chung,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2024,2766000.0,Tiền xe nv,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+06,2024,1735920.0,setup phòng họp và phòng telesale,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,253587.0,phi sms tk cá nhân cty,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,1500000.0,Cọc 3 web(3 cty) đăng kí bộ công thương,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,800000.0,khảo sát thị trường,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,692000.0,đồ ăn nv đi trường hutech,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,315000.0,Chi tiền nước đi trường 14/5,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,9000000.0,KH gth,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,120000.0,Giấy viết thư KH tháo niềng Teennie,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2024,4408470.0,phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+06,2024,310000000.0,qc tee,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,13600000.0,Qc tiktok,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,479000.0,"Đồ livetream(cáp chuyển, adapter",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,1865000.0,Thiết bị đi trường(thiết bị phát wifi+sim+băng keo+ổ điện),2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,5000000.0,KOL A Luật đi trường Hoa Sen,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,5000000.0,Nha khoa teennie clinic ung ho quy ho tro sinh vien,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,13500000.0,dây đeo đi trg(tt đủ),2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,5000000.0,KOL A Huy đi trường Hutech,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,842000.0,"Củ sạc hoco,Cáp chuyển 3.5 ra type C,standee, Chân standee,ổ điện nối dài,Vít vặn",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,1594000.0,"Xăng xe,Tiền ăn đi trường",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,30000000.0,MKT offline,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,5000000.0,KOL A Phương đi trường,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,14416667.0,Gói SEO Băng Tâm,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,1960000.0,mua ladi page,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,833333.0,"In thẻ cứng(Hutech, NKH)",2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,496667.0,Phần mềm Adobe(MKT),2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,597000.0,Chi phí đi trường ngày 11/6,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2024,95527500.0,Số 5 kỳ Đồng,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+06,2024,18407457.0,Điện kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+06,2024,1566000.0,Nước kỳ đồng,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+06,2024,24989867.0,BH NV,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+06,2024,22000000.0,bằng BS Huân,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+06,2024,8119333.0,thuê vp,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+06,2024,715000.0,wf,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2024,5033333.0,Cho hàng tháng,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2024,51666667.0,lương cổ đông,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+06,2024,118727911.0,lương bs,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+06,2024,537079273.0,% bs nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+06,2024,294525008.0,lương các bp khác,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+06,2024,104668444.0,% các bp khác nhận,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+06,2024,4100000.0,vật liệu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,930000.0,mua miếng nhựa ép hàm duy trì,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,11400000.0,thun chuỗi Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,31520000.0,Thuốc tê,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,1416667.0,tien giay chup phim,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,18772000.0,Thanh Ngọc T5,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,7900000.0,vật tư Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,1000000.0,mua vật liệu Teennie(sáp chỉnh nha),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,1540000.0,mua vật liệu trám,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,25900000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2024,1180000.0,Mua ghế + bàn Bông,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,1120000.0,Mua máy xông tinh dầu,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,833333.0,cọc bàn làm việc phòng điều trị,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,2715000.0,"2 ổ cứng HDD 12T,Dây 3.5 ra 3.5",6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,1666667.0,tiền bàn phòng điều trị,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,25800000.0,Mua ipad cho sale,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,890000.0,ghế anh phòng Hiền,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,11333333.0,chi tiền màn hình bàn tư vấn,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,2950000.0,tiền bàn phòng tv,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,7333333.0,mua màn hình quảng cáo,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,9000000.0,máy cạo vôi răng,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,33333333.0,cho phường mượn,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,135000.0,mua ổ cắm điện,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,589000.0,Mua thêm ghế phòng họp+phòng HCNS+Mua chuột + USB phòng HCNS,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2024,8250887.0,Trích thưởng nhân viên cuối năm,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+06,2024,10000000.0,Trích quỹ tất niên,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+06,2024,683333.0,Mua đồ workshop đào tạo,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+06,2024,1526667.0,thuê địa điểm + đồ ăn ngày học  quản lí,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+06,2024,10000000.0,Quỹ Team buiding,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+07,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2024,31324003.0,Mua đồ hành chính,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+07,2024,2546667.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+07,2024,21138485.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+07,2024,20000000.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+07,2024,58647333.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+07,2024,265000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+07,2024,42507499.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+07,2024,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+07,2024,6966667.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+07,2024,15000000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+07,2024,18403934.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+07,2024,3000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+07,2024,7500000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+07,2024,13750000.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+07,2024,666336656.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+07,2024,6633953.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+07,2024,456943665.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+07,2024,103691333.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+07,2024,24989867.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+07,2024,31000000.0,Thuê bằng bs,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+07,2024,6200000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2024,353000.0,mẫu hàm Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,13350000.0,mua thun Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,39424000.0,mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,4140000.0,vật liệu TEENNIE,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,6400000.0,mua KIN,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,530000.0,Mua hộp đựng kềm(teennie),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,28679000.0,công nợ Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,13500000.0,vis chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,9420000.0,"keo nâng khớp, lò xo, mc răng 6, sáp chỉnh nha",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,113000.0,mũi đốt nướu Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,810000.0,khay tinh chỉnh của Kay Trần,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,44301600.0,công nợ 3D,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,36750000.0,Mắc cài t7,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,24050000.0,Khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2024,30000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+07,2024,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+07,2024,9788333.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+07,2024,15700000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+07,2024,2000000.0,Giới thiệu nhân sự,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+07,2024,10000000.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+08,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2024,21479834.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2024,2760000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+08,2024,21064082.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+08,2024,12927334.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+08,2024,54958667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+08,2024,297000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+08,2024,28831999.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+08,2024,10000000.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+08,2024,0.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+08,2024,15000000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+08,2024,30306667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+08,2024,10000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+08,2024,7000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+08,2024,13750000.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+08,2024,582871882.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+08,2024,5742503.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+08,2024,12000000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+08,2024,467596426.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+08,2024,103246833.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+08,2024,25311867.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+08,2024,22000000.0,Thuê bằng bs,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+08,2024,39100000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2024,1000000.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2024,7670000.0,dung dịch vệ sinh dụng cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,20000000.0,Mua thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,450000.0,sáp nha khoa,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,1962000.0,mua thuốc Effegan,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,5760000.0,mũi đốt nướu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,1133333.0,Mua máy đo huyết áp,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,6400000.0,mũi khoan,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,6244000.0,Mua pin+phụ kiện máy chụp cận chóp,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,930000.0,mua keo gắn mc Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,28191000.0,Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,26400000.0,minivis,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,19859667.0,vật liệu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2024,34116667.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+08,2024,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+08,2024,14786667.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+08,2024,13500000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+08,2024,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+08,2024,5128333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+09,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2024,19857669.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2024,2709333.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+09,2024,20344614.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+09,2024,18078667.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+09,2024,23500000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+09,2024,250000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+09,2024,20112400.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+09,2024,10000000.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+09,2024,10000000.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+09,2024,43520000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+09,2024,62042667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+09,2024,12000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+09,2024,17000000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+09,2024,13750000.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+09,2024,639365807.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+09,2024,7481700.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+09,2024,12130000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+09,2024,467554232.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+09,2024,102086833.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+09,2024,25311573.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+09,2024,22000000.0,Thuê bằng bs,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+09,2024,40033333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2024,17800000.0,thanh toán thun Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,22700000.0,"Lấy khâu + tube + nâng khớp, hàm duy trì",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,6900000.0,mua kềm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,37764000.0,công nợ morelli T6,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,8460000.0,hàm duy trì,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,36343000.0,mua kềm Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,62175000.0,"thanh toán khâu Teennie 7,8,9",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,425000.0,Nhận hộp nhựa đựng mẫu hàm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,6375000.0,Mua kềm,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,25387000.0,Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,36750000.0,tt mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,21000000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,760000.0,nhập sáp nha khoa,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,7345000.0,tiền kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2024,30000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+09,2024,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+09,2024,32551667.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+09,2024,19624000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+09,2024,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+09,2024,949333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+10,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2024,17836667.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2024,4299000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,"Thuê xe, bãi xe",Định phí,Tiền thuê xe,exact_match
+10,2024,19317944.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+10,2024,11124999.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+10,2024,40500000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+10,2024,295000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+10,2024,20440000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+10,2024,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+10,2024,0.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+10,2024,9040000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+10,2024,42374334.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+10,2024,10000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+10,2024,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+10,2024,13750000.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+10,2024,640282732.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+10,2024,7424379.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+10,2024,4054667.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+10,2024,489506372.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+10,2024,114689097.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+10,2024,25845760.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+10,2024,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+10,2024,11700001.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2024,1000000.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2024,18760000.0,"Que đè lưỡi,sáp chỉnh nha, button,mua sáp nk",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,27900000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,18730000.0,Thun teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,18829000.0,thuốc tê+mua vis,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,25241000.0,"vật liệu, vật tư chỉnh nha Teennie",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,34931550.0,Máng niềng trong suốt,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,36750000.0,mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,14424000.0,Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,77697000.0,công nợ morelli T7+8,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2024,30000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+10,2024,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+10,2024,48600333.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+10,2024,7929669.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+10,2024,1000000.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+10,2024,3333333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+11,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2024,29359663.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2024,2879000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2024,21024631.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+11,2024,15005668.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+11,2024,42858000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+11,2024,258000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+11,2024,23510000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+11,2024,24321667.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+11,2024,0.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+11,2024,23000000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+11,2024,58683667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+11,2024,9000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+11,2024,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+11,2024,13750000.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+11,2024,636386638.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+11,2024,7888484.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+11,2024,9679667.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+11,2024,493149510.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+11,2024,127611167.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+11,2024,27766613.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+11,2024,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+11,2024,6033333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+11,2024,10666667.0,thuốc tê,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,61221000.0,công nợ morelli T9+10,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,5120000.0,nhập kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,5780000.0,mua nhựa in HDT,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,9000000.0,mua kềm Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,24850000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,17000000.0,"Tiền tay khoan khuỷ chậm, 2 tay khoan",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,30447000.0,"dụng cụ chỉnh nha ,keo dán MC sứ, thay đầu cây cạo vôi",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,12000000.0,Mua vit,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,17855000.0,Công nợ 3D t10/24,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,26924000.0,công nợ thanh ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,3730000.0,đơn mắc cài răng 6 teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,1452000.0,mua kéo cắt hàm duy trì,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+11,2024,50000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+11,2024,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+11,2024,4070000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+11,2024,13479000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+11,2024,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+11,2024,10000000.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+12,2024,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2024,18218996.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2024,2829667.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2024,21342273.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+12,2024,21444333.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+12,2024,20831333.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+12,2024,100000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+12,2024,28878667.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+12,2024,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+12,2024,0.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+12,2024,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+12,2024,53933999.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+12,2024,15000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+12,2024,21500000.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+12,2024,40000000.0,CRM,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2024,602379112.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+12,2024,5926846.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+12,2024,9314666.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+12,2024,490082419.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+12,2024,127364000.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+12,2024,28513280.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+12,2024,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+12,2024,6700000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+12,2024,13080000.0,nhựa hàm duy trì,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,7218000.0,dây thun chuỗi Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,3707000.0,"mua banh miệng ,gương + đèn chụp hình trong miệng KH, Kéo cắt HDT",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,5500000.0,mắc cài R6 Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,3840000.0,nước xúc miệng Kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,36750000.0,mắc cài T12,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,36750000.0,Khí cụ T11+12,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,8640000.0,thun AO,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,6400000.0,tiền nước xúc miệng KIN,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,8540000.0,dung dịch khử khuẩn y tế,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,7795000.0,Thun liên hàm  Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,5598000.0,Mũi khoan Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,26731000.0,công nợ Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,37306500.0,Công nợ 3D,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,63621000.0,công nợ Morile T11+!2,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+12,2024,50000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+12,2024,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+12,2024,31900000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+12,2024,6933334.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+12,2024,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+12,2024,1711666.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+01,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2025,15933334.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2025,2860000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2025,18494808.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+01,2025,12026667.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+01,2025,44291333.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+01,2025,55000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+01,2025,15180000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+01,2025,10533123.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+01,2025,31210667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+01,2025,6000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+01,2025,532648623.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+01,2025,6310704.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+01,2025,5756500.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+01,2025,470747438.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+01,2025,128678500.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+01,2025,27979000.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+01,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+01,2025,15883333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2025,3508500.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+01,2025,699000.0,Mũi khoan Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,8426000.0,nút Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,983333.0,composite,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,440000.0,Giấy phòng điều trị,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,9624000.0,Tiền thun Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,1273000.0,Thuốc + nước muối,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,895000.0,tiền thuốc tê xanh,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,1400000.0,tiền cao su đặc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,7218000.0,thun chuỗi Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,450000.0,hộp đựng mẫu hàm(Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,200000.0,ép danh mục thuốc chống sốc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,27623000.0,công nợ Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,13000000.0,vật tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+01,2025,50000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+01,2025,12211250.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+01,2025,2859333.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+01,2025,2413333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+02,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2025,33867335.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2025,2666667.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2025,14738973.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+02,2025,19016666.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+02,2025,48418667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+02,2025,85000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+02,2025,18293333.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+02,2025,7788727.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+02,2025,8733333.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+02,2025,12000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+02,2025,523662333.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+02,2025,5206193.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+02,2025,6142000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+02,2025,442482508.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+02,2025,127714660.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+02,2025,30006613.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+02,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+02,2025,10666667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+02,2025,6400000.0,mua kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,3500000.0,dây cung,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,5116000.0,Khẩu trang + thuốc giảm đau + mua thuốc chống sốc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,3600000.0,dây cung loop Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,9624000.0,Thun liên hàm Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,1918000.0,nút dán nâng khớp+ lò xo(Teennie),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,30830000.0,công nợ morelli T1/25,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,19648000.0,công nợ Thanh Ngọc T1/25,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,17800000.0,Vật liệu làm máng,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,814000.0,sáp nha khoa,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,1337000.0,mũi đốt nướu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,34800000.0,khí cụ T1+2,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+02,2025,11953250.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+02,2025,15596668.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+02,2025,666667.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+03,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2025,65050019.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2025,2338000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2025,15760186.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+03,2025,20771335.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+03,2025,43588667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+03,2025,128000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+03,2025,28668334.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+03,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+03,2025,12821541.0,Thưởng gián tiếp,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+03,2025,6544000.0,Đi trường,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+03,2025,68237334.0,Hành chính MKT,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+03,2025,13000000.0,Hoa hòng gth,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+03,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+03,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+03,2025,681943394.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+03,2025,5837797.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+03,2025,6623000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+03,2025,484209004.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+03,2025,128489333.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+03,2025,28938240.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+03,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+03,2025,12000000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2025,0.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+03,2025,31877000.0,"vật tư keo gắn mc Teennie,mua ốc siết ghế Teennie,đầu CVR",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2025,28857000.0,"vit chỉnh nha t2/25,vật liệu Teennie(mắc cài r6, nâng khớp, lò xo..)",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2025,23100000.0,"thanh toán tiền thuốc tê,Kin",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2025,36750000.0,Mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2025,23436000.0,mua kềm Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2025,3200000.0,tủ cực tím,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+03,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+03,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+03,2025,45629917.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+03,2025,17762667.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+03,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+03,2025,1166667.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+04,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2025,20205669.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2025,2610667.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2025,22915694.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+04,2025,10865680.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+04,2025,129000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+04,2025,35223200.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+04,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+04,2025,10291074.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+04,2025,1283000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+04,2025,18036734.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+04,2025,9000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+04,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+04,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+04,2025,614242726.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+04,2025,6790734.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+04,2025,4473000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+04,2025,434557392.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+04,2025,129913020.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+04,2025,29013360.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+04,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+04,2025,14166667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+04,2025,16370667.0,"nước ngâm dụng cụ ,thuốc giảm đau,composite lỏng,kiềm cắt thạch cao,mẫu hàm tư vấn Teennie",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,471000.0,Tiền mũi khoan Endoz Teeniee,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,138000.0,mua mắc cài mẫu(Teennie),1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,1240000.0,Nhựa in hàm duy trì loại cũ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,21735000.0,Thanh Ngọc T2,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,400000.0,dây cung Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,12600000.0,vít chỉnh nha T3,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,7619000.0,vật liệu,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,25263000.0,thun chỉnh nha,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,11620000.0,khâu + thun,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,25672000.0,Thanh Ngọc T3/25teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,47500000.0,khí cụ T3+4,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+04,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+04,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+04,2025,6833001.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+04,2025,3191667.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+04,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+04,2025,1000000.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+05,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2025,29282003.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2025,3170334.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2025,26520745.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+05,2025,21598935.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+05,2025,19000000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+05,2025,175000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+05,2025,17825000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+05,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+05,2025,11399934.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+05,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+05,2025,83350000.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+05,2025,7000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+05,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+05,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+05,2025,635936724.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+05,2025,4947239.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+05,2025,6023000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+05,2025,491458305.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+05,2025,142111333.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+05,2025,31069867.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+05,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+05,2025,13666667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+05,2025,36750000.0,mua 140b mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,17800000.0,nhựa ép máng,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,14270000.0,khâu của teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,16533000.0,vật tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,1215000.0,tiền tinh chỉnh KH niềng invi,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,72448000.0,công nợ Morelli T3+4,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,19200000.0,kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,13560000.0,vật liệu Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,12600000.0,thun chuỗi Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,2910000.0,khẩu trang,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,5556000.0,in ly giấy,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,1500000.0,keo gmc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,150000.0,nước rửa dụng cụ cho phụ tá,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,8883000.0,tube Teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,18343000.0,vật tư Thanh Ngọc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,6360000.0,Tiền vật tư bond,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,24800000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+05,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+05,2025,13484583.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+05,2025,7848333.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+05,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+05,2025,9828000.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+06,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2025,17052668.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2025,2613333.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2025,22709164.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+06,2025,23846632.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+06,2025,115125000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+06,2025,255000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+06,2025,29201669.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+06,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+06,2025,12502918.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+06,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+06,2025,46188334.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+06,2025,11000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+06,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+06,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+06,2025,899188379.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+06,2025,6032005.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+06,2025,5924466.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+06,2025,475533355.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+06,2025,117945000.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+06,2025,38223360.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+06,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+06,2025,15333333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+06,2025,34121550.0,ca invi 2799,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,12377000.0,dung dịch ngâm dụng cụ +nhận 4 Bond +mũi khoan tay Teennie+bóng tia cực tím,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,27088000.0,"keo gắn mắc cài Teennie,hộp đựng mẫu hàm Teennie, gel lạnh, nước muối",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,42432000.0,thuốc giảm đau+thuốc tê+túi zip +vật tư+sáp nha khoa,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,36750000.0,đơn mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,54038000.0,Mua khâu và keo gắn mc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,12800000.0,kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,37700000.0,khí cụ,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+06,2025,150000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+06,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+06,2025,4083334.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+06,2025,4600000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+06,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+06,2025,10166666.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+07,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2025,22448672.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2025,2856667.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2025,23540712.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+07,2025,18466000.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+07,2025,64118000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+07,2025,298000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+07,2025,24086001.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+07,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+07,2025,11782443.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+07,2025,0.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+07,2025,20623667.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+07,2025,24000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+07,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+07,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+07,2025,918888621.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+07,2025,5961182.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+07,2025,7617000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+07,2025,485022918.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+07,2025,121861667.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+07,2025,38329173.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+07,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+07,2025,10333333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+07,2025,37800000.0,Nhựa ép máng duy trì,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2025,50129000.0,"mũi khoan, tube, thun chuỗi, xe đẩy Teennie, hộp đựng hàm duy trì + hộp giấy (test)+đồ chụp hình trong miệng, mua đồ nội nha, túi chườm đá,khăn choàng, bàn chải+lược xài 1 lần, hộp đựng hàm duy trì, rổ đựng đồ Teennie",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2025,66064601.0,vật tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+07,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+07,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+07,2025,18137333.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+07,2025,10043000.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+07,2025,3000000.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+08,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2025,19803333.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2025,2900000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2025,21316171.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+08,2025,20194913.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+08,2025,2679000.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+08,2025,371000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+08,2025,28373666.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+08,2025,27669662.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+08,2025,17000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+08,2025,790153005.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+08,2025,8086237.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+08,2025,6568000.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+08,2025,471872703.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+08,2025,125986077.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+08,2025,37582333.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+08,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+08,2025,14333333.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2025,1938000.0,efferalgan,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+08,2025,30835000.0,Vật liệu teennie,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,9238950.0,vật tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,36750000.0,mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,5666667.0,thuốc tê,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,5100000.0,Giấy chuyên dụng vên sinh phòng điều trị,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,33800000.0,khí cụ T7,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,47318000.0,công nợ vật tư seadent,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,1125000.0,khăn choàng phụ tá,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,1930000.0,Mua thuốc tê xanh,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,407000.0,mua banh miệng chữ V,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,7245828.0,kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,67134000.0,đơn morelli t5+6,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+08,2025,1487000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+08,2025,4380334.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+08,2025,11139333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+09,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2025,28576333.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2025,2666667.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2025,24284731.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+09,2025,29458000.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+09,2025,12656801.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+09,2025,369000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+09,2025,27069000.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+09,2025,20000000.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+09,2025,11027418.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+09,2025,40432000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+09,2025,38525001.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+09,2025,7000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+09,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+09,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+09,2025,814938489.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+09,2025,7583375.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+09,2025,8344667.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+09,2025,503532482.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+09,2025,119286000.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+09,2025,38116667.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+09,2025,25000000.0,Thuê bằng bs+bằng y tá Châu,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+09,2025,2166667.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+09,2025,14226000.0,thuốc tê+thuốc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,5500000.0,Mua cây cvr,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,54882000.0,khăn choàng PT+mua rổ cho phụ tá+bao tay+vật tư,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,12020000.0,mua mắc cài lẻ và keo xanh,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,67071659.0,khâu t7+8,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,86100000.0,Mua mắc cài,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,30600000.0,khí cụ T8,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,27718387.0,Đơn dây thun chỉnh nha seadent t8,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+09,2025,100000000.0,Quỹ thưởng,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+09,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+09,2025,9000000.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+09,2025,9563334.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+09,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+09,2025,13333333.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match
+10,2025,0.0,Tổng hợp,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2025,40624670.0,Mua đồ hành chính,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2025,2700000.0,bãi xe nv,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2025,22305564.0,điện+nước+wf,3. Chi phí quản lý doanh nghiệp,"Điện, nước, wifi",Biến phí,Điện + Nước,exact_match
+10,2025,14818667.0,Cp tiếp khách,6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+10,2025,71742667.0,tặng phẩm khách,2. Chi phí bán hàng,Tặng phẩm khách,Biến phí,Tặng phẩm khách,exact_match
+10,2025,347000000.0,MKT chạy quảng cáo,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,Marketing chạy Quảng cáo,exact_match
+10,2025,24317334.0,"Cp sửa chữa, bảo trì",3. Chi phí quản lý doanh nghiệp,Bảo trì - sửa chữa - khử khuẩn,Biến phí,Sửa chữa,exact_match
+10,2025,0.0,Cộng tác viên,2. Chi phí bán hàng,Agency hoặc freelancer,Biến phí,Cộng tác viên,exact_match
+10,2025,12952860.0,Thưởng gián tiếp,2. Chi phí bán hàng,Thưởng gián tiếp,Biến phí,Quỹ thưởng gián tiếp,exact_match
+10,2025,3675000.0,Đi trường,2. Chi phí bán hàng,Đi trường,Biến phí,Đi trường,exact_match
+10,2025,32811634.0,Hành chính MKT,2. Chi phí bán hàng,Hành chính MKT,Biến phí,Hành chính MKT,exact_match
+10,2025,19000000.0,Hoa hòng gth,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+10,2025,0.0,TikTok,2. Chi phí bán hàng,Chi phí quảng cáo Meta/Google/Tiktok,Biến phí,Tiktok,exact_match
+10,2025,0.0,SEO,2. Chi phí bán hàng,Marketing chạy quảng cáo,Biến phí,SEO,exact_match
+10,2025,974004724.0,% của NV,4. Chi phí nhân sự,Thưởng KPI,Biến phí,KPI,exact_match
+10,2025,9515081.0,Phí cà thẻ,6. Chi phí khác,Phí cà thẻ,Biến phí,Phí cà thẻ,exact_match
+10,2025,6790667.0,"Tiếp khách pK(grab, chi phí khác)",6. Chi phí khác,Tiếp khách phòng khám,Biến phí,Tiếp khách,exact_match
+10,2025,515275285.0,Lương,4. Chi phí nhân sự,Lương cố định bộ phận văn phòng,Định phí,Lương,exact_match
+10,2025,123805667.0,Chi phí MB,3. Chi phí quản lý doanh nghiệp,Thuê mặt bằng,Định phí,Chi phí Mặt bằng,exact_match
+10,2025,36623333.0,Bảo hiểm,4. Chi phí nhân sự,Bảo hiểm,Định phí,Bảo hiểm,exact_match
+10,2025,22000000.0,Thuê bằng bs,3. Chi phí quản lý doanh nghiệp,Thuê bằng bác sĩ,Định phí,Thuê bằng,exact_match
+10,2025,8304000.0,"chi phí cho quận, phường",3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2025,1000000.0,thuế,3. Chi phí quản lý doanh nghiệp,Hành chính,Biến phí,Mua đồ hành chính,exact_match
+10,2025,27080000.0,Mua kin,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,2268000.0,kiểm định lò hấp,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,12749333.0,"Bao tay y tế+bộ khối cắn nha khoa, Povidine, tấm choàng che cổ, gương cầm tay phòng điều trị+túi chườm,mua áo chì , khăn giấy choàng cổ phòng điều trị",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,6300000.0,Mua mc,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,31628000.0,"sáp nha khoa , nhựa ép hàm duy trì",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,89969000.0,"bóng đèn cực tím, mũi tay khoan + dây lò xo+ vật tư",1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,63300000.0,kí cụ T9+10,1. Giá vốn hàng bán,Vật tư tiêu hao,Biến phí,Tiền vật liệu,exact_match
+10,2025,100000000.0,Quỹ thưởng,6. Chi phí khác,Thưởng tổng cuối năm,Định phí,Quỹ thưởng tổng cuối năm,exact_match
+10,2025,0.0,Dự trù phát sinh,6. Chi phí khác,Quỹ dự phòng,Biến phí,Tiền dự trù phát sinh,exact_match
+10,2025,5547001.0,Mua sắm tài sản,6. Chi phí khác,Mua sắm tài sản,Biến phí,Mua sắm tài sản,exact_match
+10,2025,12835001.0,Thưởng nóng+liên hoan,4. Chi phí nhân sự,"Thưởng nóng, liên hoan",Biến phí,Tiền thưởng nóng + liên hoan,exact_match
+10,2025,0.0,Giới thiệu nhân sự,2. Chi phí bán hàng,Chi phí referral/Hoa hồng giới thiệu,Biến phí,Hoa hồng giới thiệu,exact_match
+10,2025,5751667.0,đào tạo nhân sự,4. Chi phí nhân sự,Đào tạo nhân sự,Biến phí,Đào tạo,exact_match

@@ -9,27 +9,37 @@ interface DateRangePickerProps {
 }
 
 const PRESETS = [
-  { label: 'Tháng này', getValue: () => {
-    const now = new Date()
-    return { start: new Date(now.getFullYear(), now.getMonth(), 1), end: new Date(now.getFullYear(), now.getMonth() + 1, 0) }
-  }},
-  { label: 'Tháng trước', getValue: () => {
-    const now = new Date()
-    return { start: new Date(now.getFullYear(), now.getMonth() - 1, 1), end: new Date(now.getFullYear(), now.getMonth(), 0) }
-  }},
-  { label: 'Quý này', getValue: () => {
-    const now = new Date()
-    const quarter = Math.floor(now.getMonth() / 3)
-    return { start: new Date(now.getFullYear(), quarter * 3, 1), end: new Date(now.getFullYear(), quarter * 3 + 3, 0) }
-  }},
-  { label: 'Năm nay', getValue: () => {
-    const now = new Date()
-    return { start: new Date(now.getFullYear(), 0, 1), end: new Date(now.getFullYear(), 11, 31) }
-  }},
-  { label: '12 tháng gần nhất', getValue: () => {
-    const now = new Date()
-    return { start: new Date(now.getFullYear(), now.getMonth() - 11, 1), end: new Date(now.getFullYear(), now.getMonth() + 1, 0) }
-  }},
+  {
+    label: 'Tháng này', getValue: () => {
+      const now = new Date()
+      return { start: new Date(now.getFullYear(), now.getMonth(), 1), end: new Date(now.getFullYear(), now.getMonth() + 1, 0) }
+    }
+  },
+  {
+    label: 'Tháng trước', getValue: () => {
+      const now = new Date()
+      return { start: new Date(now.getFullYear(), now.getMonth() - 1, 1), end: new Date(now.getFullYear(), now.getMonth(), 0) }
+    }
+  },
+  {
+    label: 'Quý này', getValue: () => {
+      const now = new Date()
+      const quarter = Math.floor(now.getMonth() / 3)
+      return { start: new Date(now.getFullYear(), quarter * 3, 1), end: new Date(now.getFullYear(), quarter * 3 + 3, 0) }
+    }
+  },
+  {
+    label: 'Năm nay', getValue: () => {
+      const now = new Date()
+      return { start: new Date(now.getFullYear(), 0, 1), end: new Date(now.getFullYear(), 11, 31) }
+    }
+  },
+  {
+    label: '12 tháng gần nhất', getValue: () => {
+      const now = new Date()
+      return { start: new Date(now.getFullYear(), now.getMonth() - 11, 1), end: new Date(now.getFullYear(), now.getMonth() + 1, 0) }
+    }
+  },
 ]
 
 export function DateRangePicker({ value, onChange }: DateRangePickerProps) {
@@ -49,37 +59,84 @@ export function DateRangePicker({ value, onChange }: DateRangePickerProps) {
   }
 
   return (
-    <div className="relative">
+    <div style={{ position: 'relative' }}>
       <button
         onClick={() => setIsOpen(!isOpen)}
-        className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors"
         style={{
-          borderColor: 'var(--border)',
-          background: 'var(--surface)',
-          color: 'var(--text-main)',
+          display: 'flex',
+          alignItems: 'center',
+          gap: 'var(--space-2)',
+          padding: 'var(--space-2) var(--space-4)',
+          borderRadius: 'var(--radius-pill)',
+          border: '1px solid var(--border)',
+          background: 'var(--bg-card)',
+          color: 'var(--text-primary)',
+          cursor: 'pointer',
+          transition: 'all var(--transition-base)',
+          boxShadow: isOpen ? 'var(--shadow-md)' : 'var(--shadow-xs)',
+          fontFamily: 'inherit',
+          fontSize: 'var(--text-sm)',
+          fontWeight: 'var(--weight-medium)',
         }}
       >
-        <Calendar size={16} style={{ color: 'var(--text-muted)' }} />
-        <span className="text-sm">{formatDateRange()}</span>
-        <ChevronDown size={16} style={{ color: 'var(--text-muted)' }} />
+        <Calendar size={15} style={{ color: 'var(--accent)' }} />
+        <span>{formatDateRange()}</span>
+        <ChevronDown
+          size={14}
+          style={{
+            color: 'var(--text-muted)',
+            transition: 'transform 0.2s ease',
+            transform: isOpen ? 'rotate(180deg)' : 'rotate(0deg)',
+          }}
+        />
       </button>
 
       {isOpen && (
         <>
           <div
-            className="fixed inset-0 z-10"
+            style={{ position: 'fixed', inset: 0, zIndex: 10 }}
             onClick={() => setIsOpen(false)}
           />
           <div
-            className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg z-20 min-w-[180px]"
-            style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+            style={{
+              position: 'absolute',
+              top: '100%',
+              left: 0,
+              marginTop: 'var(--space-2)',
+              padding: '0.35rem 0',
+              borderRadius: 'var(--radius-lg)',
+              zIndex: 20,
+              minWidth: 200,
+              background: 'var(--bg-card)',
+              border: '1px solid var(--border)',
+              boxShadow: 'var(--shadow-lg)',
+            }}
           >
             {PRESETS.map((preset) => (
               <button
                 key={preset.label}
                 onClick={() => handlePresetSelect(preset)}
-                className="w-full px-3 py-2 text-left text-sm hover:opacity-80 transition-opacity"
-                style={{ color: 'var(--text-main)' }}
+                style={{
+                  width: '100%',
+                  padding: 'var(--space-2) var(--space-4)',
+                  textAlign: 'left',
+                  fontSize: 'var(--text-sm)',
+                  fontWeight: 'var(--weight-medium)',
+                  color: 'var(--text-primary)',
+                  background: 'transparent',
+                  border: 'none',
+                  cursor: 'pointer',
+                  transition: 'all var(--transition-fast)',
+                  fontFamily: 'inherit',
+                }}
+                onMouseEnter={(e) => {
+                  e.currentTarget.style.background = 'var(--primary-bg)'
+                  e.currentTarget.style.color = 'var(--accent)'
+                }}
+                onMouseLeave={(e) => {
+                  e.currentTarget.style.background = 'transparent'
+                  e.currentTarget.style.color = 'var(--text-primary)'
+                }}
               >
                 {preset.label}
               </button>

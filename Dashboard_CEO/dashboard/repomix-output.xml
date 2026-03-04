@@ -1,0 +1,4768 @@
+This file is a merged representation of the entire codebase, combined into a single document by Repomix.
+
+<file_summary>
+This section contains a summary of this file.
+
+<purpose>
+This file contains a packed representation of the entire repository's contents.
+It is designed to be easily consumable by AI systems for analysis, code review,
+or other automated processes.
+</purpose>
+
+<file_format>
+The content is organized as follows:
+1. This summary section
+2. Repository information
+3. Directory structure
+4. Repository files (if enabled)
+5. Multiple file entries, each consisting of:
+  - File path as an attribute
+  - Full contents of the file
+</file_format>
+
+<usage_guidelines>
+- This file should be treated as read-only. Any changes should be made to the
+  original repository files, not this packed version.
+- When processing this file, use the file path to distinguish
+  between different files in the repository.
+- Be aware that this file may contain sensitive information. Handle it with
+  the same level of security as you would the original repository.
+</usage_guidelines>
+
+<notes>
+- Some files may have been excluded based on .gitignore rules and Repomix's configuration
+- Binary files are not included in this packed representation. Please refer to the Repository Structure section for a complete list of file paths, including binary files
+- Files matching patterns in .gitignore are excluded
+- Files matching default ignore patterns are excluded
+- Files are sorted by Git change count (files with more changes are at the bottom)
+</notes>
+
+</file_summary>
+
+<directory_structure>
+plans/
+  reports/
+    code-reviewer-260303-1213-phase-5-hardening-budget-filter.md
+    code-reviewer-260303-1230-phase-5-latest-review.md
+    docs-manager-260303-1150-phase-5-hardening-doc-impact.md
+    tester-260303-1144-phase-5-hardening-validation.md
+    tester-260303-1152-phase-5-hardening-final-validation.md
+    tester-260303-1230-phase-5-final-validation.md
+public/
+  file.svg
+  globe.svg
+  manifest.json
+  next.svg
+  sw.js
+  vercel.svg
+  window.svg
+src/
+  app/
+    (auth)/
+      login/
+        page.tsx
+    (dashboard)/
+      budget/
+        page.tsx
+      layout.tsx
+      loading.tsx
+      page.tsx
+    api/
+      budget/
+        [id]/
+          route.ts
+        route.ts
+    offline/
+      page.tsx
+    error.tsx
+    favicon.ico
+    globals.css
+    layout.tsx
+    not-found.tsx
+  components/
+    budget/
+      budget-table.tsx
+      variance-alerts.tsx
+    charts/
+      budget-variance-chart.tsx
+      cost-breakdown-chart.tsx
+      trend-chart.tsx
+    dashboard/
+      kpi-card.tsx
+    filters/
+      clinic-select.tsx
+      dashboard-filters.tsx
+      date-range-picker.tsx
+    layout/
+      header.tsx
+      mobile-nav.tsx
+      sidebar.tsx
+    tables/
+      clinic-comparison-table.tsx
+  lib/
+    queries/
+      breakdown.ts
+      budget-variance-calculation.test.ts
+      budget-variance-calculation.ts
+      budget-variance-query.ts
+      budgets.ts
+      clinics.ts
+      comparison.ts
+      kpis.ts
+      trends.ts
+    supabase/
+      client.ts
+      server.ts
+  scripts/
+    import-csv.ts
+  types/
+    database.ts
+  proxy.ts
+supabase/
+  migrations/
+    001_initial_schema.sql
+.gitignore
+eslint.config.mjs
+next.config.ts
+package.json
+postcss.config.mjs
+README.md
+tsconfig.json
+vitest.config.ts
+</directory_structure>
+
+<files>
+This section contains the contents of the repository's files.
+
+<file path="plans/reports/code-reviewer-260303-1213-phase-5-hardening-budget-filter.md">
+## Code Review Summary
+
+### Scope
+- Files: `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/middleware.ts` (deleted), `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/filters/dashboard-filters.tsx`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/(dashboard)/budget/page.tsx`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budgets.ts`, `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-query.ts`
+- Delta (scoped): +36 / -186 lines
+- Focus: Phase 5 hardening + budget/filter changes
+- Scout findings: auth boundary paths, query aggregation behavior, URL update race surfaces
+
+### Overall Assessment
+- Good direction: Next 16 proxy migration is wired correctly, build/lint pass, budget variance extraction improved separation.
+- No release blocker found.
+
+### Critical Issues
+- None.
+
+### High Priority
+- None.
+
+### Medium Priority
+1. **Potential param-update race in filters (state overwrite risk under rapid interactions).**
+   - File: `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/filters/dashboard-filters.tsx`
+   - Evidence:
+     ```ts
+     const currentSearch = typeof window === 'undefined' ? '' : window.location.search
+     const params = new URLSearchParams(currentSearch)
+     router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false })
+     ```
+   - Impact: two quick updates before URL settles can compose from stale `window.location.search`, dropping one change.
+
+### Low Priority
+1. **Inline SW registration script may conflict with strict CSP rollout later.**
+   - File: `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx`
+   - Evidence:
+     ```tsx
+     <Script id="pwa-sw-register" strategy="afterInteractive">{`...`}</Script>
+     ```
+   - Impact: future CSP hardening may require nonce/hash updates.
+
+### Edge Cases Found by Scout
+- Proxy auth gate checks exact `/login` and callback path variants; this is correct for current routes.
+- Budget variance now supports `clinicId: null` and aggregates month totals across clinics (expected behavior change from prior single-clinic fallback).
+- Grouping by `category_id` correctly merges duplicate budget rows for same category key.
+
+### Positive Observations
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts` migration is consistent with Next 16 proxy model; build output confirms active proxy middleware.
+- Active-nav fix in `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx` and `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx` correctly handles nested routes.
+- Query responsibility separation improved by moving variance logic into `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-query.ts`.
+
+### Recommended Actions
+1. Keep as-is for release (no blocker).
+2. Optional hardening: make filter updates merge against router/search state source guaranteed fresh under rapid multi-control updates.
+3. Optional hardening: add CSP note for inline script strategy.
+
+### Metrics
+- Linting: pass (`npm run lint`)
+- Build/typecheck: pass (`npm run build`)
+- Test coverage: not measured in this review run
+- Type coverage: not measured in this review run
+
+### Unresolved Questions
+- Is all-clinic variance aggregation the intended product behavior when `clinic` query param is absent, or should default clinic scoping still apply?
+</file>
+
+<file path="plans/reports/code-reviewer-260303-1230-phase-5-latest-review.md">
+## Code Review Summary
+
+### Scope
+- Files reviewed:
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/middleware.ts` (deleted)
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/filters/dashboard-filters.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/(dashboard)/budget/page.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budgets.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-query.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-calculation.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-calculation.test.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/vitest.config.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/package.json`
+- Focus: correctness, security, maintainability
+- Validation run:
+  - `npm run test -- src/lib/queries/budget-variance-calculation.test.ts` → pass (3/3)
+
+### Scout Findings (edge cases)
+- Auth boundary migration has dependency risk: deleting `middleware.ts` requires `proxy.ts` to be committed together.
+- Query param parsing path has boundary risk for invalid `year/month` inputs (`NaN` propagation).
+- Client-side filter batching has state-drift risk if URL changes outside current component flow.
+
+### Findings by severity
+
+#### Critical / Blocker
+1. **Auth guard replacement is currently in broken git state**
+   - Evidence:
+     - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/middleware.ts` = deleted (tracked)
+     - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts` = untracked
+   - Impact: if committed/deployed without `proxy.ts`, all route protection is removed.
+   - Blocker: **Yes** (release blocker until file tracking is fixed in same changeset).
+
+#### High
+2. **Unvalidated `year/month` query params can produce invalid DB/date filters**
+   - Evidence in `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/(dashboard)/budget/page.tsx`:
+     - `const year = searchParams.year ? parseInt(searchParams.year) : now.getFullYear()`
+     - `const month = searchParams.month ? parseInt(searchParams.month) : now.getMonth() + 1`
+   - Data flow impact:
+     - Values feed `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-query.ts` date string construction.
+     - Invalid inputs (e.g. `?month=abc`, `?month=13`) can produce bad filters and silent wrong/empty results.
+
+#### Medium
+3. **`pendingParamsRef` can hold stale state across URL changes**
+   - Evidence in `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/filters/dashboard-filters.tsx`:
+     - `const pendingParamsRef = useRef<URLSearchParams | null>(null)`
+     - updates always seed from `pendingParamsRef.current` once set.
+   - Impact: if URL is changed externally (back/forward, deep link, other component navigation), next filter update may merge against stale params.
+
+### Positive observations
+- Good refactor split for variance logic (`budget-variance-query.ts` + pure `budget-variance-calculation.ts`) improves testability.
+- Added unit tests for variance calculation and threshold behavior.
+- Navigation active-state logic now handles nested routes robustly (`pathname.startsWith(...)`).
+- `router.replace(..., { scroll: false })` avoids disruptive UX jumps.
+
+### Unresolved questions
+- Should budget page accept and sanitize invalid/out-of-range `year/month`, or reject with redirect/default?
+- Is `/login` intended as a long-term “Account” nav destination for authenticated users?
+</file>
+
+<file path="plans/reports/docs-manager-260303-1150-phase-5-hardening-doc-impact.md">
+# Docs Impact Assessment - Phase 5 Hardening
+
+- Date: 2026-03-03
+- Scope reviewed:
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx`
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx`
+
+## Decision
+**Docs impact: minor**
+
+Rationale:
+1. Auth boundary migration (`middleware.ts` -> `proxy.ts`) changes request pipeline behavior and route protection location.
+2. Active-state logic updates in navigation are UI behavior clarifications, low blast radius.
+3. Service worker registration in root layout affects runtime/PWA behavior and should be noted in architecture/deployment docs if present.
+
+## Docs Folder Check
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/docs` does not exist.
+- Per instruction (`if updates are warranted and docs folder exists`), no docs files were updated.
+
+## Recommended future minimal doc deltas (when docs folder is created)
+- `system-architecture.md`: note auth guard execution now in `src/proxy.ts` and matcher exclusions.
+- `code-standards.md` or frontend guide: note nav active-state matching pattern (`exact root`, `prefix for nested paths`).
+- deployment/PWA guide: note service worker registration in `src/app/layout.tsx` and dependency on `/public/sw.js`.
+
+## Unresolved Questions
+- None.
+</file>
+
+<file path="plans/reports/tester-260303-1144-phase-5-hardening-validation.md">
+# Phase 5 Hardening Validation Report
+
+## Scope
+Validate requested hardening checks in:
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx`
+
+## Test Results Overview
+- Commands run:
+  - `npm run lint` → PASS
+  - `npm run build` → PASS
+- Build summary:
+  - Next.js 16.1.6 build completed
+  - TypeScript check completed
+  - Static page generation completed
+  - Proxy detected by build output: `ƒ Proxy (Middleware)`
+
+## Change Validation
+
+### 1) `src/middleware.ts` removed, `src/proxy.ts` used for auth boundary
+Status: PASS
+
+Evidence:
+- No project middleware file found under src:
+  - glob search on `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/**/middleware.ts` returned none.
+- Auth boundary present in `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts`:
+  - `export async function proxy(request: NextRequest)`
+  - unauthenticated redirect:
+    - `if (!user && !isPublicPath) { ... url.pathname = '/login' ... }`
+  - authenticated login guard:
+    - `if (user && request.nextUrl.pathname === '/login') { ... url.pathname = '/' ... }`
+  - matcher excludes static/pwa assets and image extensions.
+
+### 2) Active-state logic updates in sidebar and mobile nav
+Status: PASS
+
+Evidence:
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx`:
+  - `targetPath === '/' ? pathname === '/' : pathname === targetPath || pathname.startsWith(`${targetPath}/`)`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx`:
+  - same active-state condition pattern as sidebar.
+
+Result:
+- Root path strict match only.
+- Nested routes under non-root nav items considered active.
+- Behavior aligned between desktop and mobile navigation.
+
+### 3) Service worker registration in `src/app/layout.tsx`
+Status: PASS
+
+Evidence:
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx` includes:
+  - `import Script from "next/script";`
+  - afterInteractive script block with:
+    - `if ('serviceWorker' in navigator)`
+    - `window.addEventListener('load', () => { navigator.serviceWorker.register('/sw.js') ... })`
+- Service worker asset exists:
+  - `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/public/sw.js`
+
+## Performance Metrics
+- Build compile phase: `Compiled successfully in 15.0s`
+- Static generation: `8/8` routes generated in `337.2ms`
+- No abnormal build-time regressions surfaced from this run.
+
+## Build Status
+- Overall: PASS
+- Warnings observed: none in captured output
+- Blockers: none
+
+## Critical Issues
+- None found in requested validation scope.
+
+## Recommendations
+1. Add targeted unit tests for nav active-state helper logic (root vs nested paths).
+2. Add smoke test for auth redirect matrix (guest/private route, user/login route).
+3. Add runtime PWA smoke check in CI (SW registration + manifest fetch).
+
+## Next Steps
+1. Proceed to merge gate from QA perspective for Phase 5 hardening scope.
+2. If desired, expand with integration/e2e checks for redirects and offline page behavior.
+
+## Unresolved Questions
+- None.
+</file>
+
+<file path="plans/reports/tester-260303-1152-phase-5-hardening-final-validation.md">
+# Phase 5 Hardening Final Validation
+
+## Scope
+Validated together:
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/middleware.ts` (expected removed)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx`
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx`
+
+## Validation Commands
+- `npm --prefix "/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard" run lint`
+- `npm --prefix "/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard" run build`
+
+## Test Results Overview
+- Lint: **PASS**
+- Build: **PASS**
+- Unit/Integration/E2E tests: **Not run in this pass** (not requested)
+
+## File-State Checks
+- `src/middleware.ts`: **PASS** (file not found, removal confirmed)
+- `src/proxy.ts`: **PASS** (proxy exported, auth redirect logic present, matcher excludes static assets)
+- `src/components/layout/sidebar.tsx`: **PASS** (client nav active-state logic compiles)
+- `src/components/layout/mobile-nav.tsx`: **PASS** (client nav active-state logic compiles)
+- `src/app/layout.tsx`: **PASS** (metadata/viewport + SW registration script compiles)
+
+## Coverage Metrics
+- Not generated in this pass.
+
+## Performance Metrics
+- Next build compile: **5.1s**
+- Static page generation: **359.8ms**
+- No slow-test profiling run (no test suite executed)
+
+## Build Status
+- Status: **SUCCESS**
+- Warnings: none shown in lint/build output
+- Output confirms `ƒ Proxy (Middleware)` active during build
+
+## Critical Issues
+- None blocking from lint/build validation.
+
+## Recommendations
+1. Run targeted auth flow smoke (unauth → protected route redirect; auth user → `/login` redirect to `/`).
+2. Run coverage pass if Phase 5 exit criteria require numeric threshold.
+3. Optional: run full test suite before merge/push for regression confidence.
+
+## Next Steps
+1. Keep Phase 5 hardening state as candidate-ready.
+2. Execute final functional smoke tests on login/logout + route guarding.
+3. If smoke passes, proceed to review/merge gate.
+
+## Unresolved Questions
+- Do you want me to run full automated tests (`npm test` or project-equivalent) as an extra gate now?
+- Is a minimum coverage threshold required for Phase 5 sign-off in this repo?
+</file>
+
+<file path="plans/reports/tester-260303-1230-phase-5-final-validation.md">
+# Phase 5 Final Validation Report
+
+## Scope Check
+Validated changed scope in git status:
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/proxy.ts` (untracked)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/middleware.ts` (deleted)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/layout.tsx` (modified)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/sidebar.tsx` (modified)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/layout/mobile-nav.tsx` (modified)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/components/filters/dashboard-filters.tsx` (modified)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/app/(dashboard)/budget/page.tsx` (modified)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budgets.ts` (modified)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-query.ts` (untracked)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-calculation.ts` (untracked)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/src/lib/queries/budget-variance-calculation.test.ts` (untracked)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/vitest.config.ts` (untracked)
+- `/Users/lucasbraci/Desktop/Antigravity/projects/S Group/Dashboard_CEO/dashboard/package.json` (modified)
+
+## Pass/Fail Summary
+- `npm run lint`: PASS
+- `npm run test`: PASS (1 file, 3 tests)
+- `npm run build`: PASS
+
+## Blockers
+- None
+
+## Unresolved Questions
+- None
+</file>
+
+<file path="public/file.svg">
+<svg fill="none" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg"><path d="M14.5 13.5V5.41a1 1 0 0 0-.3-.7L9.8.29A1 1 0 0 0 9.08 0H1.5v13.5A2.5 2.5 0 0 0 4 16h8a2.5 2.5 0 0 0 2.5-2.5m-1.5 0v-7H8v-5H3v12a1 1 0 0 0 1 1h8a1 1 0 0 0 1-1M9.5 5V2.12L12.38 5zM5.13 5h-.62v1.25h2.12V5zm-.62 3h7.12v1.25H4.5zm.62 3h-.62v1.25h7.12V11z" clip-rule="evenodd" fill="#666" fill-rule="evenodd"/></svg>
+</file>
+
+<file path="public/globe.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><g clip-path="url(#a)"><path fill-rule="evenodd" clip-rule="evenodd" d="M10.27 14.1a6.5 6.5 0 0 0 3.67-3.45q-1.24.21-2.7.34-.31 1.83-.97 3.1M8 16A8 8 0 1 0 8 0a8 8 0 0 0 0 16m.48-1.52a7 7 0 0 1-.96 0H7.5a4 4 0 0 1-.84-1.32q-.38-.89-.63-2.08a40 40 0 0 0 3.92 0q-.25 1.2-.63 2.08a4 4 0 0 1-.84 1.31zm2.94-4.76q1.66-.15 2.95-.43a7 7 0 0 0 0-2.58q-1.3-.27-2.95-.43a18 18 0 0 1 0 3.44m-1.27-3.54a17 17 0 0 1 0 3.64 39 39 0 0 1-4.3 0 17 17 0 0 1 0-3.64 39 39 0 0 1 4.3 0m1.1-1.17q1.45.13 2.69.34a6.5 6.5 0 0 0-3.67-3.44q.65 1.26.98 3.1M8.48 1.5l.01.02q.41.37.84 1.31.38.89.63 2.08a40 40 0 0 0-3.92 0q.25-1.2.63-2.08a4 4 0 0 1 .85-1.32 7 7 0 0 1 .96 0m-2.75.4a6.5 6.5 0 0 0-3.67 3.44 29 29 0 0 1 2.7-.34q.31-1.83.97-3.1M4.58 6.28q-1.66.16-2.95.43a7 7 0 0 0 0 2.58q1.3.27 2.95.43a18 18 0 0 1 0-3.44m.17 4.71q-1.45-.12-2.69-.34a6.5 6.5 0 0 0 3.67 3.44q-.65-1.27-.98-3.1" fill="#666"/></g><defs><clipPath id="a"><path fill="#fff" d="M0 0h16v16H0z"/></clipPath></defs></svg>
+</file>
+
+<file path="public/manifest.json">
+{
+  "name": "S Group Dashboard",
+  "short_name": "S Group",
+  "description": "Financial dashboard for S Group dental clinics",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#F1F5F9",
+  "theme_color": "#3B82F6",
+  "lang": "vi",
+  "icons": [
+    {
+      "src": "/next.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    },
+    {
+      "src": "/vercel.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}
+</file>
+
+<file path="public/next.svg">
+<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 394 80"><path fill="#000" d="M262 0h68.5v12.7h-27.2v66.6h-13.6V12.7H262V0ZM149 0v12.7H94v20.4h44.3v12.6H94v21h55v12.6H80.5V0h68.7zm34.3 0h-17.8l63.8 79.4h17.9l-32-39.7 32-39.6h-17.9l-23 28.6-23-28.6zm18.3 56.7-9-11-27.1 33.7h17.8l18.3-22.7z"/><path fill="#000" d="M81 79.3 17 0H0v79.3h13.6V17l50.2 62.3H81Zm252.6-.4c-1 0-1.8-.4-2.5-1s-1.1-1.6-1.1-2.6.3-1.8 1-2.5 1.6-1 2.6-1 1.8.3 2.5 1a3.4 3.4 0 0 1 .6 4.3 3.7 3.7 0 0 1-3 1.8zm23.2-33.5h6v23.3c0 2.1-.4 4-1.3 5.5a9.1 9.1 0 0 1-3.8 3.5c-1.6.8-3.5 1.3-5.7 1.3-2 0-3.7-.4-5.3-1s-2.8-1.8-3.7-3.2c-.9-1.3-1.4-3-1.4-5h6c.1.8.3 1.6.7 2.2s1 1.2 1.6 1.5c.7.4 1.5.5 2.4.5 1 0 1.8-.2 2.4-.6a4 4 0 0 0 1.6-1.8c.3-.8.5-1.8.5-3V45.5zm30.9 9.1a4.4 4.4 0 0 0-2-3.3 7.5 7.5 0 0 0-4.3-1.1c-1.3 0-2.4.2-3.3.5-.9.4-1.6 1-2 1.6a3.5 3.5 0 0 0-.3 4c.3.5.7.9 1.3 1.2l1.8 1 2 .5 3.2.8c1.3.3 2.5.7 3.7 1.2a13 13 0 0 1 3.2 1.8 8.1 8.1 0 0 1 3 6.5c0 2-.5 3.7-1.5 5.1a10 10 0 0 1-4.4 3.5c-1.8.8-4.1 1.2-6.8 1.2-2.6 0-4.9-.4-6.8-1.2-2-.8-3.4-2-4.5-3.5a10 10 0 0 1-1.7-5.6h6a5 5 0 0 0 3.5 4.6c1 .4 2.2.6 3.4.6 1.3 0 2.5-.2 3.5-.6 1-.4 1.8-1 2.4-1.7a4 4 0 0 0 .8-2.4c0-.9-.2-1.6-.7-2.2a11 11 0 0 0-2.1-1.4l-3.2-1-3.8-1c-2.8-.7-5-1.7-6.6-3.2a7.2 7.2 0 0 1-2.4-5.7 8 8 0 0 1 1.7-5 10 10 0 0 1 4.3-3.5c2-.8 4-1.2 6.4-1.2 2.3 0 4.4.4 6.2 1.2 1.8.8 3.2 2 4.3 3.4 1 1.4 1.5 3 1.5 5h-5.8z"/></svg>
+</file>
+
+<file path="public/sw.js">
+const CACHE_NAME = 's-group-dashboard-v1'
+const OFFLINE_URL = '/offline'
+
+self.addEventListener('install', (event) => {
+  event.waitUntil(
+    caches.open(CACHE_NAME).then((cache) => {
+      return cache.addAll([OFFLINE_URL])
+    })
+  )
+  self.skipWaiting()
+})
+
+self.addEventListener('activate', (event) => {
+  event.waitUntil(
+    caches.keys().then((cacheNames) => {
+      return Promise.all(
+        cacheNames
+          .filter((cacheName) => cacheName !== CACHE_NAME)
+          .map((cacheName) => caches.delete(cacheName))
+      )
+    })
+  )
+  self.clients.claim()
+})
+
+self.addEventListener('fetch', (event) => {
+  if (event.request.method !== 'GET') return
+
+  const requestUrl = new URL(event.request.url)
+
+  if (requestUrl.origin !== self.location.origin) return
+
+  event.respondWith(
+    fetch(event.request).catch(async () => {
+      if (event.request.mode === 'navigate') {
+        const cache = await caches.open(CACHE_NAME)
+        const offlineResponse = await cache.match(OFFLINE_URL)
+        if (offlineResponse) return offlineResponse
+      }
+      return caches.match(event.request)
+    })
+  )
+})
+</file>
+
+<file path="public/vercel.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1155 1000"><path d="m577.3 0 577.4 1000H0z" fill="#fff"/></svg>
+</file>
+
+<file path="public/window.svg">
+<svg fill="none" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16"><path fill-rule="evenodd" clip-rule="evenodd" d="M1.5 2.5h13v10a1 1 0 0 1-1 1h-11a1 1 0 0 1-1-1zM0 1h16v11.5a2.5 2.5 0 0 1-2.5 2.5h-11A2.5 2.5 0 0 1 0 12.5zm3.75 4.5a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5M7 4.75a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0m1.75.75a.75.75 0 1 0 0-1.5.75.75 0 0 0 0 1.5" fill="#666"/></svg>
+</file>
+
+<file path="src/app/(auth)/login/page.tsx">
+'use client'
+
+import { useState } from 'react'
+import { createClient } from '@/lib/supabase/client'
+import { useRouter } from 'next/navigation'
+
+export default function LoginPage() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [error, setError] = useState<string | null>(null)
+  const [loading, setLoading] = useState(false)
+  const router = useRouter()
+  const supabase = createClient()
+
+  const handleLogin = async (e: React.FormEvent) => {
+    e.preventDefault()
+    setError(null)
+    setLoading(true)
+
+    try {
+      const { error } = await supabase.auth.signInWithPassword({
+        email,
+        password,
+      })
+
+      if (error) {
+        const errorMessage = error.message.toLowerCase()
+
+        if (errorMessage.includes('failed to fetch')) {
+          setError('Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.')
+          return
+        }
+
+        setError(
+          error.message === 'Invalid login credentials'
+            ? 'Email hoặc mật khẩu không đúng'
+            : error.message
+        )
+        return
+      }
+
+      router.push('/')
+      router.refresh()
+    } catch (error) {
+      const isNetworkError =
+        error instanceof TypeError ||
+        (error instanceof Error && error.message.toLowerCase().includes('fetch'))
+
+      setError(
+        isNetworkError
+          ? 'Không thể kết nối máy chủ đăng nhập. Kiểm tra cấu hình Supabase hoặc khởi động Supabase local.'
+          : 'Đăng nhập thất bại. Vui lòng thử lại.'
+      )
+    } finally {
+      setLoading(false)
+    }
+  }
+
+  return (
+    <div className="min-h-screen flex items-center justify-center p-4" style={{ background: 'var(--background)' }}>
+      <div className="w-full max-w-md">
+        {/* Logo */}
+        <div className="text-center mb-8">
+          <h1 className="text-2xl font-bold" style={{ color: 'var(--text-main)' }}>
+            S Group Dashboard
+          </h1>
+          <p className="mt-2" style={{ color: 'var(--text-muted)' }}>
+            Đăng nhập để tiếp tục
+          </p>
+        </div>
+
+        {/* Form */}
+        <div className="p-6 rounded-xl shadow-sm" style={{ background: 'var(--surface)' }}>
+          <form onSubmit={handleLogin} className="space-y-4">
+            {error && (
+              <div className="p-3 rounded-lg text-sm" style={{ background: 'var(--danger-soft)', color: 'var(--danger)' }}>
+                {error}
+              </div>
+            )}
+
+            <div>
+              <label htmlFor="email" className="block text-sm font-medium mb-1" style={{ color: 'var(--text-main)' }}>
+                Email
+              </label>
+              <input
+                id="email"
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+                className="w-full px-3 py-2 rounded-lg border focus:outline-none focus:ring-2"
+                style={{
+                  borderColor: 'var(--border)',
+                  background: 'var(--surface)',
+                  color: 'var(--text-main)'
+                }}
+                placeholder="email@example.com"
+              />
+            </div>
+
+            <div>
+              <label htmlFor="password" className="block text-sm font-medium mb-1" style={{ color: 'var(--text-main)' }}>
+                Mật khẩu
+              </label>
+              <input
+                id="password"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                className="w-full px-3 py-2 rounded-lg border focus:outline-none focus:ring-2"
+                style={{
+                  borderColor: 'var(--border)',
+                  background: 'var(--surface)',
+                  color: 'var(--text-main)'
+                }}
+                placeholder="••••••••"
+              />
+            </div>
+
+            <button
+              type="submit"
+              disabled={loading}
+              className="w-full py-2.5 rounded-lg font-medium text-white transition-opacity disabled:opacity-50"
+              style={{ background: 'var(--primary)' }}
+            >
+              {loading ? 'Đang đăng nhập...' : 'Đăng nhập'}
+            </button>
+          </form>
+        </div>
+
+        <p className="text-center mt-4 text-sm" style={{ color: 'var(--text-muted)' }}>
+          Quên mật khẩu? Liên hệ quản trị viên
+        </p>
+      </div>
+    </div>
+  )
+}
+</file>
+
+<file path="src/app/(dashboard)/budget/page.tsx">
+import { Plus, Download } from 'lucide-react'
+import Link from 'next/link'
+import { getBudgets, getBudgetVariance } from '@/lib/queries/budgets'
+import { BudgetTable } from '@/components/budget/budget-table'
+import { BudgetVarianceChart } from '@/components/charts/budget-variance-chart'
+
+export default async function BudgetPage({
+  searchParams,
+}: {
+  searchParams: { clinic?: string; year?: string; month?: string }
+}) {
+  const now = new Date()
+  const parsedYear = Number.parseInt(searchParams.year ?? '', 10)
+  const parsedMonth = Number.parseInt(searchParams.month ?? '', 10)
+
+  const year = Number.isInteger(parsedYear) && parsedYear >= 2000 && parsedYear <= 2100
+    ? parsedYear
+    : now.getFullYear()
+
+  const month = Number.isInteger(parsedMonth) && parsedMonth >= 1 && parsedMonth <= 12
+    ? parsedMonth
+    : now.getMonth() + 1
+  const clinicId = searchParams.clinic
+
+  const [budgets, variances] = await Promise.all([
+    getBudgets(clinicId, year, month),
+    getBudgetVariance(clinicId ?? null, year, month),
+  ])
+
+  return (
+    <div className="space-y-6">
+      {/* Header */}
+      <div className="flex items-center justify-between">
+        <div>
+          <h1 className="text-xl font-bold" style={{ color: 'var(--text-main)' }}>
+            Ngân sách
+          </h1>
+          <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+            Tháng {month}/{year}
+          </p>
+        </div>
+        <div className="flex items-center gap-3">
+          <button
+            className="flex items-center gap-2 px-3 py-2 rounded-lg border text-sm"
+            style={{ borderColor: 'var(--border)', color: 'var(--text-main)' }}
+          >
+            <Download size={16} />
+            Xuất Excel
+          </button>
+          <Link
+            href="/budget/new"
+            className="flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white"
+            style={{ background: 'var(--primary)' }}
+          >
+            <Plus size={16} />
+            Thêm ngân sách
+          </Link>
+        </div>
+      </div>
+
+      {/* Budget vs Actual Chart */}
+      <div
+        className="p-4 rounded-xl"
+        style={{ background: 'var(--surface)' }}
+      >
+        <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
+          Ngân sách vs Thực tế
+        </h2>
+        <BudgetVarianceChart variances={variances} />
+      </div>
+
+      {/* Budget Table */}
+      <div
+        className="p-4 rounded-xl"
+        style={{ background: 'var(--surface)' }}
+      >
+        <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
+          Chi tiết ngân sách
+        </h2>
+        <BudgetTable budgets={budgets} />
+      </div>
+    </div>
+  )
+}
+</file>
+
+<file path="src/app/(dashboard)/layout.tsx">
+import { Sidebar } from '@/components/layout/sidebar'
+import { Header } from '@/components/layout/header'
+import { MobileNav } from '@/components/layout/mobile-nav'
+
+export default function DashboardLayout({
+  children,
+}: {
+  children: React.ReactNode
+}) {
+  return (
+    <div className="min-h-screen" style={{ background: 'var(--background)' }}>
+      {/* Desktop Sidebar */}
+      <div className="hidden md:block">
+        <Sidebar />
+      </div>
+
+      {/* Main Content */}
+      <div className="md:ml-[240px] min-h-screen pb-24 md:pb-0">
+        <Header />
+        <main className="p-4 md:p-6">
+          {children}
+        </main>
+      </div>
+
+      {/* Mobile Navigation */}
+      <MobileNav />
+    </div>
+  )
+}
+</file>
+
+<file path="src/app/(dashboard)/loading.tsx">
+export default function DashboardLoading() {
+  return (
+    <div className="space-y-6 animate-pulse">
+      <div>
+        <div className="h-7 w-40 rounded-md" style={{ background: 'var(--surface)' }} />
+        <div className="h-4 w-32 rounded-md mt-2" style={{ background: 'var(--surface)' }} />
+      </div>
+
+      <div className="flex gap-3">
+        <div className="h-10 w-48 rounded-lg" style={{ background: 'var(--surface)' }} />
+        <div className="h-10 w-40 rounded-lg" style={{ background: 'var(--surface)' }} />
+      </div>
+
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="h-28 rounded-xl" style={{ background: 'var(--surface)' }} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="h-[320px] rounded-xl" style={{ background: 'var(--surface)' }} />
+        <div className="h-[320px] rounded-xl" style={{ background: 'var(--surface)' }} />
+      </div>
+    </div>
+  )
+}
+</file>
+
+<file path="src/app/(dashboard)/page.tsx">
+import { DollarSign, TrendingUp, Percent, Wallet } from 'lucide-react'
+import { Suspense } from 'react'
+import { KPICard, KPIGrid } from '@/components/dashboard/kpi-card'
+import { TrendChart } from '@/components/charts/trend-chart'
+import { CostBreakdownChart } from '@/components/charts/cost-breakdown-chart'
+import { ClinicComparisonTable } from '@/components/tables/clinic-comparison-table'
+import { DashboardFilters } from '@/components/filters/dashboard-filters'
+import { getKPIs } from '@/lib/queries/kpis'
+import { getTrendData } from '@/lib/queries/trends'
+import { getCostBreakdown } from '@/lib/queries/breakdown'
+import { getClinicComparison } from '@/lib/queries/comparison'
+import { getClinics } from '@/lib/queries/clinics'
+
+function parseDateParam(value: string | undefined, fallback: Date): Date {
+  if (!value) return fallback
+  const parsed = new Date(value)
+  return Number.isNaN(parsed.getTime()) ? fallback : parsed
+}
+
+function toDateParam(date: Date): string {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+
+async function DashboardContent({
+  clinicId,
+  startDate,
+  endDate,
+}: {
+  clinicId?: string
+  startDate: Date
+  endDate: Date
+}) {
+  const [kpis, trendData, breakdown, comparison] = await Promise.all([
+    getKPIs(clinicId, startDate, endDate),
+    getTrendData(clinicId, 12),
+    getCostBreakdown(clinicId, startDate, endDate),
+    getClinicComparison(startDate, endDate),
+  ])
+
+  return (
+    <div className="space-y-6">
+      <KPIGrid>
+        <KPICard
+          title="Tổng doanh thu"
+          value={kpis.totalRevenue}
+          previousValue={kpis.previousRevenue}
+          format="currency"
+          icon={<DollarSign size={18} style={{ color: 'var(--primary)' }} />}
+        />
+        <KPICard
+          title="Tổng chi phí"
+          value={kpis.totalCosts}
+          previousValue={kpis.previousCosts}
+          format="currency"
+          icon={<Wallet size={18} style={{ color: 'var(--primary)' }} />}
+          invertColors
+        />
+        <KPICard
+          title="Lợi nhuận ròng"
+          value={kpis.netProfit}
+          format="currency"
+          icon={<TrendingUp size={18} style={{ color: 'var(--primary)' }} />}
+        />
+        <KPICard
+          title="Biên lợi nhuận"
+          value={kpis.profitMargin}
+          format="percent"
+          icon={<Percent size={18} style={{ color: 'var(--primary)' }} />}
+        />
+      </KPIGrid>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div id="revenue-trend" className="p-4 rounded-xl" style={{ background: 'var(--surface)' }}>
+          <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
+            Doanh thu vs Chi phí
+          </h2>
+          <TrendChart data={trendData} />
+        </div>
+
+        <div className="p-4 rounded-xl" style={{ background: 'var(--surface)' }}>
+          <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
+            Phân bổ chi phí
+          </h2>
+          <CostBreakdownChart data={breakdown} />
+        </div>
+      </div>
+
+      <div id="clinic-comparison" className="p-4 rounded-xl" style={{ background: 'var(--surface)' }}>
+        <h2 className="font-semibold mb-4" style={{ color: 'var(--text-main)' }}>
+          So sánh chi nhánh
+        </h2>
+        <ClinicComparisonTable data={comparison} />
+      </div>
+    </div>
+  )
+}
+
+function DashboardSkeleton() {
+  return (
+    <div className="space-y-6 animate-pulse">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        {[1, 2, 3, 4].map((i) => (
+          <div key={i} className="h-28 rounded-xl" style={{ background: 'var(--surface)' }} />
+        ))}
+      </div>
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-4">
+        <div className="h-[350px] rounded-xl" style={{ background: 'var(--surface)' }} />
+        <div className="h-[350px] rounded-xl" style={{ background: 'var(--surface)' }} />
+      </div>
+
+      <div className="h-[300px] rounded-xl" style={{ background: 'var(--surface)' }} />
+    </div>
+  )
+}
+
+export default async function DashboardPage({
+  searchParams,
+}: {
+  searchParams: { clinic?: string; start?: string; end?: string }
+}) {
+  const now = new Date()
+  const defaultStart = new Date(now.getFullYear(), now.getMonth(), 1)
+  const defaultEnd = new Date(now.getFullYear(), now.getMonth() + 1, 0)
+
+  const startDate = parseDateParam(searchParams.start, defaultStart)
+  const endDate = parseDateParam(searchParams.end, defaultEnd)
+  const clinicId = searchParams.clinic
+
+  const clinics = await getClinics()
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <h1 className="text-xl font-bold" style={{ color: 'var(--text-main)' }}>
+          Tổng quan
+        </h1>
+        <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+          {startDate.toLocaleDateString('vi-VN', { month: 'long', year: 'numeric' })}
+        </p>
+      </div>
+
+      <DashboardFilters
+        clinics={clinics}
+        clinicId={clinicId ?? null}
+        startDate={toDateParam(startDate)}
+        endDate={toDateParam(endDate)}
+      />
+
+      <Suspense fallback={<DashboardSkeleton />}>
+        <DashboardContent
+          clinicId={clinicId}
+          startDate={startDate}
+          endDate={endDate}
+        />
+      </Suspense>
+    </div>
+  )
+}
+</file>
+
+<file path="src/app/api/budget/[id]/route.ts">
+import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@/lib/supabase/server'
+import { updateBudget, deleteBudget } from '@/lib/queries/budgets'
+
+// PUT /api/budget/[id] - Update budget
+export async function PUT(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Check if user is CEO
+    const { data: profile } = await supabase
+      .from('user_profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    const typedProfile = profile as unknown as { role: string }
+    if (!profile || typedProfile.role !== 'ceo') {
+      return NextResponse.json(
+        { error: 'Only CEO can manage budgets' },
+        { status: 403 }
+      )
+    }
+
+    const { id } = await params
+    const body = await request.json()
+
+    const budget = await updateBudget(id, body)
+    return NextResponse.json({ data: budget })
+  } catch (error) {
+    console.error('PUT /api/budget error:', error)
+    return NextResponse.json(
+      { error: 'Failed to update budget' },
+      { status: 500 }
+    )
+  }
+}
+
+// DELETE /api/budget/[id] - Delete budget
+export async function DELETE(
+  request: NextRequest,
+  { params }: { params: Promise<{ id: string }> }
+) {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Check if user is CEO
+    const { data: profile } = await supabase
+      .from('user_profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    const typedProfile = profile as unknown as { role: string }
+    if (!profile || typedProfile.role !== 'ceo') {
+      return NextResponse.json(
+        { error: 'Only CEO can manage budgets' },
+        { status: 403 }
+      )
+    }
+
+    const { id } = await params
+    await deleteBudget(id)
+
+    return NextResponse.json({ success: true })
+  } catch (error) {
+    console.error('DELETE /api/budget error:', error)
+    return NextResponse.json(
+      { error: 'Failed to delete budget' },
+      { status: 500 }
+    )
+  }
+}
+</file>
+
+<file path="src/app/api/budget/route.ts">
+import { NextRequest, NextResponse } from 'next/server'
+import { createClient } from '@/lib/supabase/server'
+import { getBudgets, upsertBudget } from '@/lib/queries/budgets'
+
+// GET /api/budget - List budgets
+export async function GET(request: NextRequest) {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Get user role
+    const { data: profile } = await supabase
+      .from('user_profiles')
+      .select('role, clinic_id')
+      .eq('id', user.id)
+      .single()
+
+    if (!profile) {
+      return NextResponse.json({ error: 'Profile not found' }, { status: 404 })
+    }
+
+    const typedProfile = profile as unknown as { role: string; clinic_id: string | null }
+
+    // Parse query params
+    const { searchParams } = new URL(request.url)
+    const clinicId = searchParams.get('clinic_id') || undefined
+    const year = searchParams.get('year') ? parseInt(searchParams.get('year')!) : undefined
+    const month = searchParams.get('month') ? parseInt(searchParams.get('month')!) : undefined
+
+    // Role-based filtering
+    let filterClinicId = clinicId
+    if (typedProfile.role === 'clinic_manager') {
+      filterClinicId = typedProfile.clinic_id || undefined
+    }
+
+    const budgets = await getBudgets(filterClinicId, year, month)
+    return NextResponse.json({ data: budgets })
+  } catch (error) {
+    console.error('GET /api/budget error:', error)
+    return NextResponse.json(
+      { error: 'Failed to fetch budgets' },
+      { status: 500 }
+    )
+  }
+}
+
+// POST /api/budget - Create or update budget
+export async function POST(request: NextRequest) {
+  try {
+    const supabase = await createClient()
+    const { data: { user } } = await supabase.auth.getUser()
+
+    if (!user) {
+      return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
+    }
+
+    // Check if user is CEO
+    const { data: profile } = await supabase
+      .from('user_profiles')
+      .select('role')
+      .eq('id', user.id)
+      .single()
+
+    const typedProfile = profile as unknown as { role: string }
+    if (!profile || typedProfile.role !== 'ceo') {
+      return NextResponse.json(
+        { error: 'Only CEO can manage budgets' },
+        { status: 403 }
+      )
+    }
+
+    const body = await request.json()
+    const { clinic_id, category_id, year, month, amount } = body
+
+    // Validate
+    if (!clinic_id || !category_id || !year || amount === undefined) {
+      return NextResponse.json(
+        { error: 'Missing required fields' },
+        { status: 400 }
+      )
+    }
+
+    if (amount < 0) {
+      return NextResponse.json(
+        { error: 'Amount must be positive' },
+        { status: 400 }
+      )
+    }
+
+    // Upsert budget (create or update)
+    const budget = await upsertBudget({
+      clinic_id,
+      category_id,
+      year,
+      month: month || null,
+      amount,
+    })
+
+    return NextResponse.json({ data: budget })
+  } catch (error) {
+    console.error('POST /api/budget error:', error)
+    return NextResponse.json(
+      { error: 'Failed to create/update budget' },
+      { status: 500 }
+    )
+  }
+}
+</file>
+
+<file path="src/app/offline/page.tsx">
+import Link from 'next/link'
+import { WifiOff, RefreshCcw } from 'lucide-react'
+
+export default function OfflinePage() {
+  return (
+    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'var(--background)' }}>
+      <div
+        className="w-full max-w-md p-6 rounded-2xl border"
+        style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
+      >
+        <div
+          className="inline-flex p-2 rounded-lg"
+          style={{ background: 'var(--warning-soft)', color: 'var(--warning)' }}
+        >
+          <WifiOff size={18} />
+        </div>
+
+        <h1 className="text-lg font-semibold mt-3" style={{ color: 'var(--text-main)' }}>
+          Bạn đang ngoại tuyến
+        </h1>
+        <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+          Không thể tải dữ liệu mới. Kiểm tra kết nối mạng và thử lại.
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white"
+            style={{ background: 'var(--primary)' }}
+          >
+            <RefreshCcw size={16} />
+            Thử lại kết nối
+          </Link>
+
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm"
+            style={{ borderColor: 'var(--border)', color: 'var(--text-main)' }}
+          >
+            Về dashboard
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+</file>
+
+<file path="src/app/error.tsx">
+'use client'
+
+import { AlertTriangle, RotateCcw } from 'lucide-react'
+
+export default function GlobalError({
+  error,
+  reset,
+}: {
+  error: Error & { digest?: string }
+  reset: () => void
+}) {
+  return (
+    <html lang="vi">
+      <body
+        style={{
+          background: 'var(--background)',
+          color: 'var(--text-main)',
+          fontFamily: 'var(--font-sans)',
+        }}
+      >
+        <div className="min-h-screen flex items-center justify-center p-6">
+          <div
+            className="w-full max-w-md p-6 rounded-2xl border"
+            style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
+          >
+            <div className="flex items-start gap-3">
+              <div
+                className="p-2 rounded-lg"
+                style={{ background: 'var(--danger-soft)', color: 'var(--danger)' }}
+              >
+                <AlertTriangle size={18} />
+              </div>
+
+              <div className="flex-1">
+                <h1 className="text-lg font-semibold">Đã xảy ra lỗi</h1>
+                <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
+                  Hệ thống gặp lỗi không mong muốn. Vui lòng thử lại.
+                </p>
+
+                {error?.digest && (
+                  <p className="text-xs mt-3" style={{ color: 'var(--text-muted)' }}>
+                    Mã lỗi: {error.digest}
+                  </p>
+                )}
+
+                <button
+                  onClick={reset}
+                  className="mt-4 inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white"
+                  style={{ background: 'var(--primary)' }}
+                >
+                  <RotateCcw size={16} />
+                  Thử lại
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </body>
+    </html>
+  )
+}
+</file>
+
+<file path="src/app/globals.css">
+@import "tailwindcss";
+
+:root {
+  /* Brand Colors */
+  --primary: #3B82F6;
+  --primary-dark: #2563EB;
+  --primary-soft: rgba(59, 130, 246, 0.12);
+
+  /* Status Colors */
+  --success: #10B981;
+  --success-soft: rgba(16, 185, 129, 0.12);
+  --warning: #F59E0B;
+  --warning-soft: rgba(245, 158, 11, 0.12);
+  --danger: #EF4444;
+  --danger-soft: rgba(239, 68, 68, 0.12);
+
+  /* UI Colors */
+  --background: #F1F5F9;
+  --surface: #FFFFFF;
+  --surface-elevated: #FFFFFF;
+  --border: #E2E8F0;
+  --divider: #E2E8F0;
+
+  /* Text Colors */
+  --text-main: #0F172A;
+  --text-muted: #64748B;
+
+  /* Fonts */
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-display: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+@theme inline {
+  /* Colors */
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-soft: var(--primary-soft);
+  --color-success: var(--success);
+  --color-success-soft: var(--success-soft);
+  --color-warning: var(--warning);
+  --color-warning-soft: var(--warning-soft);
+  --color-danger: var(--danger);
+  --color-danger-soft: var(--danger-soft);
+  --color-background: var(--background);
+  --color-surface: var(--surface);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-border: var(--border);
+  --color-divider: var(--divider);
+  --color-text-main: var(--text-main);
+  --color-text-muted: var(--text-muted);
+
+  /* Fonts */
+  --font-sans: var(--font-sans);
+  --font-display: var(--font-display);
+}
+
+/* Base Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 14px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: var(--background);
+  color: var(--text-main);
+  font-family: var(--font-sans);
+  line-height: 1.5;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.3;
+  letter-spacing: -0.02em;
+}
+
+h1 { font-size: 1.5rem; }
+h2 { font-size: 1.25rem; }
+h3 { font-size: 1.125rem; }
+h4 { font-size: 1rem; }
+
+/* Utility Classes */
+.text-excellent { color: var(--success); }
+.text-average { color: var(--warning); }
+.text-critical { color: var(--danger); }
+
+.bg-excellent-light { background: var(--success-soft); color: var(--success); }
+.bg-average-light { background: var(--warning-soft); color: var(--warning); }
+.bg-critical-light { background: var(--danger-soft); color: var(--danger); }
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-muted);
+}
+</file>
+
+<file path="src/app/layout.tsx">
+import type { Metadata, Viewport } from "next";
+import Script from "next/script";
+import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({
+  variable: "--font-inter",
+  subsets: ["latin"],
+});
+
+const plusJakarta = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta",
+  subsets: ["latin"],
+});
+
+export const metadata: Metadata = {
+  title: "S Group Dashboard",
+  description: "Financial dashboard for S Group dental clinics",
+  manifest: '/manifest.json',
+}
+
+export const viewport: Viewport = {
+  themeColor: '#3B82F6',
+}
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="vi">
+      <body
+        className={`${inter.variable} ${plusJakarta.variable} antialiased`}
+      >
+        {children}
+        <Script id="pwa-sw-register" strategy="afterInteractive">
+          {`
+            if ('serviceWorker' in navigator) {
+              window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch((error) => {
+                  console.error('Service worker registration failed:', error)
+                })
+              })
+            }
+          `}
+        </Script>
+      </body>
+    </html>
+  );
+}
+</file>
+
+<file path="src/app/not-found.tsx">
+import Link from 'next/link'
+import { Home, ArrowLeft } from 'lucide-react'
+
+export default function NotFound() {
+  return (
+    <div className="min-h-screen flex items-center justify-center p-6" style={{ background: 'var(--background)' }}>
+      <div
+        className="w-full max-w-md p-6 rounded-2xl border"
+        style={{ background: 'var(--surface)', borderColor: 'var(--border)' }}
+      >
+        <h1 className="text-2xl font-bold" style={{ color: 'var(--text-main)' }}>
+          404
+        </h1>
+        <p className="text-sm mt-2" style={{ color: 'var(--text-muted)' }}>
+          Không tìm thấy trang bạn đang truy cập.
+        </p>
+
+        <div className="mt-5 flex items-center gap-3">
+          <Link
+            href="/"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg text-sm text-white"
+            style={{ background: 'var(--primary)' }}
+          >
+            <Home size={16} />
+            Về trang chủ
+          </Link>
+
+          <Link
+            href="/login"
+            className="inline-flex items-center gap-2 px-3 py-2 rounded-lg border text-sm"
+            style={{ borderColor: 'var(--border)', color: 'var(--text-main)' }}
+          >
+            <ArrowLeft size={16} />
+            Đăng nhập
+          </Link>
+        </div>
+      </div>
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/budget/budget-table.tsx">
+import { Pencil, Trash2 } from 'lucide-react'
+
+interface BudgetItem {
+  id: string
+  clinic_name: string
+  category_name: string
+  category_code: string
+  year: number
+  month: number | null
+  amount: number
+}
+
+interface BudgetTableProps {
+  budgets: BudgetItem[]
+}
+
+const formatCurrency = (value: number) => {
+  if (value >= 1e9) return `${(value / 1e9).toFixed(1)} tỷ`
+  if (value >= 1e6) return `${(value / 1e6).toFixed(0)}M`
+  return `${(value / 1e3).toFixed(0)}K`
+}
+
+const getMonthName = (month: number | null) => {
+  if (month === null) return 'Cả năm'
+  return `Tháng ${month}`
+}
+
+export function BudgetTable({ budgets }: BudgetTableProps) {
+  if (budgets.length === 0) {
+    return (
+      <div
+        className="flex flex-col items-center justify-center py-12"
+        style={{ color: 'var(--text-muted)' }}
+      >
+        <p>Chưa có ngân sách nào</p>
+        <p className="text-sm mt-1">Nhấn &quot;Thêm ngân sách&quot; để bắt đầu</p>
+      </div>
+    )
+  }
+
+  // Group by clinic
+  const groupedByClinic = budgets.reduce((acc, budget) => {
+    const clinicName = budget.clinic_name
+    if (!acc[clinicName]) {
+      acc[clinicName] = []
+    }
+    acc[clinicName].push(budget)
+    return acc
+  }, {} as Record<string, BudgetItem[]>)
+
+  return (
+    <div className="space-y-6">
+      {Object.entries(groupedByClinic).map(([clinicName, clinicBudgets]) => (
+        <div key={clinicName}>
+          <h3
+            className="text-sm font-medium mb-2 pb-2 border-b"
+            style={{ color: 'var(--text-main)', borderColor: 'var(--border)' }}
+          >
+            {clinicName}
+          </h3>
+          <div className="overflow-x-auto">
+            <table className="w-full">
+              <thead>
+                <tr style={{ borderBottom: '1px solid var(--border)' }}>
+                  <th className="text-left py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                    Hạng mục
+                  </th>
+                  <th className="text-left py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                    Kỳ
+                  </th>
+                  <th className="text-right py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                    Số tiền
+                  </th>
+                  <th className="text-right py-2 px-2 text-xs font-medium" style={{ color: 'var(--text-muted)' }}>
+                    Thao tác
+                  </th>
+                </tr>
+              </thead>
+              <tbody>
+                {clinicBudgets.map((budget) => (
+                  <tr key={budget.id} style={{ borderBottom: '1px solid var(--border)' }}>
+                    <td className="py-2 px-2" style={{ color: 'var(--text-main)' }}>
+                      <div className="flex flex-col">
+                        <span className="text-sm">{budget.category_name}</span>
+                        <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+                          {budget.category_code}
+                        </span>
+                      </div>
+                    </td>
+                    <td className="py-2 px-2 text-sm" style={{ color: 'var(--text-muted)' }}>
+                      {getMonthName(budget.month)}/{budget.year}
+                    </td>
+                    <td className="py-2 px-2 text-right font-medium" style={{ color: 'var(--text-main)' }}>
+                      {formatCurrency(budget.amount)}
+                    </td>
+                    <td className="py-2 px-2">
+                      <div className="flex items-center justify-end gap-2">
+                        <button
+                          className="p-1.5 rounded hover:opacity-80"
+                          style={{ color: 'var(--text-muted)' }}
+                          title="Sửa"
+                        >
+                          <Pencil size={14} />
+                        </button>
+                        <button
+                          className="p-1.5 rounded hover:opacity-80"
+                          style={{ color: 'var(--danger)' }}
+                          title="Xóa"
+                        >
+                          <Trash2 size={14} />
+                        </button>
+                      </div>
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+              <tfoot>
+                <tr style={{ borderTop: '2px solid var(--border)' }}>
+                  <td className="py-2 px-2 font-medium" style={{ color: 'var(--text-main)' }}>
+                    Tổng
+                  </td>
+                  <td></td>
+                  <td className="py-2 px-2 text-right font-semibold" style={{ color: 'var(--primary)' }}>
+                    {formatCurrency(clinicBudgets.reduce((sum, b) => sum + b.amount, 0))}
+                  </td>
+                  <td></td>
+                </tr>
+              </tfoot>
+            </table>
+          </div>
+        </div>
+      ))}
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/budget/variance-alerts.tsx">
+import { AlertTriangle, TrendingUp, TrendingDown } from 'lucide-react'
+
+interface VarianceItem {
+  category: string
+  budget: number
+  actual: number
+  variance: number
+  variancePct: number
+  status: 'ok' | 'warning' | 'critical'
+}
+
+interface VarianceAlertListProps {
+  items: VarianceItem[]
+}
+
+const formatCurrency = (value: number) => {
+  if (Math.abs(value) >= 1e9) return `${(value / 1e9).toFixed(1)} tỷ`
+  if (Math.abs(value) >= 1e6) return `${(value / 1e6).toFixed(0)}M`
+  return `${(value / 1e3).toFixed(0)}K`
+}
+
+export function VarianceAlertList({ items }: VarianceAlertListProps) {
+  if (items.length === 0) {
+    return null
+  }
+
+  return (
+    <div className="space-y-2">
+      {items.map((item, index) => (
+        <VarianceAlertCard key={index} item={item} />
+      ))}
+    </div>
+  )
+}
+
+function VarianceAlertCard({ item }: { item: VarianceItem }) {
+  const isOver = item.variance > 0
+  const Icon = isOver ? TrendingUp : TrendingDown
+
+  const bgColor = item.status === 'critical'
+    ? 'var(--danger-soft)'
+    : 'var(--warning-soft)'
+  const textColor = item.status === 'critical'
+    ? 'var(--danger)'
+    : 'var(--warning)'
+
+  return (
+    <div
+      className="flex items-center justify-between p-3 rounded-lg"
+      style={{ background: bgColor }}
+    >
+      <div className="flex items-center gap-3">
+        <Icon size={18} style={{ color: textColor }} />
+        <div>
+          <p className="font-medium text-sm" style={{ color: textColor }}>
+            {item.category}
+          </p>
+          <p className="text-xs" style={{ color: textColor, opacity: 0.8 }}>
+            {isOver ? 'Vượt' : 'Thiếu'} {formatCurrency(Math.abs(item.variance))} ({Math.abs(item.variancePct).toFixed(1)}%)
+          </p>
+        </div>
+      </div>
+      <div className="text-right">
+        <p className="text-xs" style={{ color: textColor, opacity: 0.7 }}>
+          Ngân sách: {formatCurrency(item.budget)}
+        </p>
+        <p className="text-xs font-medium" style={{ color: textColor }}>
+          Thực tế: {formatCurrency(item.actual)}
+        </p>
+      </div>
+    </div>
+  )
+}
+
+// Summary badge for dashboard header
+interface VarianceBadgeProps {
+  count: number
+  criticalCount: number
+}
+
+export function VarianceBadge({ count, criticalCount }: VarianceBadgeProps) {
+  if (count === 0) return null
+
+  return (
+    <div
+      className="flex items-center gap-1.5 px-2 py-1 rounded-full text-xs font-medium"
+      style={{
+        background: criticalCount > 0 ? 'var(--danger-soft)' : 'var(--warning-soft)',
+        color: criticalCount > 0 ? 'var(--danger)' : 'var(--warning)',
+      }}
+    >
+      <AlertTriangle size={12} />
+      <span>{count} cảnh báo</span>
+      {criticalCount > 0 && (
+        <span className="font-bold">({criticalCount} nghiêm trọng)</span>
+      )}
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/charts/budget-variance-chart.tsx">
+'use client'
+
+import {
+  BarChart,
+  Bar,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+  ReferenceLine,
+} from 'recharts'
+import type { BudgetVariance } from '@/lib/queries/budgets'
+
+interface BudgetVarianceChartProps {
+  variances: BudgetVariance[]
+}
+
+const formatYAxis = (value: number) => {
+  if (value >= 1e9) return `${(value / 1e9).toFixed(0)} tỷ`
+  if (value >= 1e6) return `${(value / 1e6).toFixed(0)}M`
+  return `${(value / 1e3).toFixed(0)}K`
+}
+
+const CustomTooltip = ({ active, payload, label }: {
+  active?: boolean
+  payload?: Array<{ name: string; value: number; color: string }>
+  label?: string
+}) => {
+  if (active && payload && payload.length) {
+    return (
+      <div
+        className="p-3 rounded-lg shadow-lg"
+        style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+      >
+        <p className="font-medium mb-2" style={{ color: 'var(--text-main)' }}>{label}</p>
+        {payload.map((entry, index) => (
+          <p key={index} className="text-sm" style={{ color: entry.color }}>
+            {entry.name}: {formatYAxis(entry.value)}
+          </p>
+        ))}
+      </div>
+    )
+  }
+  return null
+}
+
+export function BudgetVarianceChart({ variances }: BudgetVarianceChartProps) {
+  if (!variances || variances.length === 0) {
+    return (
+      <div
+        className="flex items-center justify-center h-[300px] rounded-lg"
+        style={{ background: 'var(--background)' }}
+      >
+        <span style={{ color: 'var(--text-muted)' }}>Không có dữ liệu ngân sách</span>
+      </div>
+    )
+  }
+
+  const data = variances.map((item) => ({
+    category: item.category,
+    budget: item.budget,
+    actual: item.actual,
+    variance: item.variance,
+  }))
+
+  return (
+    <ResponsiveContainer width="100%" height={300}>
+      <BarChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+        <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+        <XAxis
+          dataKey="category"
+          tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+          axisLine={{ stroke: 'var(--border)' }}
+        />
+        <YAxis
+          tickFormatter={formatYAxis}
+          tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+          axisLine={{ stroke: 'var(--border)' }}
+        />
+        <Tooltip content={<CustomTooltip />} />
+        <Legend
+          wrapperStyle={{ paddingTop: 16 }}
+          formatter={(value) => (
+            <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>{value}</span>
+          )}
+        />
+        <ReferenceLine y={0} stroke="var(--border)" />
+        <Bar
+          dataKey="budget"
+          name="Ngân sách"
+          fill="#3B82F6"
+          radius={[4, 4, 0, 0]}
+        />
+        <Bar
+          dataKey="actual"
+          name="Thực tế"
+          fill="#10B981"
+          radius={[4, 4, 0, 0]}
+        />
+        <Bar
+          dataKey="variance"
+          name="Chênh lệch"
+          fill="#EF4444"
+          radius={[4, 4, 0, 0]}
+        />
+      </BarChart>
+    </ResponsiveContainer>
+  )
+}
+</file>
+
+<file path="src/components/charts/cost-breakdown-chart.tsx">
+'use client'
+
+import { PieChart, Pie, Cell, ResponsiveContainer, Tooltip, Legend } from 'recharts'
+import type { BreakdownDataPoint } from '@/lib/queries/breakdown'
+
+interface CostBreakdownChartProps {
+  data: BreakdownDataPoint[]
+  colors?: Record<string, string>
+}
+
+const COLORS = ['#3B82F6', '#10B981', '#F59E0B', '#8B5CF6', '#EF4444', '#6B7280']
+
+const formatValue = (value: number) => {
+  if (value >= 1e9) return `${(value / 1e9).toFixed(1)} tỷ`
+  if (value >= 1e6) return `${(value / 1e6).toFixed(0)} tr`
+  return `${(value / 1e3).toFixed(0)}K`
+}
+
+const CustomTooltip = ({ active, payload }: {
+  active?: boolean
+  payload?: Array<{ name: string; value: number; payload: { percentage: number } }>
+}) => {
+  if (active && payload && payload.length) {
+    const data = payload[0]
+    return (
+      <div
+        className="p-3 rounded-lg shadow-lg"
+        style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+      >
+        <p className="font-medium" style={{ color: 'var(--text-main)' }}>{data.name}</p>
+        <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+          {formatValue(data.value)} ({data.payload.percentage.toFixed(1)}%)
+        </p>
+      </div>
+    )
+  }
+  return null
+}
+
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+const renderLegend = (props: any) => {
+  const { payload } = props
+  return (
+    <div className="flex flex-wrap gap-3 justify-center mt-4">
+      {payload?.map((entry: { value: string; color: string }, index: number) => (
+        <div key={index} className="flex items-center gap-1.5">
+          <div
+            className="w-3 h-3 rounded-full"
+            style={{ background: entry.color }}
+          />
+          <span className="text-xs" style={{ color: 'var(--text-muted)' }}>
+            {entry.value}
+          </span>
+        </div>
+      ))}
+    </div>
+  )
+}
+
+export function CostBreakdownChart({ data }: CostBreakdownChartProps) {
+  if (!data || data.length === 0) {
+    return (
+      <div
+        className="flex items-center justify-center h-[240px] rounded-lg"
+        style={{ background: 'var(--background)' }}
+      >
+        <span style={{ color: 'var(--text-muted)' }}>Không có dữ liệu</span>
+      </div>
+    )
+  }
+
+  return (
+    <ResponsiveContainer width="100%" height={280}>
+      <PieChart>
+        <Pie
+          data={data}
+          cx="50%"
+          cy="45%"
+          innerRadius={60}
+          outerRadius={90}
+          paddingAngle={2}
+          dataKey="amount"
+          nameKey="category"
+        >
+          {data.map((_, index) => (
+            <Cell key={`cell-${index}`} fill={COLORS[index % COLORS.length]} />
+          ))}
+        </Pie>
+        <Tooltip content={<CustomTooltip />} />
+        <Legend content={renderLegend} />
+      </PieChart>
+    </ResponsiveContainer>
+  )
+}
+</file>
+
+<file path="src/components/charts/trend-chart.tsx">
+'use client'
+
+import {
+  AreaChart,
+  Area,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  ResponsiveContainer,
+  Legend,
+} from 'recharts'
+import type { TrendDataPoint } from '@/lib/queries/trends'
+
+interface TrendChartProps {
+  data: TrendDataPoint[]
+}
+
+const formatYAxis = (value: number) => {
+  if (value >= 1e9) return `${(value / 1e9).toFixed(0)} tỷ`
+  if (value >= 1e6) return `${(value / 1e6).toFixed(0)} tr`
+  return `${(value / 1e3).toFixed(0)}K`
+}
+
+const CustomTooltip = ({ active, payload, label }: {
+  active?: boolean
+  payload?: Array<{ name: string; value: number; color: string }>
+  label?: string
+}) => {
+  if (active && payload && payload.length) {
+    return (
+      <div
+        className="p-3 rounded-lg shadow-lg"
+        style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+      >
+        <p className="font-medium mb-2" style={{ color: 'var(--text-main)' }}>{label}</p>
+        {payload.map((entry, index) => (
+          <p key={index} className="text-sm" style={{ color: entry.color }}>
+            {entry.name}: {formatYAxis(entry.value)}
+          </p>
+        ))}
+      </div>
+    )
+  }
+  return null
+}
+
+export function TrendChart({ data }: TrendChartProps) {
+  if (!data || data.length === 0) {
+    return (
+      <div
+        className="flex items-center justify-center h-[240px] rounded-lg"
+        style={{ background: 'var(--background)' }}
+      >
+        <span style={{ color: 'var(--text-muted)' }}>Không có dữ liệu</span>
+      </div>
+    )
+  }
+
+  return (
+    <ResponsiveContainer width="100%" height={280}>
+      <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+        <defs>
+          <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#10B981" stopOpacity={0.3} />
+            <stop offset="95%" stopColor="#10B981" stopOpacity={0} />
+          </linearGradient>
+          <linearGradient id="colorCosts" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#EF4444" stopOpacity={0.3} />
+            <stop offset="95%" stopColor="#EF4444" stopOpacity={0} />
+          </linearGradient>
+          <linearGradient id="colorProfit" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="5%" stopColor="#3B82F6" stopOpacity={0.3} />
+            <stop offset="95%" stopColor="#3B82F6" stopOpacity={0} />
+          </linearGradient>
+        </defs>
+        <CartesianGrid strokeDasharray="3 3" stroke="var(--border)" />
+        <XAxis
+          dataKey="monthLabel"
+          tick={{ fill: 'var(--text-muted)', fontSize: 12 }}
+          axisLine={{ stroke: 'var(--border)' }}
+        />
+        <YAxis
+          tickFormatter={formatYAxis}
+          tick={{ fill: 'var(--text-muted)', fontSize: 12 }}
+          axisLine={{ stroke: 'var(--border)' }}
+        />
+        <Tooltip content={<CustomTooltip />} />
+        <Legend
+          wrapperStyle={{ paddingTop: 16 }}
+          formatter={(value) => (
+            <span style={{ color: 'var(--text-muted)', fontSize: 12 }}>{value}</span>
+          )}
+        />
+        <Area
+          type="monotone"
+          dataKey="revenue"
+          name="Doanh thu"
+          stroke="#10B981"
+          strokeWidth={2}
+          fillOpacity={1}
+          fill="url(#colorRevenue)"
+        />
+        <Area
+          type="monotone"
+          dataKey="costs"
+          name="Chi phí"
+          stroke="#EF4444"
+          strokeWidth={2}
+          fillOpacity={1}
+          fill="url(#colorCosts)"
+        />
+        <Area
+          type="monotone"
+          dataKey="profit"
+          name="Lợi nhuận"
+          stroke="#3B82F6"
+          strokeWidth={2}
+          fillOpacity={1}
+          fill="url(#colorProfit)"
+        />
+      </AreaChart>
+    </ResponsiveContainer>
+  )
+}
+</file>
+
+<file path="src/components/dashboard/kpi-card.tsx">
+import { TrendingUp, TrendingDown } from 'lucide-react'
+import { formatCurrency, formatPercent, calculateChange } from '@/lib/queries/kpis'
+
+interface KPICardProps {
+  title: string
+  value: number
+  previousValue?: number
+  format: 'currency' | 'percent'
+  icon: React.ReactNode
+  invertColors?: boolean
+}
+
+export function KPICard({
+  title,
+  value,
+  previousValue,
+  format,
+  icon,
+  invertColors = false,
+}: KPICardProps) {
+  const formattedValue = format === 'currency' ? formatCurrency(value) : formatPercent(value)
+  const change = previousValue !== undefined ? calculateChange(value, previousValue) : null
+
+  // Determine color based on change direction and invertColors
+  // For costs, up is bad (red), for profit, up is good (green)
+  const getChangeColor = () => {
+    if (!change) return 'var(--text-muted)'
+    if (invertColors) {
+      return change.type === 'down' ? 'var(--success)' : 'var(--danger)'
+    }
+    return change.type === 'up' ? 'var(--success)' : 'var(--danger)'
+  }
+
+  return (
+    <div
+      className="p-4 rounded-xl transition-shadow hover:shadow-md"
+      style={{ background: 'var(--surface)' }}
+    >
+      <div className="flex items-center justify-between mb-3">
+        <span className="text-sm" style={{ color: 'var(--text-muted)' }}>
+          {title}
+        </span>
+        <div
+          className="p-2 rounded-lg"
+          style={{ background: 'var(--primary-soft)' }}
+        >
+          {icon}
+        </div>
+      </div>
+      <div className="text-2xl font-bold" style={{ color: 'var(--text-main)' }}>
+        {formattedValue}
+      </div>
+      {change && (
+        <div className="flex items-center gap-1 mt-1">
+          {change.type === 'up' ? (
+            <TrendingUp size={14} style={{ color: getChangeColor() }} />
+          ) : (
+            <TrendingDown size={14} style={{ color: getChangeColor() }} />
+          )}
+          <span className="text-xs" style={{ color: getChangeColor() }}>
+            {change.percent} vs kỳ trước
+          </span>
+        </div>
+      )}
+    </div>
+  )
+}
+
+interface KPIGridProps {
+  children: React.ReactNode
+}
+
+export function KPIGrid({ children }: KPIGridProps) {
+  return (
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+      {children}
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/filters/clinic-select.tsx">
+'use client'
+
+import { useState } from 'react'
+import { ChevronDown, Building2 } from 'lucide-react'
+
+interface Clinic {
+  id: string
+  name: string
+  slug: string
+}
+
+interface ClinicSelectProps {
+  clinics: Clinic[]
+  value: string | null // null = all clinics
+  onChange: (clinicId: string | null) => void
+}
+
+export function ClinicSelect({ clinics, value, onChange }: ClinicSelectProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const selectedClinic = value ? clinics.find(c => c.id === value) : null
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors"
+        style={{
+          borderColor: 'var(--border)',
+          background: 'var(--surface)',
+          color: 'var(--text-main)',
+        }}
+      >
+        <Building2 size={16} style={{ color: 'var(--text-muted)' }} />
+        <span className="text-sm">{selectedClinic?.name || 'Tất cả chi nhánh'}</span>
+        <ChevronDown size={16} style={{ color: 'var(--text-muted)' }} />
+      </button>
+
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-10"
+            onClick={() => setIsOpen(false)}
+          />
+          <div
+            className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg z-20 min-w-[180px]"
+            style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+          >
+            <button
+              onClick={() => {
+                onChange(null)
+                setIsOpen(false)
+              }}
+              className="w-full px-3 py-2 text-left text-sm hover:opacity-80 transition-opacity"
+              style={{
+                color: 'var(--text-main)',
+                fontWeight: value === null ? '600' : '400',
+              }}
+            >
+              Tất cả chi nhánh
+            </button>
+            <div style={{ borderTop: '1px solid var(--border)', margin: '4px 0' }} />
+            {clinics.map((clinic) => (
+              <button
+                key={clinic.id}
+                onClick={() => {
+                  onChange(clinic.id)
+                  setIsOpen(false)
+                }}
+                className="w-full px-3 py-2 text-left text-sm hover:opacity-80 transition-opacity"
+                style={{
+                  color: 'var(--text-main)',
+                  fontWeight: value === clinic.id ? '600' : '400',
+                }}
+              >
+                {clinic.name}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/filters/dashboard-filters.tsx">
+'use client'
+
+import { useEffect, useMemo, useRef } from 'react'
+import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import { DateRangePicker } from '@/components/filters/date-range-picker'
+import { ClinicSelect } from '@/components/filters/clinic-select'
+
+interface Clinic {
+  id: string
+  name: string
+  slug: string
+}
+
+interface DashboardFiltersProps {
+  clinics: Clinic[]
+  clinicId: string | null
+  startDate: string
+  endDate: string
+}
+
+function formatDateParam(date: Date): string {
+  const year = date.getFullYear()
+  const month = String(date.getMonth() + 1).padStart(2, '0')
+  const day = String(date.getDate()).padStart(2, '0')
+  return `${year}-${month}-${day}`
+}
+
+function parseDateParam(value: string): Date {
+  const parsed = new Date(value)
+  return Number.isNaN(parsed.getTime()) ? new Date() : parsed
+}
+
+export function DashboardFilters({
+  clinics,
+  clinicId,
+  startDate,
+  endDate,
+}: DashboardFiltersProps) {
+  const router = useRouter()
+  const pathname = usePathname()
+  const searchParams = useSearchParams()
+  const pendingParamsRef = useRef<URLSearchParams | null>(null)
+
+  useEffect(() => {
+    pendingParamsRef.current = new URLSearchParams(searchParams.toString())
+  }, [searchParams])
+
+  const dateRange = useMemo(
+    () => ({
+      start: parseDateParam(startDate),
+      end: parseDateParam(endDate),
+    }),
+    [startDate, endDate]
+  )
+
+  const updateSearchParams = (updates: Record<string, string | null>) => {
+    const baseParams = pendingParamsRef.current
+      ? new URLSearchParams(pendingParamsRef.current)
+      : new URLSearchParams(typeof window === 'undefined' ? '' : window.location.search)
+
+    Object.entries(updates).forEach(([key, value]) => {
+      if (value === null || value === '') {
+        baseParams.delete(key)
+        return
+      }
+      baseParams.set(key, value)
+    })
+
+    pendingParamsRef.current = new URLSearchParams(baseParams)
+    const query = baseParams.toString()
+    router.replace(query ? `${pathname}?${query}` : pathname, { scroll: false })
+  }
+
+  return (
+    <div className="flex flex-wrap items-center gap-3">
+      <DateRangePicker
+        value={dateRange}
+        onChange={(range) => {
+          updateSearchParams({
+            start: formatDateParam(range.start),
+            end: formatDateParam(range.end),
+          })
+        }}
+      />
+
+      <ClinicSelect
+        clinics={clinics}
+        value={clinicId}
+        onChange={(nextClinicId) => {
+          updateSearchParams({ clinic: nextClinicId })
+        }}
+      />
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/filters/date-range-picker.tsx">
+'use client'
+
+import { useState } from 'react'
+import { ChevronDown, Calendar } from 'lucide-react'
+
+interface DateRangePickerProps {
+  value: { start: Date; end: Date }
+  onChange: (range: { start: Date; end: Date }) => void
+}
+
+const PRESETS = [
+  { label: 'Tháng này', getValue: () => {
+    const now = new Date()
+    return { start: new Date(now.getFullYear(), now.getMonth(), 1), end: new Date(now.getFullYear(), now.getMonth() + 1, 0) }
+  }},
+  { label: 'Tháng trước', getValue: () => {
+    const now = new Date()
+    return { start: new Date(now.getFullYear(), now.getMonth() - 1, 1), end: new Date(now.getFullYear(), now.getMonth(), 0) }
+  }},
+  { label: 'Quý này', getValue: () => {
+    const now = new Date()
+    const quarter = Math.floor(now.getMonth() / 3)
+    return { start: new Date(now.getFullYear(), quarter * 3, 1), end: new Date(now.getFullYear(), quarter * 3 + 3, 0) }
+  }},
+  { label: 'Năm nay', getValue: () => {
+    const now = new Date()
+    return { start: new Date(now.getFullYear(), 0, 1), end: new Date(now.getFullYear(), 11, 31) }
+  }},
+  { label: '12 tháng gần nhất', getValue: () => {
+    const now = new Date()
+    return { start: new Date(now.getFullYear(), now.getMonth() - 11, 1), end: new Date(now.getFullYear(), now.getMonth() + 1, 0) }
+  }},
+]
+
+export function DateRangePicker({ value, onChange }: DateRangePickerProps) {
+  const [isOpen, setIsOpen] = useState(false)
+
+  const formatDateRange = () => {
+    const startStr = value.start.toLocaleDateString('vi-VN', { month: 'short', year: 'numeric' })
+    const endStr = value.end.toLocaleDateString('vi-VN', { month: 'short', year: 'numeric' })
+    if (startStr === endStr) return startStr
+    return `${startStr} - ${endStr}`
+  }
+
+  const handlePresetSelect = (preset: typeof PRESETS[0]) => {
+    const range = preset.getValue()
+    onChange(range)
+    setIsOpen(false)
+  }
+
+  return (
+    <div className="relative">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="flex items-center gap-2 px-3 py-2 rounded-lg border transition-colors"
+        style={{
+          borderColor: 'var(--border)',
+          background: 'var(--surface)',
+          color: 'var(--text-main)',
+        }}
+      >
+        <Calendar size={16} style={{ color: 'var(--text-muted)' }} />
+        <span className="text-sm">{formatDateRange()}</span>
+        <ChevronDown size={16} style={{ color: 'var(--text-muted)' }} />
+      </button>
+
+      {isOpen && (
+        <>
+          <div
+            className="fixed inset-0 z-10"
+            onClick={() => setIsOpen(false)}
+          />
+          <div
+            className="absolute top-full left-0 mt-1 py-1 rounded-lg shadow-lg z-20 min-w-[180px]"
+            style={{ background: 'var(--surface)', border: '1px solid var(--border)' }}
+          >
+            {PRESETS.map((preset) => (
+              <button
+                key={preset.label}
+                onClick={() => handlePresetSelect(preset)}
+                className="w-full px-3 py-2 text-left text-sm hover:opacity-80 transition-opacity"
+                style={{ color: 'var(--text-main)' }}
+              >
+                {preset.label}
+              </button>
+            ))}
+          </div>
+        </>
+      )}
+    </div>
+  )
+}
+</file>
+
+<file path="src/components/layout/header.tsx">
+'use client'
+
+import { Bell, Search, User } from 'lucide-react'
+
+interface HeaderProps {
+  title?: string
+}
+
+export function Header({ title = 'Dashboard' }: HeaderProps) {
+  return (
+    <header
+      className="sticky top-0 z-30 flex items-center justify-between h-16 px-6 border-b"
+      style={{
+        background: 'var(--surface)',
+        borderColor: 'var(--border)',
+      }}
+    >
+      <h1 className="text-lg font-semibold" style={{ color: 'var(--text-main)' }}>
+        {title}
+      </h1>
+
+      <div className="flex items-center gap-4">
+        {/* Search */}
+        <button
+          className="p-2 rounded-lg hover:opacity-80 transition-opacity"
+          style={{ background: 'var(--background)' }}
+        >
+          <Search size={18} style={{ color: 'var(--text-muted)' }} />
+        </button>
+
+        {/* Notifications */}
+        <button
+          className="p-2 rounded-lg hover:opacity-80 transition-opacity relative"
+          style={{ background: 'var(--background)' }}
+        >
+          <Bell size={18} style={{ color: 'var(--text-muted)' }} />
+          <span
+            className="absolute top-1 right-1 w-2 h-2 rounded-full"
+            style={{ background: 'var(--danger)' }}
+          />
+        </button>
+
+        {/* User */}
+        <button
+          className="flex items-center gap-2 p-2 rounded-lg hover:opacity-80 transition-opacity"
+          style={{ background: 'var(--background)' }}
+        >
+          <div
+            className="w-8 h-8 rounded-full flex items-center justify-center"
+            style={{ background: 'var(--primary)' }}
+          >
+            <User size={16} className="text-white" />
+          </div>
+        </button>
+      </div>
+    </header>
+  )
+}
+</file>
+
+<file path="src/components/layout/mobile-nav.tsx">
+'use client'
+
+import Link from 'next/link'
+import { usePathname } from 'next/navigation'
+import { LayoutDashboard, Wallet, User } from 'lucide-react'
+
+const navItems = [
+  { href: '/', label: 'Tổng quan', icon: LayoutDashboard },
+  { href: '/budget', label: 'Ngân sách', icon: Wallet },
+  { href: '/login', label: 'Tài khoản', icon: User },
+]
+
+export function MobileNav() {
+  const pathname = usePathname()
+
+  return (
+    <nav
+      className="fixed bottom-0 left-0 right-0 z-50 md:hidden border-t"
+      style={{
+        background: 'var(--surface)',
+        borderColor: 'var(--border)',
+      }}
+    >
+      <div className="flex items-center justify-around h-16 px-2">
+        {navItems.map((item) => {
+          const Icon = item.icon
+          const targetPath = item.href.split('#')[0] || '/'
+          const isActive =
+            targetPath === '/'
+              ? pathname === '/'
+              : pathname === targetPath || pathname.startsWith(`${targetPath}/`)
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className="flex flex-col items-center gap-1 py-2 px-3 min-w-[64px]"
+            >
+              <Icon
+                size={20}
+                style={{
+                  color: isActive ? 'var(--primary)' : 'var(--text-muted)',
+                }}
+              />
+              <span
+                className="text-xs"
+                style={{
+                  color: isActive ? 'var(--primary)' : 'var(--text-muted)',
+                }}
+              >
+                {item.label}
+              </span>
+            </Link>
+          )
+        })}
+      </div>
+    </nav>
+  )
+}
+</file>
+
+<file path="src/components/layout/sidebar.tsx">
+'use client'
+
+import Link from 'next/link'
+import { usePathname, useRouter } from 'next/navigation'
+import {
+  LayoutDashboard,
+  Wallet,
+  Settings,
+  LogOut,
+  ChevronLeft,
+  ChevronRight,
+} from 'lucide-react'
+import { useState } from 'react'
+import { createClient } from '@/lib/supabase/client'
+
+const navItems = [
+  { href: '/', label: 'Tổng quan', icon: LayoutDashboard },
+  { href: '/budget', label: 'Ngân sách', icon: Wallet },
+  { href: '/login', label: 'Tài khoản', icon: Settings },
+]
+
+export function Sidebar() {
+  const pathname = usePathname()
+  const [collapsed, setCollapsed] = useState(false)
+  const router = useRouter()
+  const supabase = createClient()
+
+  const handleLogout = async () => {
+    await supabase.auth.signOut()
+    router.push('/login')
+    router.refresh()
+  }
+
+  return (
+    <aside
+      className="fixed left-0 top-0 h-screen flex flex-col border-r transition-all duration-300 z-40"
+      style={{
+        width: collapsed ? '64px' : '240px',
+        background: 'var(--surface)',
+        borderColor: 'var(--border)',
+      }}
+    >
+      {/* Logo */}
+      <div
+        className="flex items-center justify-between px-4 h-16 border-b"
+        style={{ borderColor: 'var(--border)' }}
+      >
+        {!collapsed && (
+          <h1 className="font-bold text-lg" style={{ color: 'var(--text-main)' }}>
+            S Group
+          </h1>
+        )}
+        <button
+          onClick={() => setCollapsed(!collapsed)}
+          className="p-1.5 rounded-lg hover:opacity-80 transition-opacity"
+          style={{ background: 'var(--background)' }}
+        >
+          {collapsed ? (
+            <ChevronRight size={18} style={{ color: 'var(--text-muted)' }} />
+          ) : (
+            <ChevronLeft size={18} style={{ color: 'var(--text-muted)' }} />
+          )}
+        </button>
+      </div>
+
+      {/* Navigation */}
+      <nav className="flex-1 py-4 px-2 space-y-1 overflow-y-auto">
+        {navItems.map((item) => {
+          const Icon = item.icon
+          const targetPath = item.href.split('#')[0] || '/'
+          const isActive =
+            targetPath === '/'
+              ? pathname === '/'
+              : pathname === targetPath || pathname.startsWith(`${targetPath}/`)
+
+          return (
+            <Link
+              key={item.href}
+              href={item.href}
+              className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-colors ${
+                isActive ? '' : 'hover:opacity-80'
+              }`}
+              style={{
+                background: isActive ? 'var(--primary)' : 'transparent',
+                color: isActive ? 'white' : 'var(--text-muted)',
+              }}
+              title={collapsed ? item.label : undefined}
+            >
+              <Icon size={20} />
+              {!collapsed && <span className="text-sm font-medium">{item.label}</span>}
+            </Link>
+          )
+        })}
+      </nav>
+
+      {/* Logout */}
+      <div className="p-2 border-t" style={{ borderColor: 'var(--border)' }}>
+        <button
+          onClick={handleLogout}
+          className="flex items-center gap-3 px-3 py-2.5 rounded-lg w-full hover:opacity-80 transition-colors"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          <LogOut size={20} />
+          {!collapsed && <span className="text-sm font-medium">Đăng xuất</span>}
+        </button>
+      </div>
+    </aside>
+  )
+}
+</file>
+
+<file path="src/components/tables/clinic-comparison-table.tsx">
+import { TrendingUp, TrendingDown } from 'lucide-react'
+import type { ClinicComparison } from '@/lib/queries/comparison'
+
+interface ClinicComparisonTableProps {
+  data: ClinicComparison[]
+}
+
+const formatCurrency = (value: number) => {
+  if (value >= 1e9) return `${(value / 1e9).toFixed(1)} tỷ`
+  if (value >= 1e6) return `${(value / 1e6).toFixed(0)}M`
+  return `${(value / 1e3).toFixed(0)}K`
+}
+
+const formatPercent = (value: number) => `${value.toFixed(1)}%`
+
+export function ClinicComparisonTable({ data }: ClinicComparisonTableProps) {
+  if (!data || data.length === 0) {
+    return (
+      <div
+        className="flex items-center justify-center h-[200px] rounded-lg"
+        style={{ background: 'var(--background)' }}
+      >
+        <span style={{ color: 'var(--text-muted)' }}>Không có dữ liệu</span>
+      </div>
+    )
+  }
+
+  // Find best performer
+  const bestMargin = Math.max(...data.map(d => d.margin))
+  const bestProfit = Math.max(...data.map(d => d.profit))
+
+  return (
+    <div className="overflow-x-auto">
+      <table className="w-full">
+        <thead>
+          <tr style={{ borderBottom: '1px solid var(--border)' }}>
+            <th className="text-left py-3 px-2 text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
+              Chi nhánh
+            </th>
+            <th className="text-right py-3 px-2 text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
+              Doanh thu
+            </th>
+            <th className="text-right py-3 px-2 text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
+              Chi phí
+            </th>
+            <th className="text-right py-3 px-2 text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
+              Lợi nhuận
+            </th>
+            <th className="text-right py-3 px-2 text-sm font-medium" style={{ color: 'var(--text-muted)' }}>
+              Biên LN
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          {data.map((clinic) => (
+            <tr
+              key={clinic.clinicId}
+              className="hover:bg-gray-50 transition-colors"
+              style={{ borderBottom: '1px solid var(--border)' }}
+            >
+              <td className="py-3 px-2">
+                <div className="flex items-center gap-2">
+                  <div
+                    className="w-8 h-8 rounded-lg flex items-center justify-center text-white text-xs font-medium"
+                    style={{ background: 'var(--primary)' }}
+                  >
+                    {clinic.clinicName.charAt(0)}
+                  </div>
+                  <span className="font-medium" style={{ color: 'var(--text-main)' }}>
+                    {clinic.clinicName}
+                  </span>
+                </div>
+              </td>
+              <td className="py-3 px-2 text-right" style={{ color: 'var(--text-main)' }}>
+                {formatCurrency(clinic.revenue)}
+              </td>
+              <td className="py-3 px-2 text-right" style={{ color: 'var(--text-main)' }}>
+                {formatCurrency(clinic.costs)}
+              </td>
+              <td className="py-3 px-2 text-right">
+                <div className="flex items-center justify-end gap-1">
+                  {clinic.profit === bestProfit && clinic.profit > 0 && (
+                    <TrendingUp size={14} style={{ color: 'var(--success)' }} />
+                  )}
+                  <span
+                    className="font-medium"
+                    style={{
+                      color: clinic.profit >= 0 ? 'var(--success)' : 'var(--danger)',
+                    }}
+                  >
+                    {formatCurrency(clinic.profit)}
+                  </span>
+                </div>
+              </td>
+              <td className="py-3 px-2 text-right">
+                <div className="flex items-center justify-end gap-1">
+                  {clinic.margin === bestMargin && clinic.margin > 0 && (
+                    <TrendingUp size={14} style={{ color: 'var(--success)' }} />
+                  )}
+                  {clinic.margin < 0 && (
+                    <TrendingDown size={14} style={{ color: 'var(--danger)' }} />
+                  )}
+                  <span
+                    className="font-medium"
+                    style={{
+                      color: clinic.margin >= 0 ? 'var(--text-main)' : 'var(--danger)',
+                    }}
+                  >
+                    {formatPercent(clinic.margin)}
+                  </span>
+                </div>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        {/* Total row */}
+        <tfoot>
+          <tr style={{ borderTop: '2px solid var(--border)' }}>
+            <td className="py-3 px-2 font-semibold" style={{ color: 'var(--text-main)' }}>
+              Tổng cộng
+            </td>
+            <td className="py-3 px-2 text-right font-semibold" style={{ color: 'var(--text-main)' }}>
+              {formatCurrency(data.reduce((sum, c) => sum + c.revenue, 0))}
+            </td>
+            <td className="py-3 px-2 text-right font-semibold" style={{ color: 'var(--text-main)' }}>
+              {formatCurrency(data.reduce((sum, c) => sum + c.costs, 0))}
+            </td>
+            <td className="py-3 px-2 text-right font-semibold" style={{ color: 'var(--success)' }}>
+              {formatCurrency(data.reduce((sum, c) => sum + c.profit, 0))}
+            </td>
+            <td className="py-3 px-2 text-right font-semibold" style={{ color: 'var(--text-main)' }}>
+              {formatPercent(
+                data.reduce((sum, c) => sum + c.profit, 0) /
+                data.reduce((sum, c) => sum + c.revenue, 0) * 100 || 0
+              )}
+            </td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  )
+}
+</file>
+
+<file path="src/lib/queries/breakdown.ts">
+import { createClient } from '@/lib/supabase/server'
+
+export interface BreakdownDataPoint {
+  category: string
+  amount: number
+  percentage: number
+}
+
+// Type for the query result with joined categories
+interface ExpenseWithCategory {
+  amount: number | null
+  categories: { parent_category: string | null } | null
+}
+
+export async function getCostBreakdown(
+  clinicId?: string,
+  startDate?: Date,
+  endDate?: Date
+): Promise<BreakdownDataPoint[]> {
+  const supabase = await createClient()
+
+  // Default to current month
+  const now = new Date()
+  const start = startDate || new Date(now.getFullYear(), now.getMonth(), 1)
+  const end = endDate || new Date(now.getFullYear(), now.getMonth() + 1, 0)
+
+  // Fetch expenses with categories
+  let query = supabase
+    .from('expenses')
+    .select(`
+      amount,
+      categories (
+        parent_category
+      )
+    `)
+    .gte('date', start.toISOString().split('T')[0])
+    .lte('date', end.toISOString().split('T')[0])
+
+  if (clinicId) {
+    query = query.eq('clinic_id', clinicId)
+  }
+
+  const { data: expenses } = await query.throwOnError()
+
+  if (!expenses || expenses.length === 0) {
+    return []
+  }
+
+  // Cast to our type
+  const typedExpenses = expenses as unknown as ExpenseWithCategory[]
+
+  // Group by parent category
+  const categoryTotals: Record<string, number> = {}
+  let total = 0
+
+  for (const expense of typedExpenses) {
+    const category = expense.categories?.parent_category || 'Khác'
+    const shortCategory = category.split('. ')[1] || category // Remove "1. " prefix
+    categoryTotals[shortCategory] = (categoryTotals[shortCategory] || 0) + (expense.amount || 0)
+    total += expense.amount || 0
+  }
+
+  // Convert to array and calculate percentages
+  const result: BreakdownDataPoint[] = Object.entries(categoryTotals)
+    .map(([category, amount]) => ({
+      category,
+      amount,
+      percentage: total > 0 ? (amount / total) * 100 : 0,
+    }))
+    .sort((a, b) => b.amount - a.amount)
+
+  return result
+}
+
+// Chart colors for categories
+export const CATEGORY_COLORS: Record<string, string> = {
+  'Giá vốn hàng bán': '#3B82F6',
+  'Chi phí bán hàng': '#10B981',
+  'Chi phí quản lý doanh nghiệp': '#F59E0B',
+  'Chi phí nhân sự': '#8B5CF6',
+  'Chi phí thuế và lãi vay': '#EF4444',
+  'Chi phí khác': '#6B7280',
+}
+</file>
+
+<file path="src/lib/queries/budget-variance-calculation.test.ts">
+import { describe, expect, it } from 'vitest'
+import { buildBudgetVariance } from './budget-variance-calculation'
+
+describe('buildBudgetVariance', () => {
+  it('aggregates budgets and expenses by category in all-clinics mode', () => {
+    const budgets = [
+      {
+        category_id: 'cat-rent',
+        amount: 100,
+        categories: { name: 'Rent', parent_category: null },
+      },
+      {
+        category_id: 'cat-rent',
+        amount: 50,
+        categories: { name: 'Rent', parent_category: null },
+      },
+      {
+        category_id: 'cat-marketing',
+        amount: 300,
+        categories: { name: 'Marketing', parent_category: null },
+      },
+    ]
+
+    const expenses = [
+      { category_id: 'cat-rent', amount: 120 },
+      { category_id: 'cat-rent', amount: 30 },
+      { category_id: 'cat-marketing', amount: 330 },
+    ]
+
+    const result = buildBudgetVariance(budgets, expenses)
+
+    expect(result).toHaveLength(2)
+
+    const rent = result.find((item) => item.category === 'Rent')
+    expect(rent).toEqual({
+      category: 'Rent',
+      budget: 150,
+      actual: 150,
+      variance: 0,
+      variance_pct: 0,
+      status: 'ok',
+    })
+
+    const marketing = result.find((item) => item.category === 'Marketing')
+    expect(marketing).toEqual({
+      category: 'Marketing',
+      budget: 300,
+      actual: 330,
+      variance: 30,
+      variance_pct: 10,
+      status: 'ok',
+    })
+  })
+
+  it('returns warning and critical statuses by variance threshold', () => {
+    const budgets = [
+      {
+        category_id: 'cat-warning',
+        amount: 100,
+        categories: { name: 'Warning', parent_category: null },
+      },
+      {
+        category_id: 'cat-critical',
+        amount: 100,
+        categories: { name: 'Critical', parent_category: null },
+      },
+    ]
+
+    const expenses = [
+      { category_id: 'cat-warning', amount: 115 },
+      { category_id: 'cat-critical', amount: 121 },
+    ]
+
+    const result = buildBudgetVariance(budgets, expenses)
+
+    const warning = result.find((item) => item.category === 'Warning')
+    expect(warning?.status).toBe('warning')
+
+    const critical = result.find((item) => item.category === 'Critical')
+    expect(critical?.status).toBe('critical')
+  })
+
+  it('uses parent category suffix as short label when present', () => {
+    const budgets = [
+      {
+        category_id: 'cat-a',
+        amount: 200,
+        categories: { name: 'Some Name', parent_category: '1. Marketing' },
+      },
+    ]
+
+    const expenses = [{ category_id: 'cat-a', amount: 100 }]
+
+    const result = buildBudgetVariance(budgets, expenses)
+
+    expect(result[0]?.category).toBe('Marketing')
+  })
+})
+</file>
+
+<file path="src/lib/queries/budget-variance-calculation.ts">
+export interface BudgetVariance {
+  category: string
+  budget: number
+  actual: number
+  variance: number
+  variance_pct: number
+  status: 'ok' | 'warning' | 'critical'
+}
+
+export interface BudgetVarianceBudgetRow {
+  category_id: string
+  amount: number
+  categories: { name: string; parent_category: string | null } | null
+}
+
+export interface BudgetVarianceExpenseRow {
+  category_id: string
+  amount: number | null
+}
+
+export function buildBudgetVariance(
+  budgets: BudgetVarianceBudgetRow[],
+  expenses: BudgetVarianceExpenseRow[]
+): BudgetVariance[] {
+  const actualsByCategory: Record<string, number> = {}
+
+  for (const expense of expenses) {
+    actualsByCategory[expense.category_id] =
+      (actualsByCategory[expense.category_id] || 0) + (expense.amount || 0)
+  }
+
+  const grouped = new Map<string, { category: string; budget: number; actual: number }>()
+
+  for (const budget of budgets) {
+    const fullName = budget.categories?.name || 'Unknown'
+    const shortName = budget.categories?.parent_category?.split('. ')[1] || fullName
+
+    const existing = grouped.get(budget.category_id)
+    const budgetAmount = budget.amount || 0
+
+    if (existing) {
+      existing.budget += budgetAmount
+      continue
+    }
+
+    grouped.set(budget.category_id, {
+      category: shortName,
+      budget: budgetAmount,
+      actual: actualsByCategory[budget.category_id] || 0,
+    })
+  }
+
+  return Array.from(grouped.values()).map((item) => {
+    const variance = item.actual - item.budget
+    const variancePct = item.budget > 0 ? (variance / item.budget) * 100 : 0
+
+    let status: 'ok' | 'warning' | 'critical' = 'ok'
+    if (Math.abs(variancePct) > 20) {
+      status = 'critical'
+    } else if (Math.abs(variancePct) > 10) {
+      status = 'warning'
+    }
+
+    return {
+      category: item.category,
+      budget: item.budget,
+      actual: item.actual,
+      variance,
+      variance_pct: variancePct,
+      status,
+    }
+  })
+}
+</file>
+
+<file path="src/lib/queries/budget-variance-query.ts">
+import { createClient } from '@/lib/supabase/server'
+import {
+  buildBudgetVariance,
+  type BudgetVariance,
+  type BudgetVarianceBudgetRow,
+  type BudgetVarianceExpenseRow,
+} from './budget-variance-calculation'
+
+export async function getBudgetVariance(
+  clinicId: string | null,
+  year: number,
+  month: number
+): Promise<BudgetVariance[]> {
+  const supabase = await createClient()
+
+  const startDate = `${year}-${String(month).padStart(2, '0')}-01`
+  const endDate = `${year}-${String(month).padStart(2, '0')}-${new Date(year, month, 0).getDate()}`
+
+  let budgetQuery = supabase
+    .from('budgets')
+    .select(`
+      id,
+      category_id,
+      amount,
+      categories (name, parent_category)
+    `)
+    .eq('year', year)
+    .eq('month', month)
+
+  if (clinicId) {
+    budgetQuery = budgetQuery.eq('clinic_id', clinicId)
+  }
+
+  const { data: budgets, error: budgetError } = await budgetQuery.throwOnError()
+  if (budgetError) throw budgetError
+
+  if (!budgets || budgets.length === 0) {
+    return []
+  }
+
+  let expenseQuery = supabase
+    .from('expenses')
+    .select('category_id, amount')
+    .gte('date', startDate)
+    .lte('date', endDate)
+
+  if (clinicId) {
+    expenseQuery = expenseQuery.eq('clinic_id', clinicId)
+  }
+
+  const { data: expenses, error: expenseError } = await expenseQuery.throwOnError()
+  if (expenseError) throw expenseError
+
+  const typedExpenses = expenses as unknown as BudgetVarianceExpenseRow[]
+  const typedBudgets = budgets as unknown as BudgetVarianceBudgetRow[]
+
+  return buildBudgetVariance(typedBudgets, typedExpenses)
+}
+</file>
+
+<file path="src/lib/queries/budgets.ts">
+import { createClient } from '@/lib/supabase/server'
+
+export { getBudgetVariance } from './budget-variance-query'
+export type { BudgetVariance } from './budget-variance-calculation'
+
+export interface Budget {
+  id: string
+  clinic_id: string
+  category_id: string
+  year: number
+  month: number | null
+  amount: number
+  created_at: string
+}
+
+export interface BudgetWithDetails extends Budget {
+  clinic_name: string
+  category_name: string
+  category_code: string
+  category_parent?: string
+}
+
+export async function getBudgets(
+  clinicId?: string,
+  year?: number,
+  month?: number
+): Promise<BudgetWithDetails[]> {
+  const supabase = await createClient()
+
+  let query = supabase
+    .from('budgets')
+    .select(`
+      id,
+      clinic_id,
+      category_id,
+      year,
+      month,
+      amount,
+      created_at,
+      clinics (name),
+      categories (name, code)
+    `)
+    .order('year', { ascending: false })
+    .order('month', { ascending: false })
+
+  if (clinicId) query = query.eq('clinic_id', clinicId)
+  if (year) query = query.eq('year', year)
+  if (month !== undefined) query = query.eq('month', month)
+
+  const { data, error } = await query.throwOnError()
+  if (error) throw error
+
+  const typedData = data as unknown as Array<{
+    id: string
+    clinic_id: string
+    category_id: string
+    year: number
+    month: number | null
+    amount: number
+    created_at: string
+    clinics: { name: string } | null
+    categories: { name: string; code: string } | null
+  }>
+
+  return typedData.map((b) => ({
+    id: b.id,
+    clinic_id: b.clinic_id,
+    category_id: b.category_id,
+    year: b.year,
+    month: b.month,
+    amount: b.amount,
+    created_at: b.created_at,
+    clinic_name: b.clinics?.name || 'Unknown',
+    category_name: b.categories?.name || 'Unknown',
+    category_code: b.categories?.code || '',
+  }))
+}
+
+export async function createBudget(budget: {
+  clinic_id: string
+  category_id: string
+  year: number
+  month: number | null
+  amount: number
+}): Promise<Budget> {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('budgets')
+    .insert(budget as never)
+    .select()
+    .single()
+    .throwOnError()
+
+  if (error) throw error
+  return data as unknown as Budget
+}
+
+export async function updateBudget(
+  id: string,
+  updates: Partial<{
+    clinic_id: string
+    category_id: string
+    year: number
+    month: number | null
+    amount: number
+  }>
+): Promise<Budget> {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('budgets')
+    .update(updates as never)
+    .eq('id', id)
+    .select()
+    .single()
+    .throwOnError()
+
+  if (error) throw error
+  return data as unknown as Budget
+}
+
+export async function deleteBudget(id: string): Promise<void> {
+  const supabase = await createClient()
+
+  const { error } = await supabase
+    .from('budgets')
+    .delete()
+    .eq('id', id)
+    .throwOnError()
+
+  if (error) throw error
+}
+
+export async function upsertBudget(budget: {
+  clinic_id: string
+  category_id: string
+  year: number
+  month: number | null
+  amount: number
+}): Promise<Budget> {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('budgets')
+    .upsert(budget as never, {
+      onConflict: 'clinic_id,category_id,year,month',
+    })
+    .select()
+    .single()
+    .throwOnError()
+
+  if (error) throw error
+  return data as unknown as Budget
+}
+</file>
+
+<file path="src/lib/queries/clinics.ts">
+import { createClient } from '@/lib/supabase/server'
+
+export interface Clinic {
+  id: string
+  name: string
+  slug: string
+}
+
+export async function getClinics(): Promise<Clinic[]> {
+  const supabase = await createClient()
+
+  const { data, error } = await supabase
+    .from('clinics')
+    .select('id, name, slug')
+    .order('name')
+
+  if (error) throw error
+  return (data as unknown as Clinic[]) || []
+}
+</file>
+
+<file path="src/lib/queries/comparison.ts">
+import { createClient } from '@/lib/supabase/server'
+
+export interface ClinicComparison {
+  clinicId: string
+  clinicName: string
+  clinicSlug: string
+  revenue: number
+  costs: number
+  profit: number
+  margin: number
+}
+
+interface ClinicRow {
+  id: string
+  name: string
+  slug: string
+}
+
+export async function getClinicComparison(
+  startDate?: Date,
+  endDate?: Date
+): Promise<ClinicComparison[]> {
+  const supabase = await createClient()
+
+  // Get all clinics
+  const { data: clinics } = await supabase
+    .from('clinics')
+    .select('id, name, slug')
+    .order('name')
+    .throwOnError()
+
+  if (!clinics || clinics.length === 0) {
+    return []
+  }
+
+  // Cast to our type
+  const typedClinics = clinics as unknown as ClinicRow[]
+
+  // Default to current month
+  const now = new Date()
+  const start = startDate || new Date(now.getFullYear(), now.getMonth(), 1)
+  const end = endDate || new Date(now.getFullYear(), now.getMonth() + 1, 0)
+
+  const results: ClinicComparison[] = []
+
+  for (const clinic of typedClinics) {
+    // Fetch revenue for this clinic
+    const { data: revenueData } = await supabase
+      .from('revenue')
+      .select('total')
+      .eq('clinic_id', clinic.id)
+      .gte('date', start.toISOString().split('T')[0])
+      .lte('date', end.toISOString().split('T')[0])
+      .throwOnError()
+
+    // Fetch expenses for this clinic
+    const { data: expenseData } = await supabase
+      .from('expenses')
+      .select('amount')
+      .eq('clinic_id', clinic.id)
+      .gte('date', start.toISOString().split('T')[0])
+      .lte('date', end.toISOString().split('T')[0])
+      .throwOnError()
+
+    // Cast to proper types
+    const typedRevenue = revenueData as unknown as { total: number | null }[]
+    const typedExpenses = expenseData as unknown as { amount: number | null }[]
+
+    const revenue = typedRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
+    const costs = typedExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
+    const profit = revenue - costs
+    const margin = revenue > 0 ? (profit / revenue) * 100 : 0
+
+    results.push({
+      clinicId: clinic.id,
+      clinicName: clinic.name,
+      clinicSlug: clinic.slug,
+      revenue,
+      costs,
+      profit,
+      margin,
+    })
+  }
+
+  // Sort by revenue descending
+  return results.sort((a, b) => b.revenue - a.revenue)
+}
+</file>
+
+<file path="src/lib/queries/kpis.ts">
+import { createClient } from '@/lib/supabase/server'
+
+export interface KPIData {
+  totalRevenue: number
+  totalCosts: number
+  netProfit: number
+  profitMargin: number
+  previousRevenue: number
+  previousCosts: number
+}
+
+export async function getKPIs(
+  clinicId?: string,
+  startDate?: Date,
+  endDate?: Date
+): Promise<KPIData> {
+  const supabase = await createClient()
+
+  // Default to current month if no dates provided
+  const now = new Date()
+  const currentStart = startDate || new Date(now.getFullYear(), now.getMonth(), 1)
+  const currentEnd = endDate || new Date(now.getFullYear(), now.getMonth() + 1, 0)
+
+  // Previous period for comparison
+  const daysDiff = currentEnd.getTime() - currentStart.getTime()
+  const previousStart = new Date(currentStart.getTime() - daysDiff - 86400000)
+  const previousEnd = new Date(currentStart.getTime() - 86400000)
+
+  let currentRevenueQuery = supabase
+    .from('revenue')
+    .select('total')
+    .gte('date', currentStart.toISOString().split('T')[0])
+    .lte('date', currentEnd.toISOString().split('T')[0])
+
+  let currentExpensesQuery = supabase
+    .from('expenses')
+    .select('amount')
+    .gte('date', currentStart.toISOString().split('T')[0])
+    .lte('date', currentEnd.toISOString().split('T')[0])
+
+  let prevRevenueQuery = supabase
+    .from('revenue')
+    .select('total')
+    .gte('date', previousStart.toISOString().split('T')[0])
+    .lte('date', previousEnd.toISOString().split('T')[0])
+
+  let prevExpensesQuery = supabase
+    .from('expenses')
+    .select('amount')
+    .gte('date', previousStart.toISOString().split('T')[0])
+    .lte('date', previousEnd.toISOString().split('T')[0])
+
+  if (clinicId) {
+    currentRevenueQuery = currentRevenueQuery.eq('clinic_id', clinicId)
+    currentExpensesQuery = currentExpensesQuery.eq('clinic_id', clinicId)
+    prevRevenueQuery = prevRevenueQuery.eq('clinic_id', clinicId)
+    prevExpensesQuery = prevExpensesQuery.eq('clinic_id', clinicId)
+  }
+
+  const { data: currentRevenue } = await currentRevenueQuery.throwOnError()
+  const { data: currentExpenses } = await currentExpensesQuery.throwOnError()
+  const { data: prevRevenue } = await prevRevenueQuery.throwOnError()
+  const { data: prevExpenses } = await prevExpensesQuery.throwOnError()
+
+  // Calculate totals with type assertions
+  const typedCurrentRevenue = currentRevenue as unknown as { total: number | null }[]
+  const typedCurrentExpenses = currentExpenses as unknown as { amount: number | null }[]
+  const typedPrevRevenue = prevRevenue as unknown as { total: number | null }[]
+  const typedPrevExpenses = prevExpenses as unknown as { amount: number | null }[]
+
+  const totalRevenue = typedCurrentRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
+  const totalCosts = typedCurrentExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
+  const previousRevenue = typedPrevRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
+  const previousCosts = typedPrevExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
+
+  const netProfit = totalRevenue - totalCosts
+  const profitMargin = totalRevenue > 0 ? (netProfit / totalRevenue) * 100 : 0
+
+  return {
+    totalRevenue,
+    totalCosts,
+    netProfit,
+    profitMargin,
+    previousRevenue,
+    previousCosts,
+  }
+}
+
+export function formatCurrency(amount: number): string {
+  if (amount >= 1e9) {
+    return `₫${(amount / 1e9).toFixed(2)} tỷ`
+  }
+  if (amount >= 1e6) {
+    return `₫${(amount / 1e6).toFixed(0)} triệu`
+  }
+  return `₫${amount.toLocaleString('vi-VN')}`
+}
+
+export function formatPercent(value: number): string {
+  return `${value.toFixed(1)}%`
+}
+
+export function calculateChange(current: number, previous: number): {
+  value: number
+  percent: string
+  type: 'up' | 'down'
+} {
+  if (previous === 0) {
+    return { value: 0, percent: 'N/A', type: 'up' }
+  }
+  const change = ((current - previous) / previous) * 100
+  return {
+    value: change,
+    percent: `${change >= 0 ? '+' : ''}${change.toFixed(1)}%`,
+    type: change >= 0 ? 'up' : 'down',
+  }
+}
+</file>
+
+<file path="src/lib/queries/trends.ts">
+import { createClient } from '@/lib/supabase/server'
+
+export interface TrendDataPoint {
+  month: string
+  monthLabel: string
+  revenue: number
+  costs: number
+  profit: number
+}
+
+export async function getTrendData(
+  clinicId?: string,
+  months: number = 12
+): Promise<TrendDataPoint[]> {
+  const supabase = await createClient()
+  const data: TrendDataPoint[] = []
+
+  const now = new Date()
+
+  for (let i = months - 1; i >= 0; i--) {
+    const monthDate = new Date(now.getFullYear(), now.getMonth() - i, 1)
+    const monthEnd = new Date(now.getFullYear(), now.getMonth() - i + 1, 0)
+    const monthStr = monthDate.toISOString().slice(0, 7) // YYYY-MM
+    const monthLabel = monthDate.toLocaleDateString('vi-VN', { month: 'short', year: '2-digit' })
+
+    // Fetch revenue for this month
+    let revenueQuery = supabase
+      .from('revenue')
+      .select('total')
+      .gte('date', monthDate.toISOString().split('T')[0])
+      .lte('date', monthEnd.toISOString().split('T')[0])
+
+    if (clinicId) {
+      revenueQuery = revenueQuery.eq('clinic_id', clinicId)
+    }
+
+    const { data: revenueData } = await revenueQuery.throwOnError()
+
+    // Fetch expenses for this month
+    let expenseQuery = supabase
+      .from('expenses')
+      .select('amount')
+      .gte('date', monthDate.toISOString().split('T')[0])
+      .lte('date', monthEnd.toISOString().split('T')[0])
+
+    if (clinicId) {
+      expenseQuery = expenseQuery.eq('clinic_id', clinicId)
+    }
+
+    const { data: expenseData } = await expenseQuery.throwOnError()
+
+    // Type assertions
+    const typedRevenue = revenueData as unknown as { total: number | null }[]
+    const typedExpenses = expenseData as unknown as { amount: number | null }[]
+
+    const revenue = typedRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
+    const costs = typedExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
+
+    data.push({
+      month: monthStr,
+      monthLabel,
+      revenue,
+      costs,
+      profit: revenue - costs,
+    })
+  }
+
+  return data
+}
+</file>
+
+<file path="src/lib/supabase/client.ts">
+import { createBrowserClient } from '@supabase/ssr'
+import type { Database } from '@/types/database'
+
+export function createClient() {
+  return createBrowserClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+  )
+}
+</file>
+
+<file path="src/lib/supabase/server.ts">
+import { createServerClient } from '@supabase/ssr'
+import { cookies } from 'next/headers'
+import type { Database } from '@/types/database'
+
+export async function createClient() {
+  const cookieStore = await cookies()
+
+  return createServerClient<Database>(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return cookieStore.getAll()
+        },
+        setAll(cookiesToSet) {
+          try {
+            cookiesToSet.forEach(({ name, value, options }) =>
+              cookieStore.set(name, value, options)
+            )
+          } catch {
+            // The `setAll` method was called from a Server Component.
+            // This can be ignored if you have middleware refreshing user sessions.
+          }
+        },
+      },
+    }
+  )
+}
+</file>
+
+<file path="src/scripts/import-csv.ts">
+/**
+ * CSV Import Script for S Group Dashboard
+ *
+ * Usage: npx dotenv-cli -e .env.local -- npx tsx src/scripts/import-csv.ts
+ *
+ * This script imports:
+ * - Expenses from Chi_phi_*.csv files
+ * - Revenue from Doanh_thu_*.csv files
+ * - Categories from Master_data_2026.csv
+ */
+
+import { createClient } from '@supabase/supabase-js'
+import { parse } from 'csv-parse/sync'
+import * as fs from 'fs'
+import * as path from 'path'
+
+// Supabase client with service role for admin access
+const supabase = createClient(
+  process.env.NEXT_PUBLIC_SUPABASE_URL!,
+  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
+)
+
+// CSV directory path (relative to project root)
+const CSV_DIR = path.resolve(__dirname, '../../..')
+
+// Clinic mapping
+const CLINIC_SLUGS: Record<string, string> = {
+  'Chi_phi_Implant.csv': 'implant',
+  'Chi_phi_San.csv': 'san',
+  'Chi_phi_Teennie.csv': 'teennie',
+  'Doanh_thu_Implant.csv': 'implant',
+  'Doanh_thu_San.csv': 'san',
+  'Doanh_thu_Teennie.csv': 'teennie',
+}
+
+// Category mapping from Vietnamese to code
+const CATEGORY_MAPPING: Record<string, string> = {
+  'Tiền vật liệu': 'GIAVON.06',
+  'Tiền Lab': 'GIAVON.03',
+  'Marketing chạy Quảng cáo': 'CPBH.04',
+  'Hoa hồng giới thiệu': 'CPBH.07',
+  'KPI': 'QLDN.NS.03',
+  'Tặng phẩm khách': 'CPBH.11',
+  'Đi trường': 'CPBH.13',
+  'Hành chính MKT': 'CPBH.14',
+  'SEO': 'CPBH.04',
+  'Tiktok': 'CPBH.01',
+  'Cộng tác viên': 'CPBH.02',
+  'Quỹ thưởng gián tiếp': 'CPBH.12',
+  'Chi phí Mặt bằng': 'QLDN.01',
+  'Thuê bằng': 'QLDN.03',
+  'Sửa chữa': 'QLDN.04',
+  'Điện + Nước': 'QLDN.09',
+  'Tiền thuê xe': 'QLDN.08',
+  'Mua đồ hành chính': 'QLDN.10',
+  'Lương': 'QLDN.NS.01',
+  'Bảo hiểm': 'QLDN.NS.06',
+  'Đào tạo': 'QLDN.NS.08',
+  'Mua sắm tài sản': 'KHAC.07',
+  'Tiếp khách': 'KHAC.05',
+  'tiếp khách': 'KHAC.05',
+  'Tiền dự trù phát sinh': 'KHAC.02',
+  'Tiền thưởng nóng + liên hoan': 'QLDN.NS.04',
+  'Quỹ thưởng tổng cuối năm': 'KHAC.01',
+  'Phí cà thẻ': 'KHAC.08',
+}
+
+interface ClinicCache {
+  [slug: string]: string
+}
+
+interface CategoryCache {
+  [code: string]: string
+}
+
+async function getClinicIds(): Promise<ClinicCache> {
+  const { data, error } = await supabase
+    .from('clinics')
+    .select('id, slug')
+
+  if (error) throw error
+
+  const cache: ClinicCache = {}
+  data?.forEach((c: { id: string; slug: string }) => {
+    cache[c.slug] = c.id
+  })
+  return cache
+}
+
+async function getCategoryIds(): Promise<CategoryCache> {
+  const { data, error } = await supabase
+    .from('categories')
+    .select('id, code')
+
+  if (error) throw error
+
+  const cache: CategoryCache = {}
+  data?.forEach((c: { id: string; code: string }) => {
+    cache[c.code] = c.id
+  })
+  return cache
+}
+
+function parseAmount(value: string): number {
+  if (!value) return 0
+  // Remove dots and convert to number
+  const cleaned = value.replace(/\./g, '').replace(/,/g, '.')
+  return parseFloat(cleaned) || 0
+}
+
+function parseMonth(monthStr: string): { year: number; month: number } {
+  // Format: "2024.01" or "202401"
+  const parts = monthStr.split('.')
+  if (parts.length === 2) {
+    return { year: parseInt(parts[0]), month: parseInt(parts[1]) }
+  }
+  // Try format YYYYMM
+  if (monthStr.length === 6) {
+    return {
+      year: parseInt(monthStr.slice(0, 4)),
+      month: parseInt(monthStr.slice(4, 6))
+    }
+  }
+  throw new Error(`Invalid month format: ${monthStr}`)
+}
+
+function getMonthDate(monthStr: string): string {
+  const { year, month } = parseMonth(monthStr)
+  // Return first day of month as ISO date
+  return `${year}-${String(month).padStart(2, '0')}-01`
+}
+
+async function importExpenses(clinicIds: ClinicCache, categoryIds: CategoryCache) {
+  console.log('\n📊 Importing expenses...')
+
+  const expenseFiles = ['Chi_phi_Implant.csv', 'Chi_phi_San.csv', 'Chi_phi_Teennie.csv']
+  let totalImported = 0
+
+  for (const file of expenseFiles) {
+    const filePath = path.join(CSV_DIR, file)
+    if (!fs.existsSync(filePath)) {
+      console.log(`  ⚠️  File not found: ${file}`)
+      continue
+    }
+
+    const clinicSlug = CLINIC_SLUGS[file]
+    const clinicId = clinicIds[clinicSlug]
+    if (!clinicId) {
+      console.log(`  ⚠️  Clinic not found: ${clinicSlug}`)
+      continue
+    }
+
+    console.log(`  📁 Processing ${file}...`)
+
+    const content = fs.readFileSync(filePath, 'utf-8')
+    const records = parse(content, {
+      columns: true,
+      skip_empty_lines: true,
+      relax_column_count: true,
+    }) as Record<string, string>[]
+
+    const expenses: Array<{
+      clinic_id: string
+      category_id: string
+      date: string
+      description: string | null
+      amount: number
+      source_type: string
+    }> = []
+
+    for (const record of records) {
+      const monthStr = record['THÁNG']
+      const description = record['NỘI DUNG CHI']
+      const category = record['PHÂN LOẠI']
+      const amount = parseAmount(record['SỐ TIỀN'])
+
+      if (!monthStr || amount === 0) continue
+
+      const categoryCode = CATEGORY_MAPPING[category] || 'KHAC.03'
+      const categoryId = categoryIds[categoryCode]
+      if (!categoryId) continue
+
+      expenses.push({
+        clinic_id: clinicId,
+        category_id: categoryId,
+        date: getMonthDate(monthStr),
+        description: description || null,
+        amount,
+        source_type: 'csv_import',
+      })
+    }
+
+    // Insert in batches of 1000
+    const batchSize = 1000
+    for (let i = 0; i < expenses.length; i += batchSize) {
+      const batch = expenses.slice(i, i + batchSize)
+      const { error } = await supabase
+        .from('expenses')
+        .insert(batch)
+
+      if (error) {
+        console.log(`  ❌ Error inserting batch: ${error.message}`)
+      } else {
+        totalImported += batch.length
+      }
+    }
+
+    console.log(`  ✅ Imported ${expenses.length} records from ${file}`)
+  }
+
+  console.log(`\n✨ Total expenses imported: ${totalImported}`)
+}
+
+async function importRevenue(clinicIds: ClinicCache) {
+  console.log('\n💰 Importing revenue...')
+
+  const revenueFiles = ['Doanh_thu_Implant.csv', 'Doanh_thu_San.csv', 'Doanh_thu_Teennie.csv']
+  let totalImported = 0
+
+  for (const file of revenueFiles) {
+    const filePath = path.join(CSV_DIR, file)
+    if (!fs.existsSync(filePath)) {
+      console.log(`  ⚠️  File not found: ${file}`)
+      continue
+    }
+
+    const clinicSlug = CLINIC_SLUGS[file]
+    const clinicId = clinicIds[clinicSlug]
+    if (!clinicId) {
+      console.log(`  ⚠️  Clinic not found: ${clinicSlug}`)
+      continue
+    }
+
+    console.log(`  📁 Processing ${file}...`)
+
+    const content = fs.readFileSync(filePath, 'utf-8')
+    const records = parse(content, {
+      columns: true,
+      skip_empty_lines: true,
+    }) as Record<string, string>[] as Record<string, string>[]
+
+    const revenueData: Array<{
+      clinic_id: string
+      date: string
+      cash: number
+      card: number
+      card_net: number
+      transfer: number
+      installment: number
+      deposit: number
+      total: number
+    }> = []
+
+    for (const record of records) {
+      const monthStr = record['THÁNG']
+      const dateStr = record['NGÀY']
+
+      if (!monthStr) continue
+
+      let date: string
+      if (dateStr) {
+        // Parse DD/MM/YYYY format
+        const parts = dateStr.split('/')
+        if (parts.length === 3) {
+          date = `${parts[2]}-${parts[1].padStart(2, '0')}-${parts[0].padStart(2, '0')}`
+        } else {
+          date = getMonthDate(monthStr)
+        }
+      } else {
+        date = getMonthDate(monthStr)
+      }
+
+      const cash = parseAmount(record['TIỀN MẶT'])
+      const card = parseAmount(record['CÀ THẺ'])
+      const cardNet = parseAmount(record['THỰC NHẬN CÀ THẺ'])
+      const transfer = parseAmount(record['CHUYỂN KHOẢN'])
+      const installment = parseAmount(record['TRẢ GÓP'])
+      const deposit = parseAmount(record['TRẢ CỌC'])
+      const total = parseAmount(record['TỔNG']) || cash + card + transfer + installment + deposit
+
+      if (total === 0) continue
+
+      revenueData.push({
+        clinic_id: clinicId,
+        date,
+        cash,
+        card,
+        card_net: cardNet,
+        transfer,
+        installment,
+        deposit,
+        total,
+      })
+    }
+
+    // Insert in batches of 1000
+    const batchSize = 1000
+    for (let i = 0; i < revenueData.length; i += batchSize) {
+      const batch = revenueData.slice(i, i + batchSize)
+      const { error } = await supabase
+        .from('revenue')
+        .insert(batch)
+
+      if (error) {
+        console.log(`  ❌ Error inserting batch: ${error.message}`)
+      } else {
+        totalImported += batch.length
+      }
+    }
+
+    console.log(`  ✅ Imported ${revenueData.length} records from ${file}`)
+  }
+
+  console.log(`\n✨ Total revenue imported: ${totalImported}`)
+}
+
+async function main() {
+  console.log('🚀 Starting CSV import...')
+  console.log(`📁 CSV directory: ${CSV_DIR}`)
+
+  // Get clinic and category IDs
+  console.log('\n📋 Fetching clinic and category IDs...')
+  const clinicIds = await getClinicIds()
+  const categoryIds = await getCategoryIds()
+
+  console.log(`  Found ${Object.keys(clinicIds).length} clinics`)
+  console.log(`  Found ${Object.keys(categoryIds).length} categories`)
+
+  // Import expenses
+  await importExpenses(clinicIds, categoryIds)
+
+  // Import revenue
+  await importRevenue(clinicIds)
+
+  console.log('\n✅ Import complete!')
+}
+
+main().catch(console.error)
+</file>
+
+<file path="src/types/database.ts">
+export type Json =
+  | string
+  | number
+  | boolean
+  | null
+  | { [key: string]: Json | undefined }
+  | Json[]
+
+export interface Database {
+  public: {
+    Tables: {
+      clinics: {
+        Row: {
+          id: string
+          name: string
+          slug: string
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          name: string
+          slug: string
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          name?: string
+          slug?: string
+          created_at?: string
+        }
+      }
+      categories: {
+        Row: {
+          id: string
+          code: string
+          name: string
+          parent_category: string | null
+          expense_type: 'fixed' | 'variable' | null
+        }
+        Insert: {
+          id?: string
+          code: string
+          name: string
+          parent_category?: string | null
+          expense_type?: 'fixed' | 'variable' | null
+        }
+        Update: {
+          id?: string
+          code?: string
+          name?: string
+          parent_category?: string | null
+          expense_type?: 'fixed' | 'variable' | null
+        }
+      }
+      user_profiles: {
+        Row: {
+          id: string
+          role: 'ceo' | 'c_suite' | 'clinic_manager'
+          clinic_id: string | null
+          created_at: string
+        }
+        Insert: {
+          id: string
+          role: 'ceo' | 'c_suite' | 'clinic_manager'
+          clinic_id?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          role?: 'ceo' | 'c_suite' | 'clinic_manager'
+          clinic_id?: string | null
+          created_at?: string
+        }
+      }
+      budgets: {
+        Row: {
+          id: string
+          clinic_id: string
+          category_id: string
+          year: number
+          month: number | null
+          amount: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          clinic_id: string
+          category_id: string
+          year: number
+          month?: number | null
+          amount: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          clinic_id?: string
+          category_id?: string
+          year?: number
+          month?: number | null
+          amount?: number
+          created_at?: string
+        }
+      }
+      expenses: {
+        Row: {
+          id: string
+          clinic_id: string
+          category_id: string
+          date: string
+          description: string | null
+          amount: number
+          source_type: string | null
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          clinic_id: string
+          category_id: string
+          date: string
+          description?: string | null
+          amount: number
+          source_type?: string | null
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          clinic_id?: string
+          category_id?: string
+          date?: string
+          description?: string | null
+          amount?: number
+          source_type?: string | null
+          created_at?: string
+        }
+      }
+      revenue: {
+        Row: {
+          id: string
+          clinic_id: string
+          date: string
+          cash: number
+          card: number
+          card_net: number
+          transfer: number
+          installment: number
+          deposit: number
+          total: number
+          created_at: string
+        }
+        Insert: {
+          id?: string
+          clinic_id: string
+          date: string
+          cash?: number
+          card?: number
+          card_net?: number
+          transfer?: number
+          installment?: number
+          deposit?: number
+          total: number
+          created_at?: string
+        }
+        Update: {
+          id?: string
+          clinic_id?: string
+          date?: string
+          cash?: number
+          card?: number
+          card_net?: number
+          transfer?: number
+          installment?: number
+          deposit?: number
+          total?: number
+          created_at?: string
+        }
+      }
+    }
+    Views: {
+      [_ in never]: never
+    }
+    Functions: {
+      [_ in never]: never
+    }
+    Enums: {
+      [_ in never]: never
+    }
+  }
+}
+
+// Convenience types
+export type Clinic = Database['public']['Tables']['clinics']['Row']
+export type Category = Database['public']['Tables']['categories']['Row']
+export type UserProfile = Database['public']['Tables']['user_profiles']['Row']
+export type Budget = Database['public']['Tables']['budgets']['Row']
+export type Expense = Database['public']['Tables']['expenses']['Row']
+export type Revenue = Database['public']['Tables']['revenue']['Row']
+</file>
+
+<file path="src/proxy.ts">
+import { createServerClient } from '@supabase/ssr'
+import { NextResponse, type NextRequest } from 'next/server'
+
+export async function proxy(request: NextRequest) {
+  let supabaseResponse = NextResponse.next({
+    request,
+  })
+
+  const supabase = createServerClient(
+    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!,
+    {
+      cookies: {
+        getAll() {
+          return request.cookies.getAll()
+        },
+        setAll(cookiesToSet) {
+          cookiesToSet.forEach(({ name, value }) => request.cookies.set(name, value))
+          supabaseResponse = NextResponse.next({
+            request,
+          })
+          cookiesToSet.forEach(({ name, value, options }) =>
+            supabaseResponse.cookies.set(name, value, options)
+          )
+        },
+      },
+    }
+  )
+
+  const {
+    data: { user },
+  } = await supabase.auth.getUser()
+
+  const pathname = request.nextUrl.pathname
+  const isPublicPath = pathname === '/login' || pathname.startsWith('/auth/callback/') || pathname === '/auth/callback'
+
+  if (!user && !isPublicPath) {
+    const url = request.nextUrl.clone()
+    url.pathname = '/login'
+    return NextResponse.redirect(url)
+  }
+
+  if (user && request.nextUrl.pathname === '/login') {
+    const url = request.nextUrl.clone()
+    url.pathname = '/'
+    return NextResponse.redirect(url)
+  }
+
+  return supabaseResponse
+}
+
+export const config = {
+  matcher: [
+    '/((?!_next/static|_next/image|favicon.ico|manifest.json|sw.js|offline|.*\\.(?:svg|png|jpg|jpeg|gif|webp)$).*)',
+  ],
+}
+</file>
+
+<file path="supabase/migrations/001_initial_schema.sql">
+-- S Group Dashboard Database Schema
+-- Run this in Supabase SQL Editor
+
+-- Enable UUID extension
+CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
+
+-- ============================================
+-- CLINICS TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS clinics (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  name TEXT NOT NULL,
+  slug TEXT UNIQUE NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Insert default clinics
+INSERT INTO clinics (name, slug) VALUES
+  ('Nha khoa Implant', 'implant'),
+  ('Nha khoa San', 'san'),
+  ('Nha khoa Teennie', 'teennie')
+ON CONFLICT (slug) DO NOTHING;
+
+-- ============================================
+-- CATEGORIES TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS categories (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  code TEXT UNIQUE NOT NULL,
+  name TEXT NOT NULL,
+  parent_category TEXT,
+  expense_type TEXT CHECK (expense_type IN ('fixed', 'variable')),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Insert categories from Master_data_2026.csv
+INSERT INTO categories (code, name, parent_category, expense_type) VALUES
+  -- Giá vốn hàng bán
+  ('GIAVON.01', 'Vật tư nha khoa (điều trị - nội nha - nha chu)', '1. Giá vốn hàng bán', 'variable'),
+  ('GIAVON.02', 'Vật liệu implant', '1. Giá vốn hàng bán', 'variable'),
+  ('GIAVON.03', 'Lab răng sứ', '1. Giá vốn hàng bán', 'variable'),
+  ('GIAVON.04', 'Mắc cài', '1. Giá vốn hàng bán', 'variable'),
+  ('GIAVON.05', 'Thuốc - hoá chất', '1. Giá vốn hàng bán', 'variable'),
+  ('GIAVON.06', 'Vật tư tiêu hao', '1. Giá vốn hàng bán', 'variable'),
+  ('GIAVON.07', 'Khác', '1. Giá vốn hàng bán', 'variable'),
+  -- Chi phí bán hàng
+  ('CPBH.01', 'Chi phí quảng cáo Meta/Google/Tiktok', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.02', 'Agency hoặc freelancer', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.03', 'Chi phí sản xuất nội dung', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.04', 'Marketing chạy quảng cáo', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.05', 'Chi phí video, hình ảnh', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.06', 'KOL/KOC', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.07', 'Chi phí referral/Hoa hồng giới thiệu', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.08', 'Event marketing', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.09', 'Quà tặng - voucher', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.10', 'In ấn POSM', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.11', 'Tặng phẩm khách', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.12', 'Thưởng gián tiếp', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.13', 'Đi trường', '2. Chi phí bán hàng', 'variable'),
+  ('CPBH.14', 'Hành chính MKT', '2. Chi phí bán hàng', 'variable'),
+  -- Chi phí quản lý doanh nghiệp
+  ('QLDN.01', 'Thuê mặt bằng', '3. Chi phí quản lý doanh nghiệp', 'fixed'),
+  ('QLDN.02', 'Dọn vệ sinh', '3. Chi phí quản lý doanh nghiệp', 'fixed'),
+  ('QLDN.03', 'Thuê bằng bác sĩ', '3. Chi phí quản lý doanh nghiệp', 'fixed'),
+  ('QLDN.04', 'Bảo trì - sửa chữa - khử khuẩn', '3. Chi phí quản lý doanh nghiệp', 'variable'),
+  ('QLDN.05', 'Văn phòng phẩm', '3. Chi phí quản lý doanh nghiệp', 'variable'),
+  ('QLDN.06', 'Chi phí phần mềm (CRM, kế toán, cloud)', '3. Chi phí quản lý doanh nghiệp', 'fixed'),
+  ('QLDN.07', 'Chi phí ngân hàng - POS', '3. Chi phí quản lý doanh nghiệp', 'fixed'),
+  ('QLDN.08', 'Thuê xe, bãi xe', '3. Chi phí quản lý doanh nghiệp', 'fixed'),
+  ('QLDN.09', 'Điện, nước, wifi', '3. Chi phí quản lý doanh nghiệp', 'variable'),
+  ('QLDN.10', 'Hành chính', '3. Chi phí quản lý doanh nghiệp', 'variable'),
+  -- Chi phí nhân sự
+  ('QLDN.NS.01', 'Lương cố định bộ phận văn phòng', '4. Chi phí nhân sự', 'fixed'),
+  ('QLDN.NS.02', 'Lương cố định bộ phận kinh doanh', '4. Chi phí nhân sự', 'fixed'),
+  ('QLDN.NS.03', 'Thưởng KPI', '4. Chi phí nhân sự', 'variable'),
+  ('QLDN.NS.04', 'Thưởng nóng, liên hoan', '4. Chi phí nhân sự', 'variable'),
+  ('QLDN.NS.05', 'Phụ cấp chuyên môn', '4. Chi phí nhân sự', 'fixed'),
+  ('QLDN.NS.06', 'Bảo hiểm', '4. Chi phí nhân sự', 'fixed'),
+  ('QLDN.NS.07', 'Thuế TNCN', '4. Chi phí nhân sự', 'fixed'),
+  ('QLDN.NS.08', 'Đào tạo nhân sự', '4. Chi phí nhân sự', 'variable'),
+  -- Chi phí thuế và lãi vay
+  ('THUE.01', 'Thuế GTGT/ TNCN/ TNDN/ môn bài/ lệ phí', '5. Chi phí thuế và lãi vay', 'variable'),
+  ('THUE.02', 'Chi phí lãi vay', '5. Chi phí thuế và lãi vay', 'variable'),
+  ('THUE.03', 'Phường, quận', '5. Chi phí thuế và lãi vay', 'variable'),
+  -- Chi phí khác
+  ('KHAC.01', 'Thưởng tổng cuối năm', '6. Chi phí khác', 'fixed'),
+  ('KHAC.02', 'Quỹ dự phòng', '6. Chi phí khác', 'variable'),
+  ('KHAC.03', 'Chi phí phát sinh bất thường', '6. Chi phí khác', 'variable'),
+  ('KHAC.04', 'Chi phí phúc lợi nội bộ', '6. Chi phí khác', 'fixed'),
+  ('KHAC.05', 'Tiếp khách phòng khám', '6. Chi phí khác', 'variable'),
+  ('KHAC.06', 'Tiếp khách ngoài', '6. Chi phí khác', 'variable'),
+  ('KHAC.07', 'Mua sắm tài sản', '6. Chi phí khác', 'variable'),
+  ('KHAC.08', 'Phí cà thẻ', '6. Chi phí khác', 'variable'),
+  ('KHAC.09', 'Giới thiệu nhân sự', '6. Chi phí khác', 'variable')
+ON CONFLICT (code) DO NOTHING;
+
+-- ============================================
+-- USER PROFILES TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS user_profiles (
+  id UUID PRIMARY KEY REFERENCES auth.users(id) ON DELETE CASCADE,
+  role TEXT NOT NULL CHECK (role IN ('ceo', 'c_suite', 'clinic_manager')),
+  clinic_id UUID REFERENCES clinics(id),
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- ============================================
+-- BUDGETS TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS budgets (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  clinic_id UUID REFERENCES clinics(id) NOT NULL,
+  category_id UUID REFERENCES categories(id) NOT NULL,
+  year INT NOT NULL,
+  month INT CHECK (month BETWEEN 1 AND 12),
+  amount DECIMAL(15,2) NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW(),
+  updated_at TIMESTAMPTZ DEFAULT NOW(),
+  UNIQUE(clinic_id, category_id, year, month)
+);
+
+-- ============================================
+-- EXPENSES TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS expenses (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  clinic_id UUID REFERENCES clinics(id) NOT NULL,
+  category_id UUID REFERENCES categories(id) NOT NULL,
+  date DATE NOT NULL,
+  description TEXT,
+  amount DECIMAL(15,2) NOT NULL,
+  source_type TEXT,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Create index for faster queries
+CREATE INDEX IF NOT EXISTS idx_expenses_clinic_date ON expenses(clinic_id, date);
+CREATE INDEX IF NOT EXISTS idx_expenses_category ON expenses(category_id);
+
+-- ============================================
+-- REVENUE TABLE
+-- ============================================
+CREATE TABLE IF NOT EXISTS revenue (
+  id UUID PRIMARY KEY DEFAULT gen_random_uuid(),
+  clinic_id UUID REFERENCES clinics(id) NOT NULL,
+  date DATE NOT NULL,
+  cash DECIMAL(15,2) DEFAULT 0,
+  card DECIMAL(15,2) DEFAULT 0,
+  card_net DECIMAL(15,2) DEFAULT 0,
+  transfer DECIMAL(15,2) DEFAULT 0,
+  installment DECIMAL(15,2) DEFAULT 0,
+  deposit DECIMAL(15,2) DEFAULT 0,
+  total DECIMAL(15,2) NOT NULL,
+  created_at TIMESTAMPTZ DEFAULT NOW()
+);
+
+-- Create index for faster queries
+CREATE INDEX IF NOT EXISTS idx_revenue_clinic_date ON revenue(clinic_id, date);
+
+-- ============================================
+-- ROW LEVEL SECURITY (RLS)
+-- ============================================
+
+-- Enable RLS on all tables
+ALTER TABLE clinics ENABLE ROW LEVEL SECURITY;
+ALTER TABLE categories ENABLE ROW LEVEL SECURITY;
+ALTER TABLE user_profiles ENABLE ROW LEVEL SECURITY;
+ALTER TABLE budgets ENABLE ROW LEVEL SECURITY;
+ALTER TABLE expenses ENABLE ROW LEVEL SECURITY;
+ALTER TABLE revenue ENABLE ROW LEVEL SECURITY;
+
+-- Clinics: All authenticated users can read
+CREATE POLICY "All users can read clinics" ON clinics FOR SELECT
+  TO authenticated
+  USING (true);
+
+-- Categories: All authenticated users can read
+CREATE POLICY "All users can read categories" ON categories FOR SELECT
+  TO authenticated
+  USING (true);
+
+-- User Profiles: Users can read own profile
+CREATE POLICY "Users can read own profile" ON user_profiles FOR SELECT
+  TO authenticated
+  USING (auth.uid() = id);
+
+-- Budgets: CEO and C-Suite can read all, Clinic Manager can read own clinic
+CREATE POLICY "CEO can manage budgets" ON budgets FOR ALL
+  TO authenticated
+  USING (
+    EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'ceo')
+  );
+
+CREATE POLICY "C-Suite can read budgets" ON budgets FOR SELECT
+  TO authenticated
+  USING (
+    EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role IN ('ceo', 'c_suite'))
+    OR
+    (EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'clinic_manager')
+     AND clinic_id = (SELECT clinic_id FROM user_profiles WHERE id = auth.uid()))
+  );
+
+-- Expenses: All roles can read based on their access level
+CREATE POLICY "CEO can read all expenses" ON expenses FOR SELECT
+  TO authenticated
+  USING (
+    EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role IN ('ceo', 'c_suite'))
+    OR
+    (EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'clinic_manager')
+     AND clinic_id = (SELECT clinic_id FROM user_profiles WHERE id = auth.uid()))
+  );
+
+-- Revenue: Same as expenses
+CREATE POLICY "CEO can read all revenue" ON revenue FOR SELECT
+  TO authenticated
+  USING (
+    EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role IN ('ceo', 'c_suite'))
+    OR
+    (EXISTS (SELECT 1 FROM user_profiles WHERE id = auth.uid() AND role = 'clinic_manager')
+     AND clinic_id = (SELECT clinic_id FROM user_profiles WHERE id = auth.uid()))
+  );
+
+-- ============================================
+-- FUNCTIONS
+-- ============================================
+
+-- Function to handle new user signup
+CREATE OR REPLACE FUNCTION public.handle_new_user()
+RETURNS TRIGGER AS $$
+BEGIN
+  INSERT INTO public.user_profiles (id, role, clinic_id)
+  VALUES (NEW.id, 'clinic_manager', NULL);
+  RETURN NEW;
+END;
+$$ LANGUAGE plpgsql SECURITY DEFINER;
+
+-- Trigger to auto-create user profile on signup
+DROP TRIGGER IF EXISTS on_auth_user_created ON auth.users;
+CREATE TRIGGER on_auth_user_created
+  AFTER INSERT ON auth.users
+  FOR EACH ROW EXECUTE FUNCTION public.handle_new_user();
+</file>
+
+<file path=".gitignore">
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# dependencies
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# testing
+/coverage
+
+# next.js
+/.next/
+/out/
+
+# production
+/build
+
+# misc
+.DS_Store
+*.pem
+
+# debug
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+
+# env files (can opt-in for committing if needed)
+.env*
+
+# vercel
+.vercel
+
+# typescript
+*.tsbuildinfo
+next-env.d.ts
+
+# unignore project query library modules
+!src/lib/
+!src/lib/**
+</file>
+
+<file path="eslint.config.mjs">
+import { defineConfig, globalIgnores } from "eslint/config";
+import nextVitals from "eslint-config-next/core-web-vitals";
+import nextTs from "eslint-config-next/typescript";
+
+const eslintConfig = defineConfig([
+  ...nextVitals,
+  ...nextTs,
+  // Override default ignores of eslint-config-next.
+  globalIgnores([
+    // Default ignores of eslint-config-next:
+    ".next/**",
+    "out/**",
+    "build/**",
+    "next-env.d.ts",
+  ]),
+]);
+
+export default eslintConfig;
+</file>
+
+<file path="next.config.ts">
+import type { NextConfig } from "next";
+import path from 'path'
+
+const nextConfig: NextConfig = {
+  turbopack: {
+    root: path.resolve(__dirname),
+  },
+}
+
+export default nextConfig;
+</file>
+
+<file path="package.json">
+{
+  "name": "dashboard",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "import": "dotenv-cli -e .env.local -- tsx src/scripts/import-csv.ts"
+  },
+  "dependencies": {
+    "@supabase/ssr": "^0.9.0",
+    "@supabase/supabase-js": "^2.98.0",
+    "date-fns": "^4.1.0",
+    "lucide-react": "^0.576.0",
+    "next": "16.1.6",
+    "react": "19.2.3",
+    "react-dom": "19.2.3",
+    "recharts": "^3.7.0"
+  },
+  "devDependencies": {
+    "@tailwindcss/postcss": "^4",
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "csv-parse": "^6.1.0",
+    "dotenv-cli": "^11.0.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.6",
+    "tailwindcss": "^4",
+    "tsx": "^4.21.0",
+    "typescript": "^5",
+    "vitest": "^4.0.18"
+  }
+}
+</file>
+
+<file path="postcss.config.mjs">
+const config = {
+  plugins: {
+    "@tailwindcss/postcss": {},
+  },
+};
+
+export default config;
+</file>
+
+<file path="README.md">
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+
+## Learn More
+
+To learn more about Next.js, take a look at the following resources:
+
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+</file>
+
+<file path="tsconfig.json">
+{
+  "compilerOptions": {
+    "target": "ES2017",
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "module": "esnext",
+    "moduleResolution": "bundler",
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",
+    "incremental": true,
+    "plugins": [
+      {
+        "name": "next"
+      }
+    ],
+    "paths": {
+      "@/*": ["./src/*"]
+    }
+  },
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    ".next/types/**/*.ts",
+    ".next/dev/types/**/*.ts",
+    "**/*.mts"
+  ],
+  "exclude": ["node_modules"]
+}
+</file>
+
+<file path="vitest.config.ts">
+import { defineConfig } from 'vitest/config'
+
+export default defineConfig({
+  test: {
+    environment: 'node',
+    include: ['src/**/*.test.ts'],
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'html'],
+    },
+  },
+})
+</file>
+
+</files>
