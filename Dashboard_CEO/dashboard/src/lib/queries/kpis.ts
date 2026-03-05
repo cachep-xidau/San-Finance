@@ -7,6 +7,12 @@ export interface KPIData {
   profitMargin: number
   previousRevenue: number
   previousCosts: number
+  previousProfit: number
+  previousMargin: number
+}
+
+function dateToMonth(d: Date): string {
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`
 }
 
 export async function getKPIs(
@@ -16,76 +22,52 @@ export async function getKPIs(
 ): Promise<KPIData> {
   const supabase = await createClient()
 
-  // Default to current month if no dates provided
   const now = new Date()
   const currentStart = startDate || new Date(now.getFullYear(), now.getMonth(), 1)
   const currentEnd = endDate || new Date(now.getFullYear(), now.getMonth() + 1, 0)
 
-  // Previous period for comparison
+  // Build month range: e.g. "2026.01" to "2026.03"
+  const startMonth = dateToMonth(currentStart)
+  const endMonth = dateToMonth(currentEnd)
+
+  // Previous period (same duration, shifted back)
   const daysDiff = currentEnd.getTime() - currentStart.getTime()
-  const previousStart = new Date(currentStart.getTime() - daysDiff - 86400000)
-  const previousEnd = new Date(currentStart.getTime() - 86400000)
+  const prevEnd = new Date(currentStart.getTime() - 86400000)
+  const prevStart = new Date(prevEnd.getTime() - daysDiff)
+  const prevStartMonth = dateToMonth(prevStart)
+  const prevEndMonth = dateToMonth(prevEnd)
 
-  let currentRevenueQuery = supabase
-    .from('revenue')
-    .select('total')
-    .gte('date', currentStart.toISOString().split('T')[0])
-    .lte('date', currentEnd.toISOString().split('T')[0])
+  // Current revenue
+  let revQ = supabase.from('raw_revenue').select('total').gte('month', startMonth).lte('month', endMonth).gt('total', 0)
+  if (clinicId) revQ = revQ.eq('clinic', clinicId)
+  const { data: revData } = await revQ
 
-  let currentExpensesQuery = supabase
-    .from('expenses')
-    .select('amount')
-    .gte('date', currentStart.toISOString().split('T')[0])
-    .lte('date', currentEnd.toISOString().split('T')[0])
+  // Current expenses
+  let expQ = supabase.from('raw_expenses').select('amount').gte('month', startMonth).lte('month', endMonth).gt('amount', 0)
+  if (clinicId) expQ = expQ.eq('clinic', clinicId)
+  const { data: expData } = await expQ
 
-  let prevRevenueQuery = supabase
-    .from('revenue')
-    .select('total')
-    .gte('date', previousStart.toISOString().split('T')[0])
-    .lte('date', previousEnd.toISOString().split('T')[0])
+  // Previous revenue
+  let prevRevQ = supabase.from('raw_revenue').select('total').gte('month', prevStartMonth).lte('month', prevEndMonth).gt('total', 0)
+  if (clinicId) prevRevQ = prevRevQ.eq('clinic', clinicId)
+  const { data: prevRevData } = await prevRevQ
 
-  let prevExpensesQuery = supabase
-    .from('expenses')
-    .select('amount')
-    .gte('date', previousStart.toISOString().split('T')[0])
-    .lte('date', previousEnd.toISOString().split('T')[0])
+  // Previous expenses
+  let prevExpQ = supabase.from('raw_expenses').select('amount').gte('month', prevStartMonth).lte('month', prevEndMonth).gt('amount', 0)
+  if (clinicId) prevExpQ = prevExpQ.eq('clinic', clinicId)
+  const { data: prevExpData } = await prevExpQ
 
-  if (clinicId) {
-    currentRevenueQuery = currentRevenueQuery.eq('clinic_id', clinicId)
-    currentExpensesQuery = currentExpensesQuery.eq('clinic_id', clinicId)
-    prevRevenueQuery = prevRevenueQuery.eq('clinic_id', clinicId)
-    prevExpensesQuery = prevExpensesQuery.eq('clinic_id', clinicId)
-  }
-
-  const { data: currentRevenue } = await currentRevenueQuery.throwOnError()
-  const { data: currentExpenses } = await currentExpensesQuery.throwOnError()
-  const { data: prevRevenue } = await prevRevenueQuery.throwOnError()
-  const { data: prevExpenses } = await prevExpensesQuery.throwOnError()
-
-  // Calculate totals with type assertions
-  const typedCurrentRevenue = currentRevenue as unknown as { total: number | null }[]
-  const typedCurrentExpenses = currentExpenses as unknown as { amount: number | null }[]
-  const typedPrevRevenue = prevRevenue as unknown as { total: number | null }[]
-  const typedPrevExpenses = prevExpenses as unknown as { amount: number | null }[]
-
-  const totalRevenue = typedCurrentRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
-  const totalCosts = typedCurrentExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
-  const previousRevenue = typedPrevRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
-  const previousCosts = typedPrevExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
+  const totalRevenue = (revData as any[])?.reduce((s, r) => s + (r.total || 0), 0) || 0
+  const totalCosts = (expData as any[])?.reduce((s, r) => s + (r.amount || 0), 0) || 0
+  const previousRevenue = (prevRevData as any[])?.reduce((s, r) => s + (r.total || 0), 0) || 0
+  const previousCosts = (prevExpData as any[])?.reduce((s, r) => s + (r.amount || 0), 0) || 0
 
   const netProfit = totalRevenue - totalCosts
   const profitMargin = totalRevenue > 0 ? (netProfit / totalRevenue) * 100 : 0
+  const previousProfit = previousRevenue - previousCosts
+  const previousMargin = previousRevenue > 0 ? (previousProfit / previousRevenue) * 100 : 0
 
-  return {
-    totalRevenue,
-    totalCosts,
-    netProfit,
-    profitMargin,
-    previousRevenue,
-    previousCosts,
-  }
+  return { totalRevenue, totalCosts, netProfit, profitMargin, previousRevenue, previousCosts, previousProfit, previousMargin }
 }
 
-// Re-export client-safe formatting utilities for backward compatibility
 export { formatCurrency, formatPercent, calculateChange } from '@/lib/format'
-

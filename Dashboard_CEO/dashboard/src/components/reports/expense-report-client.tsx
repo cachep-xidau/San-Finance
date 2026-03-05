@@ -3,6 +3,8 @@
 import { useRouter, useSearchParams } from 'next/navigation'
 import { formatCurrency } from '@/lib/format'
 import type { ExpenseReportData } from '@/lib/queries/expense-report'
+import type { CostByClassify } from '@/lib/queries/cost-analysis-types'
+import { groupByFinance } from '@/lib/queries/cost-analysis-utils'
 import React, { useState } from 'react'
 
 /** Full number format for table cells — no abbreviation */
@@ -54,10 +56,18 @@ interface Props {
     selectedYear: number
     selectedClinic: string | null
     clinicTotals: { all: number; San: number; Teennie: number; Implant: number }
+    costsByClassify: CostByClassify[]
 }
 
-export function ExpenseReportClient({ report, prevYearReport, availableYears, selectedYear, selectedClinic, clinicTotals }: Props) {
+const CHART_COLORS = [
+    '#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6',
+    '#EC4899', '#06B6D4', '#F97316', '#14B8A6', '#A855F7',
+    '#84CC16', '#E11D48', '#0EA5E9', '#D97706', '#7C3AED',
+]
+
+export function ExpenseReportClient({ report, prevYearReport, availableYears, selectedYear, selectedClinic, clinicTotals, costsByClassify }: Props) {
     const router = useRouter()
+    const [selectedCosts, setSelectedCosts] = useState<Set<string>>(new Set())
     const [viewMode, setViewMode] = useState<ViewMode>('month')
 
     const allMonths = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
@@ -555,6 +565,182 @@ export function ExpenseReportClient({ report, prevYearReport, availableYears, se
                         </tbody>
                     </table>
                 </div>
+            </div>
+
+            {/* ── Interactive Cost Comparison Chart ── */}
+            <div className="dashboard-section" style={{ padding: 'var(--space-4)' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 'var(--space-4)' }}>
+                    <div>
+                        <div style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-semibold)' as any, color: 'var(--text-primary)' }}>
+                            So sánh chi phí theo danh mục
+                        </div>
+                        <div style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)', marginTop: '2px' }}>
+                            Chọn các khoản chi phí để so sánh trực quan qua {viewMode === 'month' ? 'tháng' : 'quý'}
+                        </div>
+                    </div>
+                    {selectedCosts.size > 0 && (
+                        <button onClick={() => setSelectedCosts(new Set())} style={{
+                            padding: '4px 10px', borderRadius: 4, border: '1px solid var(--border)',
+                            background: 'transparent', color: 'var(--text-muted)', fontSize: 'var(--text-xs)',
+                            cursor: 'pointer'
+                        }}>Bỏ chọn tất cả</button>
+                    )}
+                </div>
+
+                {/* Category selector chips — grouped by finance */}
+                {(() => {
+                    const groups = groupByFinance(costsByClassify)
+                    const GROUP_COLORS: Record<string, string> = {
+                        '1': '#10B981', '2': '#3B82F6', '3': '#8B5CF6',
+                        '4': '#F59E0B', '5': '#EF4444', '6': '#6B7280',
+                    }
+                    return (
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-3)', marginBottom: 'var(--space-4)' }}>
+                            {groups.map(group => {
+                                const gKey = group.finance.charAt(0)
+                                const gColor = GROUP_COLORS[gKey] || '#6B7280'
+                                const groupSelected = group.items.filter(i => selectedCosts.has(i.classify)).length
+                                return (
+                                    <div key={group.finance} style={{ borderRadius: 'var(--radius-md)', border: '1px solid var(--border)', overflow: 'hidden' }}>
+                                        <div
+                                            style={{
+                                                display: 'flex', justifyContent: 'space-between', alignItems: 'center',
+                                                padding: '8px 12px', background: `${gColor}08`,
+                                                borderBottom: '1px solid var(--border)', cursor: 'pointer',
+                                            }}
+                                            onClick={() => {
+                                                const allSelected = group.items.every(i => selectedCosts.has(i.classify))
+                                                setSelectedCosts(prev => {
+                                                    const next = new Set(prev)
+                                                    if (allSelected) { group.items.forEach(i => next.delete(i.classify)) }
+                                                    else { group.items.forEach(i => next.add(i.classify)) }
+                                                    return next
+                                                })
+                                            }}
+                                        >
+                                            <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                                                <div style={{ width: 6, height: 20, borderRadius: 3, background: gColor }} />
+                                                <span style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-semibold)' as any, color: 'var(--text-primary)' }}>{group.finance}</span>
+                                                {groupSelected > 0 && (
+                                                    <span style={{ fontSize: '10px', background: gColor, color: '#fff', padding: '1px 6px', borderRadius: 8, fontWeight: 600 }}>{groupSelected}/{group.items.length}</span>
+                                                )}
+                                            </div>
+                                            <span style={{ fontSize: 'var(--text-xs)', color: 'var(--text-muted)', fontFamily: 'var(--font-report)' }}>{formatCurrency(group.total)}</span>
+                                        </div>
+                                        <div style={{ display: 'flex', flexWrap: 'wrap', gap: '5px', padding: '8px 12px' }}>
+                                            {group.items.map(c => {
+                                                const globalIdx = costsByClassify.findIndex(x => x.classify === c.classify)
+                                                const isActive = selectedCosts.has(c.classify)
+                                                const color = CHART_COLORS[globalIdx % CHART_COLORS.length]
+                                                return (
+                                                    <button key={c.classify} onClick={(e) => {
+                                                        e.stopPropagation()
+                                                        setSelectedCosts(prev => {
+                                                            const next = new Set(prev)
+                                                            next.has(c.classify) ? next.delete(c.classify) : next.add(c.classify)
+                                                            return next
+                                                        })
+                                                    }} style={{
+                                                        display: 'flex', alignItems: 'center', gap: '4px',
+                                                        padding: '3px 8px', borderRadius: 'var(--radius-pill)',
+                                                        border: `1.5px solid ${isActive ? color : 'var(--border)'}`,
+                                                        background: isActive ? `${color}15` : 'transparent',
+                                                        color: isActive ? color : 'var(--text-secondary)',
+                                                        fontSize: '10px', fontWeight: 500, cursor: 'pointer', transition: 'all 0.15s ease',
+                                                    }}>
+                                                        <span style={{ width: 6, height: 6, borderRadius: '50%', background: isActive ? color : 'var(--border)' }} />
+                                                        {c.classify}
+                                                        <span style={{ opacity: 0.6 }}>{formatCurrency(c.total)}</span>
+                                                    </button>
+                                                )
+                                            })}
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                        </div>
+                    )
+                })()}
+
+                {/* Chart */}
+                {selectedCosts.size === 0 ? (
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 200, borderRadius: 'var(--radius-md)', background: 'var(--bg-surface)' }}>
+                        <span style={{ color: 'var(--text-muted)', fontSize: 'var(--text-sm)' }}>Chọn các mục chi phí ở trên để hiển thị biểu đồ so sánh</span>
+                    </div>
+                ) : (
+                    (() => {
+                        const selected = costsByClassify.filter(c => selectedCosts.has(c.classify))
+                        const isMonth = viewMode === 'month'
+                        const pds = isMonth
+                            ? ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+                            : ['Q1', 'Q2', 'Q3', 'Q4']
+
+                        const series = selected.map(c => {
+                            const vals = isMonth ? c.months : monthsToQuarters(c.months)
+                            const color = CHART_COLORS[costsByClassify.findIndex(x => x.classify === c.classify) % CHART_COLORS.length]
+                            return { classify: c.classify, vals, color }
+                        })
+
+                        let maxVal = 0
+                        for (const s of series) { for (const p of pds) { maxVal = Math.max(maxVal, s.vals[p] || 0) } }
+                        maxVal = maxVal || 1
+
+                        const chartH = 200, leftPad = 60, rightPad = 20
+                        const chartW = pds.length * (isMonth ? 58 : 120)
+                        const svgW = chartW + leftPad + rightPad
+                        const stepX = chartW / (pds.length - 1 || 1)
+
+                        const formatAxis = (v: number) => {
+                            if (v >= 1e9) return `${(v / 1e9).toFixed(1)} tỷ`
+                            if (v >= 1e6) return `${(v / 1e6).toFixed(0)} tr`
+                            return `${(v / 1e3).toFixed(0)}K`
+                        }
+
+                        const yTicks = [0, 0.25, 0.5, 0.75, 1].map(pct => ({ y: chartH - pct * chartH, label: formatAxis(pct * maxVal) }))
+
+                        return (
+                            <div style={{ overflowX: 'auto' }}>
+                                <svg width={svgW} height={chartH + 40} style={{ display: 'block' }}>
+                                    {yTicks.map(t => (
+                                        <g key={t.y}>
+                                            <line x1={leftPad} y1={t.y} x2={svgW - rightPad} y2={t.y} stroke="var(--border)" strokeWidth={0.5} strokeDasharray="3 3" />
+                                            <text x={leftPad - 6} y={t.y + 4} textAnchor="end" fontSize="10" fill="var(--text-muted)" style={{ fontFamily: 'var(--font-report)' }}>{t.label}</text>
+                                        </g>
+                                    ))}
+                                    {pds.map((p, pi) => (
+                                        <text key={p} x={leftPad + pi * stepX} y={chartH + 16} textAnchor="middle" fontSize="11" fill="var(--text-muted)">{isMonth ? `T${parseInt(p)}` : p}</text>
+                                    ))}
+                                    {series.map(s => {
+                                        const pts = pds.map((p, pi) => ({ x: leftPad + pi * stepX, y: chartH - ((s.vals[p] || 0) / maxVal) * chartH }))
+                                        let d = `M${pts[0].x},${pts[0].y}`
+                                        const tension = 0.3
+                                        for (let i = 0; i < pts.length - 1; i++) {
+                                            const p0 = pts[Math.max(i - 1, 0)], p1 = pts[i], p2 = pts[i + 1], p3 = pts[Math.min(i + 2, pts.length - 1)]
+                                            d += ` C${p1.x + (p2.x - p0.x) * tension},${p1.y + (p2.y - p0.y) * tension} ${p2.x - (p3.x - p1.x) * tension},${p2.y - (p3.y - p1.y) * tension} ${p2.x},${p2.y}`
+                                        }
+                                        return (
+                                            <g key={s.classify}>
+                                                <path d={d} fill="none" stroke={s.color} strokeWidth={2.5} strokeLinecap="round" />
+                                                {pds.map((p, pi) => {
+                                                    const x = leftPad + pi * stepX, y = chartH - ((s.vals[p] || 0) / maxVal) * chartH
+                                                    return (s.vals[p] || 0) > 0 ? <circle key={pi} cx={x} cy={y} r={4} fill="var(--bg-card)" stroke={s.color} strokeWidth={2} /> : null
+                                                })}
+                                            </g>
+                                        )
+                                    })}
+                                </svg>
+                                <div style={{ display: 'flex', flexWrap: 'wrap', gap: '12px', marginTop: 'var(--space-2)', paddingLeft: leftPad }}>
+                                    {series.map(s => (
+                                        <div key={s.classify} style={{ display: 'flex', alignItems: 'center', gap: '5px', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
+                                            <div style={{ width: 12, height: 3, borderRadius: 2, background: s.color }} />
+                                            {s.classify}
+                                        </div>
+                                    ))}
+                                </div>
+                            </div>
+                        )
+                    })()
+                )}
             </div>
         </div>
     )

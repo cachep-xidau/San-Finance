@@ -1,24 +1,26 @@
 'use client'
 
 import {
-  AreaChart,
+  ComposedChart,
   Area,
+  Bar,
   XAxis,
   YAxis,
   CartesianGrid,
   Tooltip,
   ResponsiveContainer,
   Legend,
+  ReferenceLine,
 } from 'recharts'
 import type { TrendDataPoint } from '@/lib/queries/trends'
 
-interface TrendChartProps {
+interface TrendBarChartProps {
   data: TrendDataPoint[]
 }
 
 const formatYAxis = (value: number) => {
-  if (value >= 1e9) return `${(value / 1e9).toFixed(0)} tỷ`
-  if (value >= 1e6) return `${(value / 1e6).toFixed(0)} tr`
+  if (Math.abs(value) >= 1e9) return `${(value / 1e9).toFixed(2).replace('.', ',')} tỷ`
+  if (Math.abs(value) >= 1e6) return `${(value / 1e6).toFixed(1).replace('.', ',')} tr`
   return `${(value / 1e3).toFixed(0)}K`
 }
 
@@ -68,28 +70,19 @@ const GlowDot = (color: string) => {
   return Dot
 }
 
-export function TrendChart({ data }: TrendChartProps) {
+export function TrendBarChart({ data }: TrendBarChartProps) {
   if (!data || data.length === 0) {
     return (
-      <div
-        style={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
-          height: 240,
-          borderRadius: 'var(--radius-md)',
-          background: 'var(--bg-surface)',
-        }}
-      >
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: 240, borderRadius: 'var(--radius-md)', background: 'var(--bg-surface)' }}>
         <span style={{ color: 'var(--text-muted)' }}>Không có dữ liệu</span>
       </div>
     )
   }
 
   return (
-    <div style={{ cursor: 'pointer' }}>
-      <ResponsiveContainer width="100%" height={280}>
-        <AreaChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
+    <div style={{ cursor: 'pointer', marginTop: 24 }}>
+      <ResponsiveContainer width="100%" height={360}>
+        <ComposedChart data={data} margin={{ top: 10, right: 10, left: 0, bottom: 0 }}>
           <defs>
             <linearGradient id="colorRevenue" x1="0" y1="0" x2="0" y2="1">
               <stop offset="0%" stopColor="#10B981" stopOpacity={0.3} />
@@ -101,15 +94,11 @@ export function TrendChart({ data }: TrendChartProps) {
               <stop offset="40%" stopColor="#EF4444" stopOpacity={0.1} />
               <stop offset="100%" stopColor="#EF4444" stopOpacity={0} />
             </linearGradient>
-            <linearGradient id="colorProfit" x1="0" y1="0" x2="0" y2="1">
-              <stop offset="0%" stopColor="#3B82F6" stopOpacity={0.3} />
-              <stop offset="40%" stopColor="#3B82F6" stopOpacity={0.1} />
-              <stop offset="100%" stopColor="#3B82F6" stopOpacity={0} />
-            </linearGradient>
           </defs>
           <CartesianGrid strokeDasharray="4 4" stroke="var(--border)" strokeOpacity={0.5} />
           <XAxis
-            dataKey="monthLabel"
+            dataKey="month"
+            tickFormatter={(v: string) => { const mm = parseInt(v.split('.')[1]); return `Th${mm}` }}
             tick={{ fill: 'var(--text-muted)', fontSize: 12 }}
             axisLine={false}
             tickLine={false}
@@ -119,6 +108,7 @@ export function TrendChart({ data }: TrendChartProps) {
             tick={{ fill: 'var(--text-muted)', fontSize: 12 }}
             axisLine={false}
             tickLine={false}
+            domain={[-1e9, (dataMax: number) => dataMax * 1.1]}
           />
           <Tooltip content={<CustomTooltip />} />
           <Legend
@@ -127,11 +117,16 @@ export function TrendChart({ data }: TrendChartProps) {
               <span style={{ color: 'var(--text-muted)', fontSize: 12, fontWeight: 500 }}>{value}</span>
             )}
           />
-          <Area type="monotone" dataKey="revenue" name="Doanh thu" stroke="#10B981" strokeWidth={2.5} fillOpacity={1} fill="url(#colorRevenue)" activeDot={GlowDot('#10B981')} />
-          <Area type="monotone" dataKey="costs" name="Chi phí" stroke="#EF4444" strokeWidth={2.5} fillOpacity={1} fill="url(#colorCosts)" activeDot={GlowDot('#EF4444')} />
-          <Area type="monotone" dataKey="profit" name="Lợi nhuận" stroke="#3B82F6" strokeWidth={2.5} fillOpacity={1} fill="url(#colorProfit)" activeDot={GlowDot('#3B82F6')} />
-        </AreaChart>
+          <ReferenceLine y={0} stroke="var(--border)" strokeOpacity={0.8} />
+          {/* Revenue & Costs as Area lines */}
+          <Area type="monotone" dataKey="revenue" name="Doanh thu" stroke="#10B981" strokeWidth={2.5} fillOpacity={1} fill="url(#colorRevenue)" dot={{ fill: 'var(--bg-card, #fff)', stroke: '#10B981', strokeWidth: 2, r: 3 }} activeDot={GlowDot('#10B981')} />
+          <Area type="monotone" dataKey="costs" name="Chi phí" stroke="#EF4444" strokeWidth={2.5} fillOpacity={1} fill="url(#colorCosts)" dot={{ fill: 'var(--bg-card, #fff)', stroke: '#EF4444', strokeWidth: 2, r: 3 }} activeDot={GlowDot('#EF4444')} />
+          {/* Profit as Bar to show negative values clearly */}
+          <Bar dataKey="profit" name="Lợi nhuận" fill="#3B82F6" fillOpacity={0.7} radius={[3, 3, 0, 0]} maxBarSize={24} />
+        </ComposedChart>
       </ResponsiveContainer>
     </div>
   )
 }
+
+export { TrendBarChart as TrendChart }

@@ -1,5 +1,6 @@
 import { getPnLReport } from '@/lib/queries/pnl-report'
 import { getAvailableYears } from '@/lib/queries/expense-report'
+import { getCostsByClassify } from '@/lib/queries/cost-analysis'
 import { PnLReportClient } from '@/components/reports/pnl-report-client'
 
 export const dynamic = 'force-dynamic'
@@ -15,13 +16,14 @@ export default async function PnLReportPage({
     const year = params.year ? parseInt(params.year) : currentYear
     const clinic = params.clinic || undefined
 
-    const [report, prevYearReport, allReport, sanReport, teennieReport, implantReport] = await Promise.all([
+    const [report, prevYearReport, allReport, sanReport, teennieReport, implantReport, costsByClassify] = await Promise.all([
         getPnLReport(year, clinic),
         getPnLReport(year - 1, clinic),
         getPnLReport(year),
         getPnLReport(year, 'San'),
         getPnLReport(year, 'Teennie'),
         getPnLReport(year, 'Implant'),
+        getCostsByClassify(year, clinic),
     ])
 
     // Clinic totals = revenue (section 0)
@@ -42,6 +44,7 @@ export default async function PnLReportPage({
             selectedYear={year}
             selectedClinic={clinic || null}
             clinicTotals={clinicTotals}
+            costsByClassify={costsByClassify}
         />
     )
 }

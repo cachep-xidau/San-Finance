@@ -3,7 +3,9 @@
 import { useRouter } from 'next/navigation'
 import { formatCurrency } from '@/lib/format'
 import type { PnLReportData, PnLSection } from '@/lib/queries/pnl-report'
-import React, { useState } from 'react'
+import type { CostByClassify, CostGroup } from '@/lib/queries/cost-analysis-utils'
+
+import React, { useState, useMemo } from 'react'
 
 function fmtFull(amount: number): string {
     return amount.toLocaleString('vi-VN')
@@ -41,6 +43,12 @@ function getRowStyle(section: PnLSection): React.CSSProperties {
     return {}
 }
 
+const CHART_COLORS = [
+    '#3B82F6', '#EF4444', '#10B981', '#F59E0B', '#8B5CF6',
+    '#EC4899', '#06B6D4', '#F97316', '#14B8A6', '#A855F7',
+    '#84CC16', '#E11D48', '#0EA5E9', '#D97706', '#7C3AED',
+]
+
 interface Props {
     report: PnLReportData
     prevYearReport: PnLReportData
@@ -48,12 +56,14 @@ interface Props {
     selectedYear: number
     selectedClinic: string | null
     clinicTotals: { all: number; San: number; Teennie: number; Implant: number }
+    costsByClassify: CostByClassify[]
 }
 
-export function PnLReportClient({ report, prevYearReport, availableYears, selectedYear, selectedClinic, clinicTotals }: Props) {
+export function PnLReportClient({ report, prevYearReport, availableYears, selectedYear, selectedClinic, clinicTotals, costsByClassify }: Props) {
     const router = useRouter()
     const [viewMode, setViewMode] = useState<ViewMode>('month')
     const [expanded, setExpanded] = useState<Set<string>>(new Set())
+
 
     const periods = viewMode === 'month'
         ? ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
@@ -202,64 +212,260 @@ export function PnLReportClient({ report, prevYearReport, availableYears, select
                 )
             })()}
 
-            {/* ── Charts Row: Revenue vs Expenses Bar (2/3) + Donut (1/3) ── */}
-            <div style={{ display: 'grid', gridTemplateColumns: '2fr 1fr', gap: 'var(--space-4)' }}>
-                {/* Stacked Bar: Revenue vs Total Expenses by period */}
+            {/* ── Charts Row: Waterfall + Fixed/Variable + Donut ── */}
+            <div style={{ display: 'grid', gridTemplateColumns: '5fr 4fr 3fr', gap: 'var(--space-4)' }}>
+                {/* Waterfall chart */}
                 <div className="dashboard-section" style={{ padding: 'var(--space-4)' }}>
                     <div style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-semibold)' as any, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>
-                        Doanh thu vs Chi phí theo {viewMode === 'month' ? 'tháng' : 'quý'}
+                        Cấu trúc lãi lỗ (Waterfall)
                     </div>
                     {(() => {
-                        const revMonths = getValues(getSection('revenue')?.months || {})
-                        const cogsMonths = getValues(getSection('cogs')?.months || {})
-                        const sellingMonths = getValues(getSection('selling')?.months || {})
-                        const adminMonths = getValues(getSection('admin')?.months || {})
-                        const otherMonths = getValues(getSection('other_costs')?.months || {})
-                        const taxMonths = getValues(getSection('tax')?.months || {})
+                        const rev = getSection('revenue')?.total || 0
+                        const cogs = getSection('cogs')?.total || 0
+                        const gross = getSection('gross_profit')?.total || 0
+                        const selling = getSection('selling')?.total || 0
+                        const admin = getSection('admin')?.total || 0
+                        const otherCost = getSection('other_costs')?.total || 0
+                        const preTax = getSection('pre_tax')?.total || 0
+                        const tax = getSection('tax')?.total || 0
+                        const retained = getSection('retained')?.total || 0
 
-                        const isMonth = viewMode === 'month'
-                        const barW = isMonth ? 20 : 40
-                        const gap = isMonth ? 24 : 40
-                        const chartH = 180
-                        const svgW = periods.length * (barW * 2 + gap) + gap
+                        // Waterfall steps: { label, value, type }
+                        // type: 'start' = full bar from 0, 'decrease' = red bar going down, 'subtotal' = intermediate total, 'total' = final
+                        const steps = [
+                            { label: 'Doanh thu', value: rev, type: 'start' as const },
+                            { label: 'Giá vốn', value: -cogs, type: 'decrease' as const },
+                            { label: 'Lãi gộp', value: gross, type: 'subtotal' as const },
+                            { label: 'CP bán hàng', value: -selling, type: 'decrease' as const },
+                            { label: 'CP quản lý', value: -admin, type: 'decrease' as const },
+                            { label: 'CP khác', value: -otherCost, type: 'decrease' as const },
+                            { label: 'LN trước thuế', value: preTax, type: 'subtotal' as const },
+                            { label: 'Thuế & lãi vay', value: -tax, type: 'decrease' as const },
+                            { label: 'LN chưa PP', value: retained, type: 'total' as const },
+                        ]
 
-                        const allVals: number[] = []
-                        for (const p of periods) {
-                            allVals.push(revMonths[p] || 0)
-                            allVals.push((cogsMonths[p] || 0) + (sellingMonths[p] || 0) + (adminMonths[p] || 0) + (otherMonths[p] || 0) + (taxMonths[p] || 0))
+                        const chartH = 200
+                        const barW = 44
+                        const gap = 16
+                        const svgW = steps.length * (barW + gap) + gap + 10
+                        const maxVal = Math.max(...steps.map(s => Math.abs(s.value)), 1)
+                        const scale = (v: number) => (Math.abs(v) / maxVal) * (chartH - 20)
+
+                        // Calculate bar positions (waterfall logic)
+                        let runningTop = 0
+                        const bars = steps.map((step) => {
+                            let top: number, h: number, color: string
+
+                            if (step.type === 'start') {
+                                // Full bar from bottom
+                                h = scale(step.value)
+                                top = chartH - h
+                                runningTop = top
+                                color = '#34D399' // green
+                            } else if (step.type === 'decrease') {
+                                // Red bar hanging from running top
+                                h = scale(step.value)
+                                top = runningTop
+                                runningTop = top + h
+                                color = '#F87171' // red
+                            } else if (step.type === 'subtotal') {
+                                // Blue bar showing subtotal level
+                                h = scale(step.value)
+                                top = chartH - h
+                                runningTop = top
+                                color = '#60A5FA' // blue
+                            } else {
+                                // Final total
+                                h = scale(step.value)
+                                if (step.value >= 0) {
+                                    top = chartH - h
+                                } else {
+                                    top = chartH
+                                    h = scale(step.value)
+                                }
+                                runningTop = top
+                                color = step.value >= 0 ? '#34D399' : '#F87171'
+                            }
+
+                            return { ...step, top, h, color }
+                        })
+
+                        const fmtShort = (v: number) => {
+                            const abs = Math.abs(v)
+                            if (abs >= 1e9) return `${(v / 1e9).toFixed(1)} tỷ`
+                            if (abs >= 1e6) return `${(v / 1e6).toFixed(0)} tr`
+                            return `${(v / 1e3).toFixed(0)}K`
                         }
-                        const maxVal = Math.max(...allVals, 1)
 
                         return (
                             <div style={{ overflowX: 'auto' }}>
-                                <svg width={svgW} height={chartH + 30} style={{ display: 'block' }}>
-                                    {periods.map((p, pi) => {
-                                        const x = pi * (barW * 2 + gap) + gap
-                                        const revH = ((revMonths[p] || 0) / maxVal) * chartH
-                                        const expTotal = (cogsMonths[p] || 0) + (sellingMonths[p] || 0) + (adminMonths[p] || 0) + (otherMonths[p] || 0) + (taxMonths[p] || 0)
-                                        const expH = (expTotal / maxVal) * chartH
+                                <svg width={svgW} height={chartH + 50} style={{ display: 'block' }}>
+                                    {/* Bars + labels */}
+                                    {bars.map((bar, i) => {
+                                        const x = i * (barW + gap) + gap
                                         return (
-                                            <g key={p}>
-                                                <rect x={x} y={chartH - revH} width={barW} height={revH} fill="#34D399" rx={3} opacity={0.85} />
-                                                <rect x={x + barW + 2} y={chartH - expH} width={barW} height={expH} fill="#F87171" rx={3} opacity={0.85} />
-                                                <text x={x + barW} y={chartH + 16} textAnchor="middle" fontSize="11" fill="var(--text-muted)">
-                                                    {isMonth ? `T${parseInt(p)}` : p}
+                                            <g key={bar.label}>
+                                                {/* Bar */}
+                                                <rect
+                                                    x={x} y={bar.top} width={barW} height={Math.max(bar.h, 2)}
+                                                    fill={bar.color} rx={4} opacity={0.85}
+                                                />
+                                                {/* Value on top */}
+                                                <text
+                                                    x={x + barW / 2} y={bar.top - 5}
+                                                    textAnchor="middle" fontSize="10" fontWeight="600"
+                                                    fill={bar.color}
+                                                    style={{ fontFamily: 'var(--font-report)' }}
+                                                >
+                                                    {bar.type === 'decrease' ? `-${fmtShort(Math.abs(bar.value))}` : fmtShort(bar.value)}
                                                 </text>
+                                                {/* Label below */}
+                                                <text
+                                                    x={x + barW / 2} y={chartH + 14}
+                                                    textAnchor="middle" fontSize="10" fill="var(--text-muted)"
+                                                >
+                                                    {bar.label}
+                                                </text>
+                                                {/* Connector line to next bar */}
+                                                {i < bars.length - 1 && (
+                                                    <line
+                                                        x1={x + barW} y1={bar.type === 'decrease' ? bar.top + bar.h : bar.top}
+                                                        x2={x + barW + gap} y2={bar.type === 'decrease' ? bar.top + bar.h : bar.top}
+                                                        stroke="var(--text-muted)" strokeWidth={1} strokeDasharray="3 2" opacity={0.4}
+                                                    />
+                                                )}
                                             </g>
                                         )
                                     })}
+                                    {/* Baseline */}
+                                    <line x1={gap - 4} y1={chartH} x2={svgW - 4} y2={chartH} stroke="var(--border)" strokeWidth={1} />
                                 </svg>
                             </div>
                         )
                     })()}
                     <div style={{ display: 'flex', gap: '16px', marginTop: 'var(--space-2)' }}>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
-                            <div style={{ width: 8, height: 8, borderRadius: 2, background: '#34D399' }} /> Doanh thu
+                            <div style={{ width: 8, height: 8, borderRadius: 2, background: '#34D399' }} /> Doanh thu / Lợi nhuận
                         </div>
                         <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
                             <div style={{ width: 8, height: 8, borderRadius: 2, background: '#F87171' }} /> Chi phí
                         </div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
+                            <div style={{ width: 8, height: 8, borderRadius: 2, background: '#60A5FA' }} /> Lãi gộp / Lãi thuần
+                        </div>
                     </div>
+                </div>
+
+                {/* Fixed vs Variable Cost Chart */}
+                <div className="dashboard-section" style={{ padding: 'var(--space-4)' }}>
+                    <div style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-semibold)' as any, color: 'var(--text-primary)', marginBottom: 'var(--space-3)' }}>
+                        Định phí vs Biến phí
+                    </div>
+                    {(() => {
+                        // Classify each expense as fixed or variable
+                        const FIXED_CLASSIFY = new Set([
+                            'Lương cố định bộ phận văn phòng', 'Thuê mặt bằng', 'Bảo hiểm',
+                            'Điện, nước, wifi', 'Chi phí phần mềm (CRM, kế toán, cloud)',
+                            'Thuê bằng bác sĩ', 'Thuê xe, bãi xe', 'Đào tạo nhân sự',
+                            'Thuế GTGT/ TNCN/ TNDN/ môn bài/ lệ phí..nộp NSNN', 'Phường, quận',
+                        ])
+
+                        const months = ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '12']
+                        const fixedByMonth: Record<string, number> = {}
+                        const variableByMonth: Record<string, number> = {}
+
+                        for (const c of costsByClassify) {
+                            const isFixed = FIXED_CLASSIFY.has(c.classify)
+                            for (const m of months) {
+                                const v = c.months[m] || 0
+                                if (isFixed) {
+                                    fixedByMonth[m] = (fixedByMonth[m] || 0) + v
+                                } else {
+                                    variableByMonth[m] = (variableByMonth[m] || 0) + v
+                                }
+                            }
+                        }
+
+                        const totalFixed = Object.values(fixedByMonth).reduce((a, b) => a + b, 0)
+                        const totalVariable = Object.values(variableByMonth).reduce((a, b) => a + b, 0)
+                        const totalAll = totalFixed + totalVariable || 1
+
+                        // Find max stacked value
+                        let maxVal = 0
+                        for (const m of months) {
+                            maxVal = Math.max(maxVal, (fixedByMonth[m] || 0) + (variableByMonth[m] || 0))
+                        }
+                        maxVal = maxVal || 1
+
+                        const chartH = 160
+                        const barW = 18
+                        const gap = 8
+                        const leftPad = 45
+                        const totalW = leftPad + months.length * (barW + gap) + 10
+
+                        const formatAxis = (v: number) => {
+                            if (v >= 1e9) return `${(v / 1e9).toFixed(1)}tỷ`
+                            if (v >= 1e6) return `${(v / 1e6).toFixed(0)}tr`
+                            return `${(v / 1e3).toFixed(0)}K`
+                        }
+
+                        return (
+                            <div>
+                                {/* Summary */}
+                                <div style={{ display: 'flex', gap: 'var(--space-4)', marginBottom: 'var(--space-3)' }}>
+                                    <div style={{ flex: 1, padding: '8px 12px', borderRadius: 'var(--radius-md)', background: '#3B82F610', border: '1px solid #3B82F630' }}>
+                                        <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginBottom: '2px' }}>Định phí</div>
+                                        <div style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-bold)' as any, color: '#3B82F6', fontFamily: 'var(--font-report)' }}>{formatCurrency(totalFixed)}</div>
+                                        <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{(totalFixed / totalAll * 100).toFixed(1)}%</div>
+                                    </div>
+                                    <div style={{ flex: 1, padding: '8px 12px', borderRadius: 'var(--radius-md)', background: '#F59E0B10', border: '1px solid #F59E0B30' }}>
+                                        <div style={{ fontSize: '10px', color: 'var(--text-muted)', marginBottom: '2px' }}>Biến phí</div>
+                                        <div style={{ fontSize: 'var(--text-sm)', fontWeight: 'var(--weight-bold)' as any, color: '#F59E0B', fontFamily: 'var(--font-report)' }}>{formatCurrency(totalVariable)}</div>
+                                        <div style={{ fontSize: '10px', color: 'var(--text-muted)' }}>{(totalVariable / totalAll * 100).toFixed(1)}%</div>
+                                    </div>
+                                </div>
+                                {/* Stacked bar chart */}
+                                <div style={{ overflowX: 'auto' }}>
+                                    <svg width={totalW} height={chartH + 24} style={{ display: 'block' }}>
+                                        {/* Y grid */}
+                                        {[0, 0.5, 1].map(pct => (
+                                            <g key={pct}>
+                                                <line x1={leftPad} y1={chartH - pct * chartH} x2={totalW - 5} y2={chartH - pct * chartH} stroke="var(--border)" strokeWidth={0.5} strokeDasharray="3 3" />
+                                                <text x={leftPad - 4} y={chartH - pct * chartH + 3} textAnchor="end" fontSize="9" fill="var(--text-muted)" style={{ fontFamily: 'var(--font-report)' }}>{formatAxis(pct * maxVal)}</text>
+                                            </g>
+                                        ))}
+                                        {/* Bars */}
+                                        {months.map((m, mi) => {
+                                            const fx = fixedByMonth[m] || 0
+                                            const vx = variableByMonth[m] || 0
+                                            const x = leftPad + mi * (barW + gap)
+                                            const hFixed = (fx / maxVal) * chartH
+                                            const hVar = (vx / maxVal) * chartH
+                                            return (
+                                                <g key={m}>
+                                                    {/* Variable (bottom) */}
+                                                    <rect x={x} y={chartH - hVar - hFixed} width={barW} height={hVar} rx={2} fill="#F59E0B" opacity={0.75} />
+                                                    {/* Fixed (top of stack) */}
+                                                    <rect x={x} y={chartH - hFixed} width={barW} height={hFixed} rx={2} fill="#3B82F6" opacity={0.75} />
+                                                    {/* Month label */}
+                                                    <text x={x + barW / 2} y={chartH + 14} textAnchor="middle" fontSize="9" fill="var(--text-muted)">T{parseInt(m)}</text>
+                                                </g>
+                                            )
+                                        })}
+                                    </svg>
+                                </div>
+                                {/* Legend */}
+                                <div style={{ display: 'flex', gap: '12px', marginTop: 'var(--space-1)' }}>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
+                                        <div style={{ width: 8, height: 8, borderRadius: 2, background: '#3B82F6' }} /> Định phí
+                                    </div>
+                                    <div style={{ display: 'flex', alignItems: 'center', gap: '4px', fontSize: 'var(--text-xs)', color: 'var(--text-muted)' }}>
+                                        <div style={{ width: 8, height: 8, borderRadius: 2, background: '#F59E0B' }} /> Biến phí
+                                    </div>
+                                </div>
+                            </div>
+                        )
+                    })()}
                 </div>
 
                 {/* Donut: Cost structure */}
@@ -314,129 +520,131 @@ export function PnLReportClient({ report, prevYearReport, availableYears, select
                 </div>
             </div>
 
-            {/* ── P&L Table ── */}
-            <div className="dashboard-section" style={{ overflow: 'auto' }}>
-                <div style={{ overflowX: 'auto' }}>
-                    <table className="san-table" style={{ minWidth: viewMode === 'month' ? '1200px' : '700px' }}>
-                        <thead>
-                            <tr>
-                                <th className="san-th" style={{ position: 'sticky', left: 0, background: 'var(--bg-surface)', zIndex: 2, minWidth: '260px' }}>
-                                    KHOẢN MỤC
-                                </th>
-                                {periods.map(p => (
-                                    <th key={p} className="san-th" style={{ textAlign: 'right', minWidth: '90px' }}>
-                                        {viewMode === 'month' ? `T${parseInt(p)}` : p}
-                                    </th>
-                                ))}
-                                <th className="san-th" style={{ textAlign: 'right', minWidth: '110px', borderLeft: '2px solid var(--border)' }}>NĂM</th>
-                                <th className="san-th" style={{ textAlign: 'right', minWidth: '100px' }}>
-                                    TB/{viewMode === 'month' ? 'THÁNG' : 'QUÝ'}
-                                </th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {report.sections.map(section => {
-                                const isComputed = section.type === 'computed'
-                                const hasItems = section.items && section.items.length > 0
-                                const isExpanded = expanded.has(section.key)
-                                const rowStyle = getRowStyle(section)
-                                const vals = getValues(section.months)
-                                const avg = viewMode === 'month' ? avgMonth(section.total) : avgQuarter(section.total)
-                                const isNegativeRow = ['cogs', 'selling', 'admin', 'other_costs', 'other_exp', 'fin_expense', 'other_income_cost', 'tax'].includes(section.key)
 
-                                return (
-                                    <React.Fragment key={section.key}>
-                                        {/* Section header row */}
-                                        <tr style={rowStyle}>
+
+
+    <div className="dashboard-section" style={{ overflow: 'auto' }}>
+        <div style={{ overflowX: 'auto' }}>
+            <table className="san-table" style={{ minWidth: viewMode === 'month' ? '1200px' : '700px' }}>
+                <thead>
+                    <tr>
+                        <th className="san-th" style={{ position: 'sticky', left: 0, background: 'var(--bg-surface)', zIndex: 2, minWidth: '260px' }}>
+                            KHOẢN MỤC
+                        </th>
+                        {periods.map(p => (
+                            <th key={p} className="san-th" style={{ textAlign: 'right', minWidth: '90px' }}>
+                                {viewMode === 'month' ? `T${parseInt(p)}` : p}
+                            </th>
+                        ))}
+                        <th className="san-th" style={{ textAlign: 'right', minWidth: '110px', borderLeft: '2px solid var(--border)' }}>NĂM</th>
+                        <th className="san-th" style={{ textAlign: 'right', minWidth: '100px' }}>
+                            TB/{viewMode === 'month' ? 'THÁNG' : 'QUÝ'}
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {report.sections.map(section => {
+                        const isComputed = section.type === 'computed'
+                        const hasItems = section.items && section.items.length > 0
+                        const isExpanded = expanded.has(section.key)
+                        const rowStyle = getRowStyle(section)
+                        const vals = getValues(section.months)
+                        const avg = viewMode === 'month' ? avgMonth(section.total) : avgQuarter(section.total)
+                        const isNegativeRow = ['cogs', 'selling', 'admin', 'other_costs', 'other_exp', 'fin_expense', 'other_income_cost', 'tax'].includes(section.key)
+
+                        return (
+                            <React.Fragment key={section.key}>
+                                {/* Section header row */}
+                                <tr style={rowStyle}>
+                                    <td className="san-td" style={{
+                                        position: 'sticky', left: 0, zIndex: 1,
+                                        background: isComputed ? rowStyle.background : 'var(--bg-surface)',
+                                        fontWeight: isComputed ? 'var(--weight-bold)' as any : 'var(--weight-semibold)' as any,
+                                        fontSize: 'var(--text-sm)',
+                                        cursor: hasItems ? 'pointer' : 'default',
+                                        fontFamily: 'var(--font-report)',
+                                    }}
+                                        onClick={() => hasItems && toggleExpand(section.key)}
+                                    >
+                                        <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                                            {hasItems && <span style={{ fontSize: '10px', transition: 'transform 0.2s', transform: isExpanded ? 'rotate(90deg)' : 'none' }}>▶</span>}
+                                            {section.label}
+                                        </span>
+                                    </td>
+                                    {periods.map(p => (
+                                        <td key={p} className="san-td" style={{
+                                            textAlign: 'right',
+                                            fontFamily: 'var(--font-report)',
+                                            color: isComputed ? rowStyle.color : (isNegativeRow ? '#F87171' : 'var(--text-primary)'),
+                                            fontWeight: isComputed ? 'var(--weight-bold)' as any : undefined,
+                                            ...rowStyle,
+                                        }}>
+                                            {(vals[p] || 0) !== 0 ? fmtFull(vals[p] || 0) : '—'}
+                                        </td>
+                                    ))}
+                                    <td className="san-td" style={{
+                                        textAlign: 'right', borderLeft: '2px solid var(--border)',
+                                        fontFamily: 'var(--font-report)',
+                                        color: isComputed ? rowStyle.color : (isNegativeRow ? '#F87171' : 'var(--text-primary)'),
+                                        fontWeight: 'var(--weight-bold)' as any,
+                                        ...rowStyle,
+                                    }}>
+                                        {section.total !== 0 ? fmtFull(section.total) : '—'}
+                                    </td>
+                                    <td className="san-td" style={{
+                                        textAlign: 'right', fontFamily: 'var(--font-report)',
+                                        color: isComputed ? rowStyle.color : 'var(--text-muted)',
+                                        ...rowStyle,
+                                    }}>
+                                        {avg !== 0 ? fmtFull(Math.round(avg)) : '—'}
+                                    </td>
+                                </tr>
+                                {/* Sub-items */}
+                                {isExpanded && section.items?.map(item => {
+                                    const itemVals = getValues(item.months)
+                                    const itemAvg = viewMode === 'month' ? avgMonth(item.total) : avgQuarter(item.total)
+                                    return (
+                                        <tr key={item.classify}>
                                             <td className="san-td" style={{
                                                 position: 'sticky', left: 0, zIndex: 1,
-                                                background: isComputed ? rowStyle.background : 'var(--bg-surface)',
-                                                fontWeight: isComputed ? 'var(--weight-bold)' as any : 'var(--weight-semibold)' as any,
-                                                fontSize: 'var(--text-sm)',
-                                                cursor: hasItems ? 'pointer' : 'default',
-                                                fontFamily: 'var(--font-report)',
-                                            }}
-                                                onClick={() => hasItems && toggleExpand(section.key)}
-                                            >
-                                                <span style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                                                    {hasItems && <span style={{ fontSize: '10px', transition: 'transform 0.2s', transform: isExpanded ? 'rotate(90deg)' : 'none' }}>▶</span>}
-                                                    {section.label}
-                                                </span>
+                                                background: 'var(--bg-surface)',
+                                                paddingLeft: 'var(--space-6)',
+                                                fontSize: 'var(--text-xs)',
+                                                color: 'var(--text-secondary)',
+                                            }}>
+                                                {item.classify}
                                             </td>
                                             {periods.map(p => (
                                                 <td key={p} className="san-td" style={{
-                                                    textAlign: 'right',
-                                                    fontFamily: 'var(--font-report)',
-                                                    color: isComputed ? rowStyle.color : (isNegativeRow ? '#F87171' : 'var(--text-primary)'),
-                                                    fontWeight: isComputed ? 'var(--weight-bold)' as any : undefined,
-                                                    ...rowStyle,
+                                                    textAlign: 'right', fontSize: 'var(--text-xs)',
+                                                    fontFamily: 'var(--font-report)', color: 'var(--text-secondary)',
                                                 }}>
-                                                    {(vals[p] || 0) !== 0 ? fmtFull(vals[p] || 0) : '—'}
+                                                    {(itemVals[p] || 0) !== 0 ? fmtFull(itemVals[p] || 0) : '—'}
                                                 </td>
                                             ))}
                                             <td className="san-td" style={{
                                                 textAlign: 'right', borderLeft: '2px solid var(--border)',
-                                                fontFamily: 'var(--font-report)',
-                                                color: isComputed ? rowStyle.color : (isNegativeRow ? '#F87171' : 'var(--text-primary)'),
-                                                fontWeight: 'var(--weight-bold)' as any,
-                                                ...rowStyle,
+                                                fontSize: 'var(--text-xs)', fontFamily: 'var(--font-report)',
+                                                color: 'var(--text-secondary)',
                                             }}>
-                                                {section.total !== 0 ? fmtFull(section.total) : '—'}
+                                                {item.total !== 0 ? fmtFull(item.total) : '—'}
                                             </td>
                                             <td className="san-td" style={{
-                                                textAlign: 'right', fontFamily: 'var(--font-report)',
-                                                color: isComputed ? rowStyle.color : 'var(--text-muted)',
-                                                ...rowStyle,
+                                                textAlign: 'right', fontSize: 'var(--text-xs)',
+                                                fontFamily: 'var(--font-report)', color: 'var(--text-muted)',
                                             }}>
-                                                {avg !== 0 ? fmtFull(Math.round(avg)) : '—'}
+                                                {itemAvg !== 0 ? fmtFull(Math.round(itemAvg)) : '—'}
                                             </td>
                                         </tr>
-                                        {/* Sub-items */}
-                                        {isExpanded && section.items?.map(item => {
-                                            const itemVals = getValues(item.months)
-                                            const itemAvg = viewMode === 'month' ? avgMonth(item.total) : avgQuarter(item.total)
-                                            return (
-                                                <tr key={item.classify}>
-                                                    <td className="san-td" style={{
-                                                        position: 'sticky', left: 0, zIndex: 1,
-                                                        background: 'var(--bg-surface)',
-                                                        paddingLeft: 'var(--space-6)',
-                                                        fontSize: 'var(--text-xs)',
-                                                        color: 'var(--text-secondary)',
-                                                    }}>
-                                                        {item.classify}
-                                                    </td>
-                                                    {periods.map(p => (
-                                                        <td key={p} className="san-td" style={{
-                                                            textAlign: 'right', fontSize: 'var(--text-xs)',
-                                                            fontFamily: 'var(--font-report)', color: 'var(--text-secondary)',
-                                                        }}>
-                                                            {(itemVals[p] || 0) !== 0 ? fmtFull(itemVals[p] || 0) : '—'}
-                                                        </td>
-                                                    ))}
-                                                    <td className="san-td" style={{
-                                                        textAlign: 'right', borderLeft: '2px solid var(--border)',
-                                                        fontSize: 'var(--text-xs)', fontFamily: 'var(--font-report)',
-                                                        color: 'var(--text-secondary)',
-                                                    }}>
-                                                        {item.total !== 0 ? fmtFull(item.total) : '—'}
-                                                    </td>
-                                                    <td className="san-td" style={{
-                                                        textAlign: 'right', fontSize: 'var(--text-xs)',
-                                                        fontFamily: 'var(--font-report)', color: 'var(--text-muted)',
-                                                    }}>
-                                                        {itemAvg !== 0 ? fmtFull(Math.round(itemAvg)) : '—'}
-                                                    </td>
-                                                </tr>
-                                            )
-                                        })}
-                                    </React.Fragment>
-                                )
-                            })}
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+                                    )
+                                })}
+                            </React.Fragment>
+                        )
+                    })}
+                </tbody>
+            </table>
         </div>
+    </div>
+        </div >
     )
 }

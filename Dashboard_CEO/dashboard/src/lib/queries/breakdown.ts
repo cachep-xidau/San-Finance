@@ -6,10 +6,8 @@ export interface BreakdownDataPoint {
   percentage: number
 }
 
-// Type for the query result with joined categories
-interface ExpenseWithCategory {
-  amount: number | null
-  categories: { parent_category: string | null } | null
+function dateToMonth(d: Date): string {
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`
 }
 
 export async function getCostBreakdown(
@@ -19,60 +17,47 @@ export async function getCostBreakdown(
 ): Promise<BreakdownDataPoint[]> {
   const supabase = await createClient()
 
-  // Default to current month
   const now = new Date()
   const start = startDate || new Date(now.getFullYear(), now.getMonth(), 1)
   const end = endDate || new Date(now.getFullYear(), now.getMonth() + 1, 0)
 
-  // Fetch expenses with categories
+  const startMonth = dateToMonth(start)
+  const endMonth = dateToMonth(end)
+
   let query = supabase
-    .from('expenses')
-    .select(`
-      amount,
-      categories (
-        parent_category
-      )
-    `)
-    .gte('date', start.toISOString().split('T')[0])
-    .lte('date', end.toISOString().split('T')[0])
+    .from('raw_expenses')
+    .select('finance, amount')
+    .gte('month', startMonth)
+    .lte('month', endMonth)
+    .gt('amount', 0)
 
   if (clinicId) {
-    query = query.eq('clinic_id', clinicId)
+    query = query.eq('clinic', clinicId)
   }
 
-  const { data: expenses } = await query.throwOnError()
+  const { data: expenses } = await query
 
-  if (!expenses || expenses.length === 0) {
-    return []
-  }
+  if (!expenses || expenses.length === 0) return []
 
-  // Cast to our type
-  const typedExpenses = expenses as unknown as ExpenseWithCategory[]
-
-  // Group by parent category
   const categoryTotals: Record<string, number> = {}
   let total = 0
 
-  for (const expense of typedExpenses) {
-    const category = expense.categories?.parent_category || 'Khác'
-    const shortCategory = category.split('. ')[1] || category // Remove "1. " prefix
-    categoryTotals[shortCategory] = (categoryTotals[shortCategory] || 0) + (expense.amount || 0)
-    total += expense.amount || 0
+  for (const exp of expenses as any[]) {
+    const finance = exp.finance || 'Chưa phân loại'
+    const shortName = finance.replace(/^\d+\.\s*/, '')
+    categoryTotals[shortName] = (categoryTotals[shortName] || 0) + (exp.amount || 0)
+    total += exp.amount || 0
   }
 
-  // Convert to array and calculate percentages
-  const result: BreakdownDataPoint[] = Object.entries(categoryTotals)
+  return Object.entries(categoryTotals)
     .map(([category, amount]) => ({
       category,
       amount,
       percentage: total > 0 ? (amount / total) * 100 : 0,
     }))
     .sort((a, b) => b.amount - a.amount)
-
-  return result
 }
 
-// Chart colors for categories
 export const CATEGORY_COLORS: Record<string, string> = {
   'Giá vốn hàng bán': '#3B82F6',
   'Chi phí bán hàng': '#10B981',

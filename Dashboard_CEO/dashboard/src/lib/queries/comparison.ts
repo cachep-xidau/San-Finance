@@ -10,11 +10,15 @@ export interface ClinicComparison {
   margin: number
 }
 
-interface ClinicRow {
-  id: string
-  name: string
-  slug: string
+function dateToMonth(d: Date): string {
+  return `${d.getFullYear()}.${String(d.getMonth() + 1).padStart(2, '0')}`
 }
+
+const CLINICS = [
+  { id: 'San', name: 'Nha khoa San', slug: 'san' },
+  { id: 'Implant', name: 'Thế giới Implant', slug: 'implant' },
+  { id: 'Teennie', name: 'Teennie', slug: 'teennie' },
+]
 
 export async function getClinicComparison(
   startDate?: Date,
@@ -22,66 +26,44 @@ export async function getClinicComparison(
 ): Promise<ClinicComparison[]> {
   const supabase = await createClient()
 
-  // Get all clinics
-  const { data: clinics } = await supabase
-    .from('clinics')
-    .select('id, name, slug')
-    .order('name')
-    .throwOnError()
-
-  if (!clinics || clinics.length === 0) {
-    return []
-  }
-
-  // Cast to our type
-  const typedClinics = clinics as unknown as ClinicRow[]
-
-  // Default to current month
   const now = new Date()
   const start = startDate || new Date(now.getFullYear(), now.getMonth(), 1)
   const end = endDate || new Date(now.getFullYear(), now.getMonth() + 1, 0)
+  const startMonth = dateToMonth(start)
+  const endMonth = dateToMonth(end)
 
-  const results: ClinicComparison[] = []
+  // Fetch all revenue and expenses in range at once
+  const { data: revData } = await supabase
+    .from('raw_revenue').select('clinic, total')
+    .gte('month', startMonth).lte('month', endMonth).gt('total', 0)
 
-  for (const clinic of typedClinics) {
-    // Fetch revenue for this clinic
-    const { data: revenueData } = await supabase
-      .from('revenue')
-      .select('total')
-      .eq('clinic_id', clinic.id)
-      .gte('date', start.toISOString().split('T')[0])
-      .lte('date', end.toISOString().split('T')[0])
-      .throwOnError()
+  const { data: expData } = await supabase
+    .from('raw_expenses').select('clinic, amount')
+    .gte('month', startMonth).lte('month', endMonth).gt('amount', 0)
 
-    // Fetch expenses for this clinic
-    const { data: expenseData } = await supabase
-      .from('expenses')
-      .select('amount')
-      .eq('clinic_id', clinic.id)
-      .gte('date', start.toISOString().split('T')[0])
-      .lte('date', end.toISOString().split('T')[0])
-      .throwOnError()
+  // Aggregate by clinic
+  const revByClinic: Record<string, number> = {}
+  for (const r of (revData as any[]) || []) {
+    revByClinic[r.clinic] = (revByClinic[r.clinic] || 0) + (r.total || 0)
+  }
 
-    // Cast to proper types
-    const typedRevenue = revenueData as unknown as { total: number | null }[]
-    const typedExpenses = expenseData as unknown as { amount: number | null }[]
+  const expByClinic: Record<string, number> = {}
+  for (const r of (expData as any[]) || []) {
+    expByClinic[r.clinic] = (expByClinic[r.clinic] || 0) + (r.amount || 0)
+  }
 
-    const revenue = typedRevenue?.reduce((sum, r) => sum + (r.total || 0), 0) || 0
-    const costs = typedExpenses?.reduce((sum, e) => sum + (e.amount || 0), 0) || 0
+  return CLINICS.map(c => {
+    const revenue = revByClinic[c.id] || 0
+    const costs = expByClinic[c.id] || 0
     const profit = revenue - costs
-    const margin = revenue > 0 ? (profit / revenue) * 100 : 0
-
-    results.push({
-      clinicId: clinic.id,
-      clinicName: clinic.name,
-      clinicSlug: clinic.slug,
+    return {
+      clinicId: c.id,
+      clinicName: c.name,
+      clinicSlug: c.slug,
       revenue,
       costs,
       profit,
-      margin,
-    })
-  }
-
-  // Sort by revenue descending
-  return results.sort((a, b) => b.revenue - a.revenue)
+      margin: revenue > 0 ? (profit / revenue) * 100 : 0,
+    }
+  }).sort((a, b) => b.revenue - a.revenue)
 }

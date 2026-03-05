@@ -1,4 +1,5 @@
 import { getExpenseReport, getAvailableYears } from '@/lib/queries/expense-report'
+import { getCostsByClassify } from '@/lib/queries/cost-analysis'
 import { ExpenseReportClient } from '@/components/reports/expense-report-client'
 
 export const dynamic = 'force-dynamic'
@@ -15,13 +16,14 @@ export default async function ExpenseReportPage({
     const clinic = params.clinic || undefined
 
     // Fetch report for selected clinic and also all clinics for card totals
-    const [report, allReport, sanReport, teennieReport, implantReport, prevYearReport] = await Promise.all([
+    const [report, allReport, sanReport, teennieReport, implantReport, prevYearReport, costsByClassify] = await Promise.all([
         getExpenseReport(year, clinic),
         getExpenseReport(year),
         getExpenseReport(year, 'San'),
         getExpenseReport(year, 'Teennie'),
         getExpenseReport(year, 'Implant'),
         getExpenseReport(year - 1, clinic),
+        getCostsByClassify(year, clinic),
     ])
 
     const clinicTotals = {
@@ -39,7 +41,7 @@ export default async function ExpenseReportPage({
             selectedYear={year}
             selectedClinic={clinic || null}
             clinicTotals={clinicTotals}
+            costsByClassify={costsByClassify}
         />
     )
 }
-

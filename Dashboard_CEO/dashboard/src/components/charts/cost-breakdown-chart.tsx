@@ -118,41 +118,65 @@ export function CostBreakdownChart({ data }: CostBreakdownChartProps) {
   const totalAmount = data.reduce((sum, d) => sum + d.amount, 0)
 
   return (
-    <div style={{ cursor: 'pointer' }}>
-      <ResponsiveContainer width="100%" height={280}>
-        <PieChart>
-          <Pie
-            data={data}
-            cx="50%"
-            cy="45%"
-            innerRadius={65}
-            outerRadius={95}
-            paddingAngle={4}
-            dataKey="amount"
-            nameKey="category"
-            cornerRadius={4}
-            onMouseLeave={onCellLeave}
+    <div style={{ display: 'flex', alignItems: 'center', gap: 'var(--space-3)', cursor: 'pointer', marginTop: 24 }}>
+      <div style={{ flex: 1, minWidth: 0, height: 320 }}>
+        <ResponsiveContainer width="100%" height="100%">
+          <PieChart>
+            <Pie
+              data={data}
+              cx="50%"
+              cy="50%"
+              innerRadius={80}
+              outerRadius={120}
+              paddingAngle={4}
+              dataKey="amount"
+              nameKey="category"
+              cornerRadius={4}
+              onMouseLeave={onCellLeave}
+            >
+              {data.map((_, index) => (
+                <Cell
+                  key={`cell-${index}`}
+                  fill={COLORS[index % COLORS.length]}
+                  stroke={activeIndex === index ? 'white' : 'transparent'}
+                  strokeWidth={activeIndex === index ? 3 : 0}
+                  style={{
+                    filter: activeIndex === index ? `drop-shadow(0 0 6px ${COLORS[index % COLORS.length]}60)` : 'none',
+                    transition: 'filter 0.2s ease, stroke 0.2s ease',
+                    cursor: 'pointer',
+                  }}
+                  onMouseEnter={(e) => onCellEnter(e, index)}
+                />
+              ))}
+              <CenterLabel total={formatValue(totalAmount)} />
+            </Pie>
+            <Tooltip content={<CustomTooltip />} />
+          </PieChart>
+        </ResponsiveContainer>
+      </div>
+      {/* Right-side legend - compact */}
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 'var(--space-2)', flex: '0 0 auto', maxWidth: 260 }}>
+        {data.map((d, index) => (
+          <div
+            key={index}
+            style={{
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              padding: '0.3rem 0.6rem',
+              borderRadius: 'var(--radius-pill)',
+              fontSize: 'var(--text-xs)',
+              background: `${COLORS[index % COLORS.length]}12`,
+              color: COLORS[index % COLORS.length],
+              fontWeight: 'var(--weight-medium)' as any,
+            }}
           >
-            {data.map((_, index) => (
-              <Cell
-                key={`cell-${index}`}
-                fill={COLORS[index % COLORS.length]}
-                stroke={activeIndex === index ? 'white' : 'transparent'}
-                strokeWidth={activeIndex === index ? 3 : 0}
-                style={{
-                  filter: activeIndex === index ? `drop-shadow(0 0 6px ${COLORS[index % COLORS.length]}60)` : 'none',
-                  transition: 'filter 0.2s ease, stroke 0.2s ease',
-                  cursor: 'pointer',
-                }}
-                onMouseEnter={(e) => onCellEnter(e, index)}
-              />
-            ))}
-            <CenterLabel total={formatValue(totalAmount)} />
-          </Pie>
-          <Tooltip content={<CustomTooltip />} />
-          <Legend content={renderLegend} />
-        </PieChart>
-      </ResponsiveContainer>
+            <div style={{ width: 8, height: 8, borderRadius: 'var(--radius-pill)', background: COLORS[index % COLORS.length], flexShrink: 0 }} />
+            <span style={{ flex: 1, whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>{d.category}</span>
+            <span style={{ fontFamily: 'var(--font-report)', fontWeight: 600, whiteSpace: 'nowrap' }}>{formatValue(d.amount)} ({d.percentage.toFixed(0)}%)</span>
+          </div>
+        ))}
+      </div>
     </div>
   )
 }

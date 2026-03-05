@@ -14,7 +14,7 @@ export default function DashboardLayout({
 
       {/* Main Content */}
       <div className="main-content">
-        <Header />
+        <Header title="Tổng quan tài chính" />
         <main className="page-content">
           {children}
         </main>
